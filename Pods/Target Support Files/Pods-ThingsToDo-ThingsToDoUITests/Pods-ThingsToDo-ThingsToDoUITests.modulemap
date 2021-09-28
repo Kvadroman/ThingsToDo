@@ -1,0 +1,6 @@
+framework module Pods_ThingsToDo_ThingsToDoUITests {
+  umbrella header "Pods-ThingsToDo-ThingsToDoUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
