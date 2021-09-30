@@ -19,18 +19,20 @@ class NeedToDoViewController: UIViewController {
         formatter.dateFormat = "dd/MM/yyyy"
         return formatter
     }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         needToDoTasks.register(UINib(nibName: "TasksCell", bundle: nil), forCellReuseIdentifier: "tasksCell")
         if let d = selectedDate {
             titleNavigationBar.title = formatter.string(from: d)
         }
+        needToDoTasks.dataSource = self
+        needToDoTasks.delegate = self
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         needToDoTasks.reloadData()
-        needToDoTasks.tableFooterView = UIView()
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

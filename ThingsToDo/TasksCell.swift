@@ -9,6 +9,7 @@ import UIKit
 
 class TasksCell: UITableViewCell {
 
+    @IBOutlet weak var switchReminder: UISwitch!
     @IBOutlet weak var textFromCell: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -17,34 +17,29 @@
                 <rect key="frame" x="0.0" y="0.0" width="340" height="60"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3qR-cz-eI6">
-                        <rect key="frame" x="10" y="10" width="0.0" height="40"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JMC-8x-hVk">
+                        <rect key="frame" x="31" y="19.5" width="41.5" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="FUn-NU-Y8J">
-                        <rect key="frame" x="276" y="14" width="51" height="31"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                <integer key="value" value="15"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
+                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lSP-Op-5zO">
+                        <rect key="frame" x="269" y="14.5" width="51" height="31"/>
                     </switch>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="3qR-cz-eI6" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="Bdg-8P-RQR"/>
-                    <constraint firstItem="3qR-cz-eI6" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="QAQ-pU-c3L"/>
-                    <constraint firstAttribute="bottom" secondItem="3qR-cz-eI6" secondAttribute="bottom" constant="10" id="swa-az-JwP"/>
+                    <constraint firstAttribute="trailing" secondItem="lSP-Op-5zO" secondAttribute="trailing" constant="22" id="FWM-oL-Iiq"/>
+                    <constraint firstItem="lSP-Op-5zO" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="k1D-yC-YPv"/>
+                    <constraint firstItem="JMC-8x-hVk" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="st3-Qg-Z7q"/>
+                    <constraint firstItem="JMC-8x-hVk" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="31" id="y8q-Zu-Nrg"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="textFromCell" destination="3qR-cz-eI6" id="mbN-2n-0Ao"/>
+                <outlet property="switchReminder" destination="lSP-Op-5zO" id="tzH-Gf-MkZ"/>
+                <outlet property="textFromCell" destination="JMC-8x-hVk" id="np0-dq-yMZ"/>
             </connections>
-            <point key="canvasLocation" x="73.913043478260875" y="101.78571428571428"/>
+            <point key="canvasLocation" x="88" y="101"/>
         </tableViewCell>
     </objects>
 </document>
