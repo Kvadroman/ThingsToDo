@@ -6,7 +6,9 @@ target 'ThingsToDo' do
   use_frameworks!
 
   # Pods for ThingsToDo
-  pod 'FSCalendar'
+ pod 'FSCalendar'
+ pod 'SwiftLint'
+ pod 'Firebase/Analytics'
 
   target 'ThingsToDoTests' do
     inherit! :search_paths

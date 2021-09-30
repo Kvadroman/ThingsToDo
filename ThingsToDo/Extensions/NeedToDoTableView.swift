@@ -8,19 +8,19 @@
 import UIKit
 
 extension NeedToDoViewController: UITableViewDelegate, UITableViewDataSource {
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 15
+        return tasks.count
     }
-    
+
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        44
+    }
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "tasksCell", for: indexPath) as! TasksCell
-        switch indexPath.row {
-        case 0: cell.backgroundColor = .red
-        case 1: cell.backgroundColor = .green
-        default: cell.backgroundColor = .white
-        }
+        cell.textFromCell.text = tasks[indexPath.row]
+        print(tasks)
         return cell
     }
-    
-    
 }

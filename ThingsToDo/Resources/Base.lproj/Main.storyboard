@@ -106,7 +106,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="пуфкпуыкпыу" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Io6-vx-wIE">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="1. Задача " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Io6-vx-wIE">
                                 <rect key="frame" x="0.0" y="88" width="390" height="300"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
@@ -116,30 +116,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="dqX-H9-VFG">
-                                <rect key="frame" x="22" y="408" width="54.333333333333343" height="67.333333333333314"/>
-                                <subviews>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="751" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EXe-XV-t0E">
-                                        <rect key="frame" x="0.0" y="0.0" width="56.333333333333336" height="31"/>
-                                        <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <color key="onTintColor" systemColor="systemGreenColor"/>
-                                        <color key="thumbTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="15"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </switch>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" ambiguous="YES" text="Priority" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ABp-eD-766">
-                                        <rect key="frame" x="0.0" y="47" width="54.333333333333336" height="20.333333333333329"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="gFP-f0-GDq">
-                                <rect key="frame" x="158.66666666666666" y="408" width="72.666666666666657" height="66.333333333333314"/>
+                                <rect key="frame" x="158.66666666666666" y="459" width="72.666666666666657" height="66.333333333333371"/>
                                 <subviews>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="pko-Wc-ORr">
                                         <rect key="frame" x="12" y="0.0" width="51" height="31"/>
@@ -161,7 +139,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="5ow-w4-hDq">
-                                <rect key="frame" x="311.33333333333331" y="408" width="49" height="66.333333333333314"/>
+                                <rect key="frame" x="321" y="459" width="49" height="66.333333333333371"/>
                                 <subviews>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="6us-IA-qMC">
                                         <rect key="frame" x="0.0" y="0.0" width="51" height="31"/>
@@ -182,32 +160,205 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="gGb-yH-gqR">
+                                <rect key="frame" x="20.000000000000004" y="459" width="54.333333333333343" height="66.333333333333371"/>
+                                <subviews>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="539-D3-axT">
+                                        <rect key="frame" x="2.6666666666666679" y="0.0" width="51" height="31"/>
+                                        <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="onTintColor" systemColor="systemGreenColor"/>
+                                        <color key="thumbTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </switch>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Priority" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dWH-Ol-yxe">
+                                        <rect key="frame" x="0.0" y="46" width="54.333333333333336" height="20.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E5c-Lp-9Ul">
+                                <rect key="frame" x="0.0" y="408" width="390" height="31"/>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Reminder"/>
+                                <connections>
+                                    <action selector="reminderButton:" destination="Xkk-LE-VGn" eventType="touchUpInside" id="ntU-VI-LzU"/>
+                                    <segue destination="fB3-Yr-PCe" kind="show" identifier="reminderViewController" id="eUL-j1-BiC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="23c-Ih-gkJ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="23c-Ih-gkJ" firstAttribute="trailing" secondItem="Io6-vx-wIE" secondAttribute="trailing" id="2zp-7Y-bhc"/>
-                            <constraint firstItem="5ow-w4-hDq" firstAttribute="leading" secondItem="gFP-f0-GDq" secondAttribute="trailing" constant="80" id="4JG-aW-yFW"/>
-                            <constraint firstItem="gFP-f0-GDq" firstAttribute="top" secondItem="Io6-vx-wIE" secondAttribute="bottom" constant="20" id="8Xb-Ti-ecr"/>
+                            <constraint firstItem="E5c-Lp-9Ul" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="23c-Ih-gkJ" secondAttribute="leading" id="AFJ-Um-xFJ"/>
+                            <constraint firstItem="23c-Ih-gkJ" firstAttribute="trailing" secondItem="E5c-Lp-9Ul" secondAttribute="trailing" id="FUq-Fb-EX8"/>
                             <constraint firstItem="Io6-vx-wIE" firstAttribute="leading" secondItem="23c-Ih-gkJ" secondAttribute="leading" id="JD3-KD-JZv"/>
-                            <constraint firstItem="dqX-H9-VFG" firstAttribute="top" secondItem="Io6-vx-wIE" secondAttribute="bottom" constant="20" id="aqu-Tv-hg9"/>
-                            <constraint firstItem="gFP-f0-GDq" firstAttribute="centerX" secondItem="Io6-vx-wIE" secondAttribute="centerX" id="cqf-RA-N9E"/>
-                            <constraint firstItem="gFP-f0-GDq" firstAttribute="leading" secondItem="dqX-H9-VFG" secondAttribute="trailing" constant="80" id="ecy-au-Q2c"/>
+                            <constraint firstItem="gFP-f0-GDq" firstAttribute="top" secondItem="E5c-Lp-9Ul" secondAttribute="bottom" constant="20" id="M28-c1-ZR2"/>
+                            <constraint firstItem="gGb-yH-gqR" firstAttribute="leading" secondItem="23c-Ih-gkJ" secondAttribute="leading" constant="20" id="Ms1-JW-Teo"/>
+                            <constraint firstItem="E5c-Lp-9Ul" firstAttribute="top" secondItem="Io6-vx-wIE" secondAttribute="bottom" constant="20" id="Nas-ew-UT3"/>
+                            <constraint firstItem="E5c-Lp-9Ul" firstAttribute="centerX" secondItem="23c-Ih-gkJ" secondAttribute="centerX" id="Pih-yM-W0r"/>
+                            <constraint firstItem="23c-Ih-gkJ" firstAttribute="trailing" secondItem="5ow-w4-hDq" secondAttribute="trailing" constant="20" id="lCP-DW-iAf"/>
                             <constraint firstItem="Io6-vx-wIE" firstAttribute="top" secondItem="23c-Ih-gkJ" secondAttribute="top" id="loR-P8-wt2"/>
-                            <constraint firstItem="5ow-w4-hDq" firstAttribute="top" secondItem="Io6-vx-wIE" secondAttribute="bottom" constant="20" id="oQd-wY-RTc"/>
+                            <constraint firstItem="gGb-yH-gqR" firstAttribute="top" secondItem="E5c-Lp-9Ul" secondAttribute="bottom" constant="20" id="qZL-Ac-bMj"/>
+                            <constraint firstItem="E5c-Lp-9Ul" firstAttribute="leading" secondItem="23c-Ih-gkJ" secondAttribute="leading" id="tDS-qg-Isg"/>
+                            <constraint firstItem="gFP-f0-GDq" firstAttribute="centerX" secondItem="23c-Ih-gkJ" secondAttribute="centerX" id="wk3-3z-JSi"/>
+                            <constraint firstItem="23c-Ih-gkJ" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="E5c-Lp-9Ul" secondAttribute="trailing" id="yFi-rP-s7b"/>
+                            <constraint firstItem="5ow-w4-hDq" firstAttribute="top" secondItem="E5c-Lp-9Ul" secondAttribute="bottom" constant="20" id="zSn-gB-vta"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="TLj-ND-d1u"/>
+                    <navigationItem key="navigationItem" id="TLj-ND-d1u">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="qMU-7c-qep">
+                            <connections>
+                                <segue destination="519-MJ-cad" kind="unwind" unwindAction="unwindWithUnwindSegue:" id="PX9-3f-Smc"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="backButton" destination="TLj-ND-d1u" id="X7c-tf-sM5"/>
-                        <outlet property="doneSwitch" destination="6us-IA-qMC" id="H8n-ej-MfB"/>
-                        <outlet property="prioritySwitch" destination="EXe-XV-t0E" id="YuF-N8-ynZ"/>
-                        <outlet property="reminderSwitch" destination="pko-Wc-ORr" id="bZd-h9-dDx"/>
+                        <outlet property="newTaskTextField" destination="Io6-vx-wIE" id="oww-5c-dbh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EgB-DI-l29" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="519-MJ-cad" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2241.5384615384614" y="-4.2654028436018958"/>
+        </scene>
+        <!--Reminder View Controller-->
+        <scene sceneID="S5l-oA-0l1">
+            <objects>
+                <viewController id="fB3-Yr-PCe" customClass="ReminderViewController" customModule="ThingsToDo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vbz-68-LAe">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FiG-37-Wyu">
+                                <rect key="frame" x="0.0" y="103" width="390" height="31"/>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="No"/>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="tG8-du-zin">
+                                <rect key="frame" x="0.0" y="164" width="390" height="355"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L0E-gA-hg9">
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="31"/>
+                                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="At the time of event"/>
+                                        <connections>
+                                            <action selector="atTheTimeReminderButton:" destination="fB3-Yr-PCe" eventType="touchUpInside" id="WYl-Vq-Pz8"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dvY-0E-awX">
+                                        <rect key="frame" x="0.0" y="36" width="390" height="31"/>
+                                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="In 5 minutes"/>
+                                        <connections>
+                                            <action selector="inFiveMinutesReminderButton:" destination="fB3-Yr-PCe" eventType="touchUpInside" id="Qto-O9-Mbg"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fJm-oo-G2a">
+                                        <rect key="frame" x="0.0" y="72" width="390" height="31"/>
+                                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="In 10 minutes"/>
+                                        <connections>
+                                            <action selector="inTenMinutesReminderButton:" destination="fB3-Yr-PCe" eventType="touchUpInside" id="y3C-gC-eGC"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v59-XP-ESI">
+                                        <rect key="frame" x="0.0" y="108" width="390" height="31"/>
+                                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="In 15 minutes"/>
+                                        <connections>
+                                            <action selector="inFiftheenMinutesReminderButton:" destination="fB3-Yr-PCe" eventType="touchUpInside" id="tyg-qr-Ham"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nUu-fN-ZKe">
+                                        <rect key="frame" x="0.0" y="144" width="390" height="31"/>
+                                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="In 30 minutes"/>
+                                        <connections>
+                                            <action selector="inThirthyMinutesReminderButton:" destination="fB3-Yr-PCe" eventType="touchUpInside" id="TpH-r7-Poe"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Eg-UK-uEZ">
+                                        <rect key="frame" x="0.0" y="180" width="390" height="31"/>
+                                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="In 1 hour"/>
+                                        <connections>
+                                            <action selector="inOneHourReminderButton:" destination="fB3-Yr-PCe" eventType="touchUpInside" id="7e8-rc-ntO"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="COd-6k-mrb">
+                                        <rect key="frame" x="0.0" y="216" width="390" height="31"/>
+                                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="In 2 hour"/>
+                                        <connections>
+                                            <action selector="inTwoHourReminderButton:" destination="fB3-Yr-PCe" eventType="touchUpInside" id="69N-od-H3L"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jUC-7h-qzn">
+                                        <rect key="frame" x="0.0" y="252" width="390" height="31"/>
+                                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="In 1 day"/>
+                                        <connections>
+                                            <action selector="inOneDayReminderButton:" destination="fB3-Yr-PCe" eventType="touchUpInside" id="hjT-un-2XE"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zjC-xM-jkg">
+                                        <rect key="frame" x="0.0" y="288" width="390" height="31"/>
+                                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="In 2 day"/>
+                                        <connections>
+                                            <action selector="inTwoDayReminderButton:" destination="fB3-Yr-PCe" eventType="touchUpInside" id="if2-IN-ouH"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hll-5c-gxh">
+                                        <rect key="frame" x="0.0" y="324" width="390" height="31"/>
+                                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="In 1 week"/>
+                                        <connections>
+                                            <action selector="inOneWeekReminderButton:" destination="fB3-Yr-PCe" eventType="touchUpInside" id="eRJ-TO-spd"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ilq-qe-dSX"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ilq-qe-dSX" firstAttribute="trailing" secondItem="tG8-du-zin" secondAttribute="trailing" id="KK5-pU-g3a"/>
+                            <constraint firstItem="tG8-du-zin" firstAttribute="top" secondItem="FiG-37-Wyu" secondAttribute="bottom" constant="30" id="KjA-QA-GRu"/>
+                            <constraint firstItem="tG8-du-zin" firstAttribute="leading" secondItem="ilq-qe-dSX" secondAttribute="leading" id="g3q-b0-pNx"/>
+                            <constraint firstItem="FiG-37-Wyu" firstAttribute="top" secondItem="ilq-qe-dSX" secondAttribute="top" constant="15" id="gRI-30-2Lv"/>
+                            <constraint firstItem="FiG-37-Wyu" firstAttribute="leading" secondItem="ilq-qe-dSX" secondAttribute="leading" id="ii1-6S-HQM"/>
+                            <constraint firstItem="ilq-qe-dSX" firstAttribute="trailing" secondItem="FiG-37-Wyu" secondAttribute="trailing" id="vJN-g2-1R6"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="fCf-bI-As3"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="inO-Ix-YAk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2987.6923076923076" y="-4.2654028436018958"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="TsZ-sm-D4K">
@@ -233,6 +384,9 @@
         <image name="plus.circle" catalog="system" width="128" height="121"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

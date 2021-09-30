@@ -1,0 +1,5 @@
+disabled_rules:
+- force_cast
+- identifier_name
+- unused_optional_binding
+- unused_closure_parameter

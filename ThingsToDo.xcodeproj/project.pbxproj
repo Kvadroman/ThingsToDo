@@ -13,7 +13,10 @@
 		0027B5292702426E002298D5 /* TasksCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0027B5272702426E002298D5 /* TasksCell.xib */; };
 		0027B52B27026578002298D5 /* NeedToDoTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0027B52A27026578002298D5 /* NeedToDoTableView.swift */; };
 		0027B52D2703486A002298D5 /* NewTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0027B52C2703486A002298D5 /* NewTaskViewController.swift */; };
-		0027B52F27036CC6002298D5 /* SwitchUISwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0027B52E27036CC6002298D5 /* SwitchUISwitch.swift */; };
+		0027B5312704914F002298D5 /* ReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0027B5302704914F002298D5 /* ReminderViewController.swift */; };
+		0027B5332704BBBA002298D5 /* ThingsToDo.xcworkspace in Resources */ = {isa = PBXBuildFile; fileRef = 0027B5322704BBBA002298D5 /* ThingsToDo.xcworkspace */; };
+		00686A152704BDFE00C55C2B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 00686A142704BDFE00C55C2B /* GoogleService-Info.plist */; };
+		00686A182705EE8D00C55C2B /* UIAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00686A172705EE8D00C55C2B /* UIAlertViewController.swift */; };
 		00F0827126F3331800B9EC28 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F0827026F3331800B9EC28 /* AppDelegate.swift */; };
 		00F0827326F3331800B9EC28 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F0827226F3331800B9EC28 /* SceneDelegate.swift */; };
 		00F0827526F3331800B9EC28 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F0827426F3331800B9EC28 /* MainViewController.swift */; };
@@ -52,7 +55,10 @@
 		0027B5272702426E002298D5 /* TasksCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TasksCell.xib; sourceTree = "<group>"; };
 		0027B52A27026578002298D5 /* NeedToDoTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeedToDoTableView.swift; sourceTree = "<group>"; };
 		0027B52C2703486A002298D5 /* NewTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskViewController.swift; sourceTree = "<group>"; };
-		0027B52E27036CC6002298D5 /* SwitchUISwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchUISwitch.swift; sourceTree = "<group>"; };
+		0027B5302704914F002298D5 /* ReminderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderViewController.swift; sourceTree = "<group>"; };
+		0027B5322704BBBA002298D5 /* ThingsToDo.xcworkspace */ = {isa = PBXFileReference; lastKnownFileType = wrapper.workspace; path = ThingsToDo.xcworkspace; sourceTree = "<group>"; };
+		00686A142704BDFE00C55C2B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		00686A172705EE8D00C55C2B /* UIAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertViewController.swift; sourceTree = "<group>"; };
 		00F0826D26F3331800B9EC28 /* ThingsToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThingsToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00F0827026F3331800B9EC28 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		00F0827226F3331800B9EC28 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -111,8 +117,8 @@
 			isa = PBXGroup;
 			children = (
 				0027B51E2702365E002298D5 /* MainFsCalendar.swift */,
+				00686A172705EE8D00C55C2B /* UIAlertViewController.swift */,
 				0027B52A27026578002298D5 /* NeedToDoTableView.swift */,
-				0027B52E27036CC6002298D5 /* SwitchUISwitch.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -143,6 +149,8 @@
 			isa = PBXGroup;
 			children = (
 				00F0826F26F3331800B9EC28 /* ThingsToDo */,
+				0027B5322704BBBA002298D5 /* ThingsToDo.xcworkspace */,
+				00686A142704BDFE00C55C2B /* GoogleService-Info.plist */,
 				00F0828926F3331900B9EC28 /* ThingsToDoTests */,
 				00F0829426F3331900B9EC28 /* ThingsToDoUITests */,
 				00F0826E26F3331800B9EC28 /* Products */,
@@ -168,6 +176,7 @@
 				0027B51B2701EE94002298D5 /* NeedToDoViewController.swift */,
 				00F0827426F3331800B9EC28 /* MainViewController.swift */,
 				0027B5262702426E002298D5 /* TasksCell.swift */,
+				0027B5302704914F002298D5 /* ReminderViewController.swift */,
 				0027B52C2703486A002298D5 /* NewTaskViewController.swift */,
 				0027B521270236A3002298D5 /* Resources */,
 				0027B51D2702357A002298D5 /* Extensions */,
@@ -224,10 +233,11 @@
 			buildConfigurationList = 00F0829A26F3331900B9EC28 /* Build configuration list for PBXNativeTarget "ThingsToDo" */;
 			buildPhases = (
 				EE0CDFA8B1AB2AABB611B522 /* [CP] Check Pods Manifest.lock */,
+				00686A162704C38900C55C2B /* ShellScript */,
 				00F0826926F3331800B9EC28 /* Sources */,
 				00F0826A26F3331800B9EC28 /* Frameworks */,
 				00F0826B26F3331800B9EC28 /* Resources */,
-				C1228A4E0FDBF0640AF6EED6 /* [CP] Embed Pods Frameworks */,
+				F40950B546E11498E3865003 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -265,7 +275,7 @@
 				00F0828D26F3331900B9EC28 /* Sources */,
 				00F0828E26F3331900B9EC28 /* Frameworks */,
 				00F0828F26F3331900B9EC28 /* Resources */,
-				D878D4F035EDDB542271DEAF /* [CP] Embed Pods Frameworks */,
+				B6F1E930274E3E6C472C3AD0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -326,8 +336,10 @@
 			files = (
 				0027B5292702426E002298D5 /* TasksCell.xib in Resources */,
 				00F0828026F3331900B9EC28 /* LaunchScreen.storyboard in Resources */,
+				0027B5332704BBBA002298D5 /* ThingsToDo.xcworkspace in Resources */,
 				00F0827D26F3331900B9EC28 /* Assets.xcassets in Resources */,
 				00F0827826F3331800B9EC28 /* Main.storyboard in Resources */,
+				00686A152704BDFE00C55C2B /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,6 +360,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		00686A162704C38900C55C2B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
 		31978542BE51874CFE56D27F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -392,24 +421,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C1228A4E0FDBF0640AF6EED6 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ThingsToDo/Pods-ThingsToDo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ThingsToDo/Pods-ThingsToDo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ThingsToDo/Pods-ThingsToDo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D878D4F035EDDB542271DEAF /* [CP] Embed Pods Frameworks */ = {
+		B6F1E930274E3E6C472C3AD0 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -448,6 +460,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		F40950B546E11498E3865003 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ThingsToDo/Pods-ThingsToDo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ThingsToDo/Pods-ThingsToDo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ThingsToDo/Pods-ThingsToDo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -457,12 +486,13 @@
 			files = (
 				00F0827526F3331800B9EC28 /* MainViewController.swift in Sources */,
 				0027B5282702426E002298D5 /* TasksCell.swift in Sources */,
+				0027B5312704914F002298D5 /* ReminderViewController.swift in Sources */,
 				0027B51F2702365E002298D5 /* MainFsCalendar.swift in Sources */,
+				00686A182705EE8D00C55C2B /* UIAlertViewController.swift in Sources */,
 				00F0827126F3331800B9EC28 /* AppDelegate.swift in Sources */,
 				0027B52D2703486A002298D5 /* NewTaskViewController.swift in Sources */,
 				0027B51C2701EE94002298D5 /* NeedToDoViewController.swift in Sources */,
 				00F0827B26F3331800B9EC28 /* ThingsToDo.xcdatamodeld in Sources */,
-				0027B52F27036CC6002298D5 /* SwitchUISwitch.swift in Sources */,
 				00F0827326F3331800B9EC28 /* SceneDelegate.swift in Sources */,
 				0027B52B27026578002298D5 /* NeedToDoTableView.swift in Sources */,
 			);

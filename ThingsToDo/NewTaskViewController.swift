@@ -6,18 +6,42 @@
 //
 
 import UIKit
+import UserNotifications
+import FSCalendar
 
 class NewTaskViewController: UIViewController {
-    
-    @IBOutlet weak var doneSwitch: UISwitch!
-    @IBOutlet weak var reminderSwitch: UISwitch!
-    @IBOutlet weak var prioritySwitch: UISwitch!
+
+    @IBOutlet weak var newTaskTextField: UITextView!
     @IBOutlet weak var backButton: UINavigationItem!
     override func viewDidLoad() {
         super.viewDidLoad()
-        prioritySwitch.colorUISwitch()
-        reminderSwitch.colorUISwitch()
-        doneSwitch.colorUISwitch()
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        navigationItem.backButtonTitle = "Event"
+    }
+    @IBAction func reminderButton(_ sender: Any) {
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
+            if success {
+                self.addReminder()
+            } else if let error = error {
+                print("\(error)")
+            }
+        }
+    }
+
+    func addReminder() {
+        let content = UNMutableNotificationContent()
+        content.title = "Hello world"
+        content.sound = .default
+        content.body = "Here is the reminder"
+        let targetDate = Date().addingTimeInterval(5)
+        let trigger = UNCalendarNotificationTrigger(dateMatching: Calendar.current.dateComponents([.year, .month, .day,
+                                                            .hour, .minute, .second], from: targetDate), repeats: false)
+        let request = UNNotificationRequest(identifier: "id", content: content, trigger: trigger)
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: { error in
+            if error != nil {
+                print("Error")
+            }
+        })
     }
 }
-
