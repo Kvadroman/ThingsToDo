@@ -37,6 +37,7 @@ class NeedToDoViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         needToDoTasks.reloadData()
+        print(tasks)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

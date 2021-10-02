@@ -46,9 +46,11 @@ class NewTaskViewController: UIViewController {
         })
     }
     @IBAction func saveTextFromTextField(_ sender: UIBarButtonItem) {
-        delegate?.updateCell(label: newTaskTextField.text)
-//        self.dismiss(animated: true, completion: nil)
-//        navigationController?.pushViewController(NeedToDoViewController(), animated: true)
-        print("null")
+        if newTaskTextField.text == "" {
+            showAlert(msg: "", inViewController: self, title: "Please fill the fields")
+        } else {
+            delegate?.updateCell(label: newTaskTextField.text)
+            self.navigationController?.popViewController(animated: true)
+        }
     }
 }

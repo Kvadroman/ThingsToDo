@@ -219,7 +219,6 @@
                         <barButtonItem key="rightBarButtonItem" title="Save" id="qMU-7c-qep">
                             <connections>
                                 <action selector="saveTextFromTextField:" destination="Xkk-LE-VGn" id="GnM-Xa-kY9"/>
-                                <segue destination="519-MJ-cad" kind="unwind" unwindAction="unwindWithUnwindSegue:" id="PX9-3f-Smc"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -229,7 +228,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EgB-DI-l29" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="519-MJ-cad" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2241.5384615384614" y="-4.2654028436018958"/>
         </scene>
