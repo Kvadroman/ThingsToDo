@@ -20,13 +20,13 @@ class ReminderViewController: UIViewController {
     }
     @IBAction func inThirthyMinutesReminderButton(_ sender: UIButton) {
     }
-    @IBAction func inOneHourReminderButton(_ sender: Any) {
+    @IBAction func inOneHourReminderButton(_ sender: UIButton) {
     }
     @IBAction func inTwoHourReminderButton(_ sender: UIButton) {
     }
     @IBAction func inOneDayReminderButton(_ sender: UIButton) {
     }
-    @IBAction func inTwoDayReminderButton(_ sender: Any) {
+    @IBAction func inTwoDayReminderButton(_ sender: UIButton) {
     }
     @IBAction func inOneWeekReminderButton(_ sender: UIButton) {
     }

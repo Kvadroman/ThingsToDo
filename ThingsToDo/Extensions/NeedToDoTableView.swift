@@ -7,24 +7,34 @@
 
 import UIKit
 
-extension NeedToDoViewController: UITableViewDelegate, UITableViewDataSource {
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tasks.count
+extension NeedToDoViewController: UITableViewDelegate, UITableViewDataSource, NeedToDoViewControllerDelegate {
+    func updateCell(label text: String) {
+        tasks.append(text)
     }
 
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        44
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if tasks.count != 0 {
+        return tasks.count
+    }
+        return 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "tasksCell", for: indexPath) as! TasksCell
-        cell.textFromCell.text = tasks[indexPath.row]
-        print(tasks)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "TasksCell", for: indexPath)
+                as? TasksCell else {fatalError()}
+        cell.textFromCell.text = "\(indexPath.row+1). \(tasks[indexPath.row])"
         return cell
     }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle,
+                   forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            tasks.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
     }
 }

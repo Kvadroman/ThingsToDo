@@ -11,6 +11,7 @@ import FSCalendar
 
 class NewTaskViewController: UIViewController {
 
+    weak var delegate: NeedToDoViewControllerDelegate?
     @IBOutlet weak var newTaskTextField: UITextView!
     @IBOutlet weak var backButton: UINavigationItem!
     override func viewDidLoad() {
@@ -35,13 +36,19 @@ class NewTaskViewController: UIViewController {
         content.sound = .default
         content.body = "Here is the reminder"
         let targetDate = Date().addingTimeInterval(5)
-        let trigger = UNCalendarNotificationTrigger(dateMatching: Calendar.current.dateComponents([.year, .month, .day,
-                                                            .hour, .minute, .second], from: targetDate), repeats: false)
+        let trigger = UNCalendarNotificationTrigger(dateMatching: Calendar.current.dateComponents([
+            .year, .month, .day, .hour, .minute, .second], from: targetDate), repeats: false)
         let request = UNNotificationRequest(identifier: "id", content: content, trigger: trigger)
         UNUserNotificationCenter.current().add(request, withCompletionHandler: { error in
             if error != nil {
-                print("Error")
+                fatalError()
             }
         })
+    }
+    @IBAction func saveTextFromTextField(_ sender: UIBarButtonItem) {
+        delegate?.updateCell(label: newTaskTextField.text)
+//        self.dismiss(animated: true, completion: nil)
+//        navigationController?.pushViewController(NeedToDoViewController(), animated: true)
+        print("null")
     }
 }
