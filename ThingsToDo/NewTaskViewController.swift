@@ -12,14 +12,20 @@ import FSCalendar
 class NewTaskViewController: UIViewController {
 
     weak var delegate: NeedToDoViewControllerDelegate?
-    @IBOutlet weak var newTaskTextField: UITextView!
+    @IBOutlet weak var newTaskTextView: UITextView!
     @IBOutlet weak var backButton: UINavigationItem!
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        newTaskTextView.becomeFirstResponder()
+    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         navigationItem.backButtonTitle = "Event"
     }
+
     @IBAction func reminderButton(_ sender: Any) {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
             if success {
@@ -46,10 +52,10 @@ class NewTaskViewController: UIViewController {
         })
     }
     @IBAction func saveTextFromTextField(_ sender: UIBarButtonItem) {
-        if newTaskTextField.text == "" {
+        if newTaskTextView.text == "" {
             showAlert(msg: "", inViewController: self, title: "Please fill the fields")
         } else {
-            delegate?.updateCell(label: newTaskTextField.text)
+            delegate?.updateCell(label: newTaskTextView.text)
             self.navigationController?.popViewController(animated: true)
         }
     }

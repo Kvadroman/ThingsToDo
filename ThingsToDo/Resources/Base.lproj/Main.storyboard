@@ -65,6 +65,16 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="yfN-Ow-pwq">
                                 <rect key="frame" x="0.0" y="122" width="390" height="688"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EditCell" id="qyI-bk-kXo">
+                                        <rect key="frame" x="0.0" y="44.666666030883789" width="390" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qyI-bk-kXo" id="gfm-VG-eX0">
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="ZtS-Xj-n0q" id="RhM-71-qU4"/>
                                     <outlet property="delegate" destination="ZtS-Xj-n0q" id="w5B-LR-bGo"/>
@@ -98,6 +108,49 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sh5-uV-JZd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1509.2307692307693" y="-3.5545023696682461"/>
+        </scene>
+        <!--Edit Cell View Controller-->
+        <scene sceneID="Krl-kC-qKQ">
+            <objects>
+                <viewController storyboardIdentifier="EditCellViewController" id="BiY-zP-W0M" customClass="EditCellViewController" customModule="ThingsToDo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Pi1-vv-JPa">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="O6m-rw-AiE">
+                                <rect key="frame" x="16" y="108" width="358" height="300"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="300" id="421-2N-xo2"/>
+                                    <constraint firstAttribute="height" constant="300" id="asD-ce-VeE"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Jzp-1Y-2A4"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="O6m-rw-AiE" secondAttribute="trailing" constant="16" id="BiC-Oh-Waw"/>
+                            <constraint firstItem="O6m-rw-AiE" firstAttribute="leading" secondItem="Jzp-1Y-2A4" secondAttribute="leading" constant="16" id="xmQ-iG-KY6"/>
+                            <constraint firstItem="O6m-rw-AiE" firstAttribute="top" secondItem="Jzp-1Y-2A4" secondAttribute="top" constant="20" id="zK9-15-g5N"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="asV-aW-pUP">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="Mm4-DM-9le">
+                            <connections>
+                                <action selector="saveEditingText:" destination="BiY-zP-W0M" id="qOp-pT-j4s"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="editCellTextView" destination="O6m-rw-AiE" id="5QV-TU-BZE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LuN-nl-vGq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2436.9230769230767" y="720.85308056872032"/>
         </scene>
         <!--New Task View Controller-->
         <scene sceneID="D1X-cG-qKE">
@@ -224,7 +277,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="backButton" destination="TLj-ND-d1u" id="X7c-tf-sM5"/>
-                        <outlet property="newTaskTextField" destination="Io6-vx-wIE" id="oww-5c-dbh"/>
+                        <outlet property="newTaskTextView" destination="Io6-vx-wIE" id="oww-5c-dbh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EgB-DI-l29" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -377,6 +430,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dsp-aF-w9u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-94.20289855072464" y="-3.3482142857142856"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="X8i-AA-uaF">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="N1Q-wB-uyX" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2kT-hR-T3N">
+                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BiY-zP-W0M" kind="relationship" relationship="rootViewController" id="smh-VT-QoI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1qH-ho-kqb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1507.6923076923076" y="720.85308056872032"/>
         </scene>
     </scenes>
     <resources>

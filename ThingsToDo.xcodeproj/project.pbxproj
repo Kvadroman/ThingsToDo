@@ -17,6 +17,7 @@
 		00686A182705EE8D00C55C2B /* UIAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00686A172705EE8D00C55C2B /* UIAlertViewController.swift */; };
 		00686A64270711E000C55C2B /* TasksCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00686A62270711E000C55C2B /* TasksCell.swift */; };
 		00686A6B2707167900C55C2B /* TasksCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00686A6A2707167900C55C2B /* TasksCell.xib */; };
+		00686A732709C90B00C55C2B /* EditCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00686A722709C90A00C55C2B /* EditCellViewController.swift */; };
 		00F0827126F3331800B9EC28 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F0827026F3331800B9EC28 /* AppDelegate.swift */; };
 		00F0827326F3331800B9EC28 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F0827226F3331800B9EC28 /* SceneDelegate.swift */; };
 		00F0827526F3331800B9EC28 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F0827426F3331800B9EC28 /* MainViewController.swift */; };
@@ -59,6 +60,7 @@
 		00686A172705EE8D00C55C2B /* UIAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertViewController.swift; sourceTree = "<group>"; };
 		00686A62270711E000C55C2B /* TasksCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksCell.swift; sourceTree = "<group>"; };
 		00686A6A2707167900C55C2B /* TasksCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TasksCell.xib; sourceTree = "<group>"; };
+		00686A722709C90A00C55C2B /* EditCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCellViewController.swift; sourceTree = "<group>"; };
 		00F0826D26F3331800B9EC28 /* ThingsToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThingsToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00F0827026F3331800B9EC28 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		00F0827226F3331800B9EC28 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 				0027B51B2701EE94002298D5 /* NeedToDoViewController.swift */,
 				00F0827426F3331800B9EC28 /* MainViewController.swift */,
 				00686A62270711E000C55C2B /* TasksCell.swift */,
+				00686A722709C90A00C55C2B /* EditCellViewController.swift */,
 				0027B5302704914F002298D5 /* ReminderViewController.swift */,
 				0027B52C2703486A002298D5 /* NewTaskViewController.swift */,
 				0027B521270236A3002298D5 /* Resources */,
@@ -488,6 +491,7 @@
 				0027B5312704914F002298D5 /* ReminderViewController.swift in Sources */,
 				0027B51F2702365E002298D5 /* MainFsCalendar.swift in Sources */,
 				00686A182705EE8D00C55C2B /* UIAlertViewController.swift in Sources */,
+				00686A732709C90B00C55C2B /* EditCellViewController.swift in Sources */,
 				00F0827126F3331800B9EC28 /* AppDelegate.swift in Sources */,
 				0027B52D2703486A002298D5 /* NewTaskViewController.swift in Sources */,
 				0027B51C2701EE94002298D5 /* NeedToDoViewController.swift in Sources */,

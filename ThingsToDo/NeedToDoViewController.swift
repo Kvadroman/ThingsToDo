@@ -31,13 +31,13 @@ class NeedToDoViewController: UIViewController {
         if let d = selectedDate {
             titleNavigationBar.title = formatter.string(from: d)
         }
-
+        needToDoTasks.dataSource = self
+        needToDoTasks.delegate = self
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         needToDoTasks.reloadData()
-        print(tasks)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -48,14 +48,4 @@ class NeedToDoViewController: UIViewController {
         }
         navigationItem.backButtonTitle = "NeedToDo"
     }
-
-//    @IBAction func unwind(unwindSegue: UIStoryboardSegue) {
-//        if let save = unwindSegue.source as? NewTaskViewController {
-//            if save.newTaskTextField.text == "" {
-//                print("null")
-//            } else {
-//                tasks.append(save.newTaskTextField.text)
-//            }
-//        }
-//    }
 }
