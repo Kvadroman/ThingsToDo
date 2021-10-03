@@ -21,8 +21,11 @@ class EditCellViewController: UIViewController {
         super.viewWillAppear(animated)
         editCellTextView.becomeFirstResponder()
     }
-    @IBAction func saveEditingText(_ sender: UIBarButtonItem) {
-        delegate?.updateCell(label: editCellTextView.text)
-        self.navigationController?.popViewController(animated: true)
+//
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//            guard let destination = segue.destination as? NeedToDoViewController else {return}
+//            destination.tasks.append(editText)
+//            print(destination.tasks)
+//        }
+//        navigationController?.popViewController(animated: true)
     }
-}

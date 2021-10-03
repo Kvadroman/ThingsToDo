@@ -41,7 +41,7 @@ extension NeedToDoViewController: UITableViewDelegate, UITableViewDataSource, Ne
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let vc = storyboard?.instantiateViewController(withIdentifier:
             "EditCellViewController") as? EditCellViewController else {return}
-        vc.editText = "\(indexPath.row+1). \(tasks[indexPath.row])"
-        self.navigationController?.pushViewController(vc, animated: true)
+        vc.editText = "\(tasks[indexPath.row])"
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
