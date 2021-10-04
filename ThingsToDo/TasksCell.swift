@@ -9,6 +9,8 @@ import UIKit
 
 class TasksCell: UITableViewCell {
 
+    var state: Bool = false
+    @IBOutlet weak var progressLine: UIProgressView!
     @IBOutlet weak var switchReminder: UISwitch!
     @IBOutlet weak var textFromCell: UILabel!
     override func awakeFromNib() {
@@ -17,8 +19,5 @@ class TasksCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        if selected == true {
-        print(self.textFromCell?.text ?? fatalError())
         }
     }
-}

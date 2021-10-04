@@ -73,6 +73,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <gestureRecognizers/>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -140,7 +141,6 @@
                     <navigationItem key="navigationItem" id="asV-aW-pUP">
                         <barButtonItem key="rightBarButtonItem" title="Save" id="Mm4-DM-9le">
                             <connections>
-                                <action selector="saveToNeedToDo:" destination="BiY-zP-W0M" id="bwL-wc-Rd3"/>
                                 <segue destination="ZT0-if-lYC" kind="unwind" unwindAction="returnToNeedToDoWithUnwindSegue:" id="sMK-gb-jTV"/>
                             </connections>
                         </barButtonItem>

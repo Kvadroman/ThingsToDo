@@ -38,7 +38,6 @@ class NeedToDoViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         needToDoTasks.reloadData()
-        print(tasks)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -52,7 +51,8 @@ class NeedToDoViewController: UIViewController {
 // NEW ACTION
     @IBAction func returnToNeedToDo(unwindSegue: UIStoryboardSegue) {
         if let segue = unwindSegue.source as? EditCellViewController {
-            tasks.append(segue.editText)
+            tasks.remove(at: segue.indexPath)
+            tasks.insert(segue.editCellTextView.text, at: segue.indexPath)
         }
     }
-    }
+}

@@ -18,6 +18,7 @@
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aMM-hZ-pvB">
                         <rect key="frame" x="20" y="29" width="41.5" height="20.5"/>
+                        <gestureRecognizers/>
                         <attributedString key="attributedText">
                             <fragment content="Label">
                                 <attributes>
@@ -37,21 +38,33 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </switch>
+                    <progressView hidden="YES" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="1" translatesAutoresizingMaskIntoConstraints="NO" id="9bb-AM-Ahi">
+                        <rect key="frame" x="20" y="38" width="427" height="2"/>
+                        <color key="tintColor" red="0.01625487394630909" green="0.036132529377937317" blue="0.14998689293861389" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="2" id="uPF-f5-tdg"/>
+                            <constraint firstAttribute="width" secondItem="9bb-AM-Ahi" secondAttribute="height" multiplier="427:2" id="v8E-JT-hGP"/>
+                        </constraints>
+                    </progressView>
                 </subviews>
+                <gestureRecognizers/>
                 <constraints>
                     <constraint firstItem="1dr-na-HZe" firstAttribute="centerY" secondItem="F7A-RJ-jNF" secondAttribute="centerY" id="7Ds-qB-pKM"/>
                     <constraint firstItem="aMM-hZ-pvB" firstAttribute="centerY" secondItem="F7A-RJ-jNF" secondAttribute="centerY" id="A75-wG-xgN"/>
                     <constraint firstItem="1dr-na-HZe" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="aMM-hZ-pvB" secondAttribute="trailing" constant="20" id="BLO-Mh-UVp"/>
-                    <constraint firstItem="aMM-hZ-pvB" firstAttribute="leading" secondItem="F7A-RJ-jNF" secondAttribute="leading" constant="20" symbolic="YES" id="EQs-se-fhG"/>
+                    <constraint firstItem="aMM-hZ-pvB" firstAttribute="leading" secondItem="F7A-RJ-jNF" secondAttribute="leading" priority="999" constant="20" symbolic="YES" id="EQs-se-fhG"/>
+                    <constraint firstItem="9bb-AM-Ahi" firstAttribute="centerY" secondItem="F7A-RJ-jNF" secondAttribute="centerY" id="Isz-xc-Tih"/>
                     <constraint firstAttribute="trailing" secondItem="1dr-na-HZe" secondAttribute="trailing" constant="20" symbolic="YES" id="PZg-ho-wwX"/>
+                    <constraint firstItem="9bb-AM-Ahi" firstAttribute="centerX" secondItem="F7A-RJ-jNF" secondAttribute="centerX" id="Yxl-hV-API"/>
                 </constraints>
             </tableViewCellContentView>
             <gestureRecognizers/>
             <connections>
+                <outlet property="progressLine" destination="9bb-AM-Ahi" id="OIs-9u-Sif"/>
                 <outlet property="switchReminder" destination="1dr-na-HZe" id="eAr-bh-fBy"/>
                 <outlet property="textFromCell" destination="aMM-hZ-pvB" id="sYk-7t-bBW"/>
             </connections>
-            <point key="canvasLocation" x="-30" y="17"/>
+            <point key="canvasLocation" x="-31.159420289855074" y="16.741071428571427"/>
         </tableViewCell>
     </objects>
 </document>
