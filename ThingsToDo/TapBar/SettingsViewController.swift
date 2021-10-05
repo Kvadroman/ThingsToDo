@@ -9,7 +9,8 @@ import UIKit
 
 class SettingsViewController: UIViewController {
 
-    var settingsArray: [String] = ["Color Theme", "Font Face", "Font Size", "Change App Icon", "Contact Me (via E-mail)"]
+    var settingsArray: [String] = ["Color Theme", "Font Face", "Font Size", "Change App Icon",
+                                   "Contact Me (via E-mail)"]
     @IBOutlet weak var settings: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()

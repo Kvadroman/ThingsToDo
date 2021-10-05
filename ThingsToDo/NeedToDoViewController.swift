@@ -14,6 +14,7 @@ protocol NeedToDoViewControllerDelegate: AnyObject {
 
 class NeedToDoViewController: UIViewController {
 
+    var state: Bool = false
     var tasks: [String] = []
     var selectedDate: Date?
     @IBOutlet weak var titleNavigationBar: UINavigationItem!

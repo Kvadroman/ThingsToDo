@@ -34,14 +34,14 @@ extension NeedToDoViewController: UITableViewDelegate, UITableViewDataSource, Ne
         let tapLocation = recognizer.location(in: self.needToDoTasks)
         if let tapIndexPath = self.needToDoTasks.indexPathForRow(at: tapLocation) {
             if let tappedCell = self.needToDoTasks.cellForRow(at: tapIndexPath) as? TasksCell {
-                if !tappedCell.state {
+                if !state {
                     tappedCell.contentView.backgroundColor = .green
                     tappedCell.progressLine.isHidden = false
                 } else {
                     tappedCell.contentView.backgroundColor = .white
                     tappedCell.progressLine.isHidden = true
                 }
-                tappedCell.state.toggle()
+                state.toggle()
             }
         }
     }
@@ -51,14 +51,14 @@ extension NeedToDoViewController: UITableViewDelegate, UITableViewDataSource, Ne
         let tapLocation = recognizer.location(in: self.needToDoTasks)
         if let tapIndexPath = self.needToDoTasks.indexPathForRow(at: tapLocation) {
             if let tappedCell = self.needToDoTasks.cellForRow(at: tapIndexPath) as? TasksCell {
-                if !tappedCell.state {
+                if !state {
                     tappedCell.contentView.backgroundColor = .red
                     tappedCell.progressLine.isHidden = true
                 } else {
                     tappedCell.contentView.backgroundColor = .white
                     tappedCell.progressLine.isHidden = true
                 }
-                tappedCell.state.toggle()
+                state.toggle()
             }
         }
     }
@@ -71,6 +71,9 @@ extension NeedToDoViewController: UITableViewDelegate, UITableViewDataSource, Ne
                    forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             tasks.remove(at: indexPath.row)
+            let cell = needToDoTasks.cellForRow(at: indexPath) as? TasksCell
+            cell?.progressLine.isHidden = true
+            cell?.contentView.backgroundColor = .white
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
     }

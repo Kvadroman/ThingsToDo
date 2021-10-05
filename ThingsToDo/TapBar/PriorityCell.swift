@@ -1,5 +1,5 @@
 //
-//  SettingsCell.swift
+//  PriorityCell.swift
 //  ThingsToDo
 //
 //  Created by Ивченко Антон on 05.10.2021.
@@ -7,9 +7,9 @@
 
 import UIKit
 
-class SettingsCell: UITableViewCell {
+class PriorityCell: UITableViewCell {
 
-    @IBOutlet weak var textFromLabelCell: UILabel!
+    @IBOutlet weak var priorityLabelCell: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -17,6 +17,8 @@ class SettingsCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+
+        // Configure the view for the selected state
     }
 
 }

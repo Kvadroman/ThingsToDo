@@ -14,6 +14,8 @@
 		00206132270B9B6E00EC3E1C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00206131270B9B6E00EC3E1C /* SettingsViewController.swift */; };
 		00206135270B9CE500EC3E1C /* SettingsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00206134270B9CE500EC3E1C /* SettingsTableView.swift */; };
 		00260404270C427400D48A2D /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00260403270C427400D48A2D /* SettingsCell.swift */; };
+		00260407270C810B00D48A2D /* PriorityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00260406270C810B00D48A2D /* PriorityCell.swift */; };
+		00260409270C815D00D48A2D /* PriorityTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00260408270C815D00D48A2D /* PriorityTableView.swift */; };
 		0027B51C2701EE94002298D5 /* NeedToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0027B51B2701EE94002298D5 /* NeedToDoViewController.swift */; };
 		0027B51F2702365E002298D5 /* MainFsCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0027B51E2702365E002298D5 /* MainFsCalendar.swift */; };
 		0027B52B27026578002298D5 /* NeedToDoTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0027B52A27026578002298D5 /* NeedToDoTableView.swift */; };
@@ -64,6 +66,8 @@
 		00206131270B9B6E00EC3E1C /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		00206134270B9CE500EC3E1C /* SettingsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableView.swift; sourceTree = "<group>"; };
 		00260403270C427400D48A2D /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
+		00260406270C810B00D48A2D /* PriorityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriorityCell.swift; sourceTree = "<group>"; };
+		00260408270C815D00D48A2D /* PriorityTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriorityTableView.swift; sourceTree = "<group>"; };
 		0027B51B2701EE94002298D5 /* NeedToDoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeedToDoViewController.swift; sourceTree = "<group>"; };
 		0027B51E2702365E002298D5 /* MainFsCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFsCalendar.swift; sourceTree = "<group>"; };
 		0027B52A27026578002298D5 /* NeedToDoTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeedToDoTableView.swift; sourceTree = "<group>"; };
@@ -133,10 +137,11 @@
 			isa = PBXGroup;
 			children = (
 				00206129270B883400EC3E1C /* TabBarController.swift */,
+				00260406270C810B00D48A2D /* PriorityCell.swift */,
 				0020612B270B9B0A00EC3E1C /* PriorityViewController.swift */,
 				0020612D270B9B2900EC3E1C /* DoneViewController.swift */,
-				00260403270C427400D48A2D /* SettingsCell.swift */,
 				0020612F270B9B4000EC3E1C /* SearchViewController.swift */,
+				00260403270C427400D48A2D /* SettingsCell.swift */,
 				00206131270B9B6E00EC3E1C /* SettingsViewController.swift */,
 			);
 			path = TapBar;
@@ -149,6 +154,7 @@
 				00686A172705EE8D00C55C2B /* UIAlertViewController.swift */,
 				0027B52A27026578002298D5 /* NeedToDoTableView.swift */,
 				00206134270B9CE500EC3E1C /* SettingsTableView.swift */,
+				00260408270C815D00D48A2D /* PriorityTableView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -527,11 +533,13 @@
 				00F0827126F3331800B9EC28 /* AppDelegate.swift in Sources */,
 				0027B52D2703486A002298D5 /* NewTaskViewController.swift in Sources */,
 				0027B51C2701EE94002298D5 /* NeedToDoViewController.swift in Sources */,
+				00260407270C810B00D48A2D /* PriorityCell.swift in Sources */,
 				00206130270B9B4000EC3E1C /* SearchViewController.swift in Sources */,
 				00686A64270711E000C55C2B /* TasksCell.swift in Sources */,
 				00206132270B9B6E00EC3E1C /* SettingsViewController.swift in Sources */,
 				0020612C270B9B0A00EC3E1C /* PriorityViewController.swift in Sources */,
 				00F0827B26F3331800B9EC28 /* ThingsToDo.xcdatamodeld in Sources */,
+				00260409270C815D00D48A2D /* PriorityTableView.swift in Sources */,
 				00260404270C427400D48A2D /* SettingsCell.swift in Sources */,
 				00F0827326F3331800B9EC28 /* SceneDelegate.swift in Sources */,
 				0027B52B27026578002298D5 /* NeedToDoTableView.swift in Sources */,

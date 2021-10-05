@@ -9,7 +9,6 @@ import UIKit
 
 class TasksCell: UITableViewCell {
 
-    var state: Bool = false
     @IBOutlet weak var progressLine: UIProgressView!
     @IBOutlet weak var switchReminder: UISwitch!
     @IBOutlet weak var textFromCell: UILabel!
