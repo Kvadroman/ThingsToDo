@@ -10,6 +10,7 @@ import FSCalendar
 
 class MainViewController: UIViewController {
 
+    var tasksMain: [String] = []
     @IBOutlet weak var calendar: FSCalendar!
     override func viewWillAppear(_ animated: Bool) {
         calendar.reloadData()
@@ -19,6 +20,13 @@ class MainViewController: UIViewController {
             config.selectedDate = calendar.selectedDate
             navigationItem.backButtonTitle = "Back"
             config.selectedDate = self.calendar.selectedDate
+        }
+    }
+
+    @IBAction func returnToNeedToDo(unwindSegue: UIStoryboardSegue) {
+        if let segue = unwindSegue.source as? NeedToDoViewController {
+            tasksMain.insert(contentsOf: segue.tasks, at: 0)
+            print(tasksMain)
         }
     }
 }
