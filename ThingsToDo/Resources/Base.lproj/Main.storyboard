@@ -585,22 +585,32 @@
                                             <rect key="frame" x="0.0" y="0.0" width="350" height="56"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="epy-B7-CdC">
-                                                    <rect key="frame" x="48" y="19" width="42" height="18"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ozv-iC-jW7">
+                                                    <rect key="frame" x="8" y="8" width="40" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="40" id="F3f-fm-zAv"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Axx-Hj-AXp">
+                                                    <rect key="frame" x="56" y="19" width="42" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="epy-B7-CdC" firstAttribute="leading" secondItem="VyA-za-YmH" secondAttribute="leadingMargin" constant="28" id="3W6-zd-IIO"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="epy-B7-CdC" secondAttribute="bottom" constant="8" id="7bk-GE-uAX"/>
-                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="epy-B7-CdC" secondAttribute="trailing" constant="20" symbolic="YES" id="LoH-0n-jNj"/>
-                                                <constraint firstItem="epy-B7-CdC" firstAttribute="top" secondItem="VyA-za-YmH" secondAttribute="topMargin" constant="8" id="V6p-B9-WTn"/>
+                                                <constraint firstItem="Ozv-iC-jW7" firstAttribute="leading" secondItem="VyA-za-YmH" secondAttribute="leading" constant="8" id="5Mc-qj-5dn"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Axx-Hj-AXp" secondAttribute="bottom" constant="8" id="75c-wg-Fw2"/>
+                                                <constraint firstItem="Axx-Hj-AXp" firstAttribute="top" secondItem="VyA-za-YmH" secondAttribute="topMargin" constant="8" id="8oB-lx-nrL"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Axx-Hj-AXp" secondAttribute="trailing" constant="20" symbolic="YES" id="LzC-gf-UEO"/>
+                                                <constraint firstItem="Ozv-iC-jW7" firstAttribute="top" secondItem="VyA-za-YmH" secondAttribute="top" constant="8" id="g01-UN-ucn"/>
+                                                <constraint firstItem="Axx-Hj-AXp" firstAttribute="leading" secondItem="Ozv-iC-jW7" secondAttribute="trailing" constant="8" id="jVi-Nq-Zdi"/>
+                                                <constraint firstAttribute="bottom" secondItem="Ozv-iC-jW7" secondAttribute="bottom" constant="8" id="mXg-Ha-jjG"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="textFromLabelCell" destination="epy-B7-CdC" id="zbt-s5-7bl"/>
+                                            <outlet property="imageViewSettingCell" destination="Ozv-iC-jW7" id="gNp-ak-bxC"/>
+                                            <outlet property="textFromLabelCell" destination="Axx-Hj-AXp" id="nlf-rx-vO5"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

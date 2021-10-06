@@ -15,7 +15,8 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
      guard let cell = tableView.dequeueReusableCell(withIdentifier: "SettingsCell") as? SettingsCell else {fatalError()}
-        cell.textLabel?.text = settingsArray[indexPath.row]
+        cell.textFromLabelCell?.text = settingsArray[indexPath.row]
+        cell.imageViewSettingCell.image = UIImage(systemName: settingsCell[indexPath.row])
         print(settingsArray[indexPath.row])
         return cell
     }
