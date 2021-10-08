@@ -103,7 +103,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="needToDoTasks" destination="yfN-Ow-pwq" id="EDC-OV-3kp"/>
+                        <outlet property="needToDoTasksTableView" destination="yfN-Ow-pwq" id="EDC-OV-3kp"/>
                         <outlet property="titleNavigationBar" destination="SfS-0G-3RL" id="ozR-Nv-noX"/>
                         <outlet property="view" destination="GUg-47-qxb" id="REM-U4-qOX"/>
                     </connections>
@@ -281,7 +281,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="backButton" destination="TLj-ND-d1u" id="X7c-tf-sM5"/>
+                        <outlet property="backButtonNavigationBar" destination="TLj-ND-d1u" id="X7c-tf-sM5"/>
                         <outlet property="newTaskTextView" destination="Io6-vx-wIE" id="oww-5c-dbh"/>
                     </connections>
                 </viewController>

@@ -13,7 +13,7 @@ class NewTaskViewController: UIViewController {
 
     weak var delegate: NeedToDoViewControllerDelegate?
     @IBOutlet weak var newTaskTextView: UITextView!
-    @IBOutlet weak var backButton: UINavigationItem!
+    @IBOutlet weak var backButtonNavigationBar: UINavigationItem!
     override func viewDidLoad() {
         super.viewDidLoad()
     }

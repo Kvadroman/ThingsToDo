@@ -10,7 +10,7 @@ import UIKit
 class PriorityViewController: UIViewController {
 
     @IBOutlet weak var priorityTableView: UITableView!
-    var priorityTasks: [String] = ["1", "1", "1", "1", "1", "1", ]
+    var priorityTasks: [String] = ["1", "1", "1", "1", "1", "1"]
     override func viewDidLoad() {
         super.viewDidLoad()
         priorityTableView.delegate = self

@@ -8,7 +8,6 @@ target 'ThingsToDo' do
   # Pods for ThingsToDo
  pod 'FSCalendar'
  pod 'SwiftLint'
- pod 'Firebase/Analytics'
 
   target 'ThingsToDoTests' do
     inherit! :search_paths

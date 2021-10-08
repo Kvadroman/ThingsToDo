@@ -9,7 +9,8 @@ import UIKit
 
 extension NeedToDoViewController: UITableViewDelegate, UITableViewDataSource, NeedToDoViewControllerDelegate {
     func updateCell(label text: String) {
-        tasks.append(text)
+        createTask(title: text)
+//        tasks.append(text)
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -31,9 +32,9 @@ extension NeedToDoViewController: UITableViewDelegate, UITableViewDataSource, Ne
     }
 
     @objc func swipeTapEdit(recognizer: UISwipeGestureRecognizer) {
-        let tapLocation = recognizer.location(in: self.needToDoTasks)
-        if let tapIndexPath = self.needToDoTasks.indexPathForRow(at: tapLocation) {
-            if let tappedCell = self.needToDoTasks.cellForRow(at: tapIndexPath) as? TasksCell {
+        let tapLocation = recognizer.location(in: self.needToDoTasksTableView)
+        if let tapIndexPath = self.needToDoTasksTableView.indexPathForRow(at: tapLocation) {
+            if let tappedCell = self.needToDoTasksTableView.cellForRow(at: tapIndexPath) as? TasksCell {
                 if !state {
                     tappedCell.contentView.backgroundColor = .green
                     tappedCell.progressLine.isHidden = false
@@ -48,9 +49,9 @@ extension NeedToDoViewController: UITableViewDelegate, UITableViewDataSource, Ne
 
     @objc func longTapEdit(recognizer: UILongPressGestureRecognizer) {
         if recognizer.state != .began {return}
-        let tapLocation = recognizer.location(in: self.needToDoTasks)
-        if let tapIndexPath = self.needToDoTasks.indexPathForRow(at: tapLocation) {
-            if let tappedCell = self.needToDoTasks.cellForRow(at: tapIndexPath) as? TasksCell {
+        let tapLocation = recognizer.location(in: self.needToDoTasksTableView)
+        if let tapIndexPath = self.needToDoTasksTableView.indexPathForRow(at: tapLocation) {
+            if let tappedCell = self.needToDoTasksTableView.cellForRow(at: tapIndexPath) as? TasksCell {
                 if !state {
                     tappedCell.contentView.backgroundColor = .red
                     tappedCell.progressLine.isHidden = true
@@ -70,8 +71,8 @@ extension NeedToDoViewController: UITableViewDelegate, UITableViewDataSource, Ne
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle,
                    forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            tasks.remove(at: indexPath.row)
-            let cell = needToDoTasks.cellForRow(at: indexPath) as? TasksCell
+            deleteTask(title: tasks.remove(at: indexPath.row))
+            let cell = needToDoTasksTableView.cellForRow(at: indexPath) as? TasksCell
             cell?.progressLine.isHidden = true
             cell?.contentView.backgroundColor = .white
             tableView.deleteRows(at: [indexPath], with: .automatic)

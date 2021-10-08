@@ -22,7 +22,6 @@
 		0027B52D2703486A002298D5 /* NewTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0027B52C2703486A002298D5 /* NewTaskViewController.swift */; };
 		0027B5312704914F002298D5 /* ReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0027B5302704914F002298D5 /* ReminderViewController.swift */; };
 		0027B5332704BBBA002298D5 /* ThingsToDo.xcworkspace in Resources */ = {isa = PBXBuildFile; fileRef = 0027B5322704BBBA002298D5 /* ThingsToDo.xcworkspace */; };
-		00686A152704BDFE00C55C2B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 00686A142704BDFE00C55C2B /* GoogleService-Info.plist */; };
 		00686A182705EE8D00C55C2B /* UIAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00686A172705EE8D00C55C2B /* UIAlertViewController.swift */; };
 		00686A64270711E000C55C2B /* TasksCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00686A62270711E000C55C2B /* TasksCell.swift */; };
 		00686A6B2707167900C55C2B /* TasksCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00686A6A2707167900C55C2B /* TasksCell.xib */; };
@@ -36,6 +35,8 @@
 		00F0828026F3331900B9EC28 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00F0827E26F3331900B9EC28 /* LaunchScreen.storyboard */; };
 		00F0828B26F3331900B9EC28 /* ThingsToDoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F0828A26F3331900B9EC28 /* ThingsToDoTests.swift */; };
 		00F0829626F3331900B9EC28 /* ThingsToDoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F0829526F3331900B9EC28 /* ThingsToDoUITests.swift */; };
+		00F1380E2710447A004873B4 /* Tasks+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F1380C2710447A004873B4 /* Tasks+CoreDataClass.swift */; };
+		00F1380F2710447A004873B4 /* Tasks+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F1380D2710447A004873B4 /* Tasks+CoreDataProperties.swift */; };
 		43B08C53F5164FE0BE1A98EA /* Pods_ThingsToDoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A296FE0CACCBF29EF6D2726 /* Pods_ThingsToDoTests.framework */; };
 		B97608C8C5FE0FD8DCCECAA3 /* Pods_ThingsToDo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0D58FB709AD0F91AF7826A9 /* Pods_ThingsToDo.framework */; };
 		D53F2D337BFA959A8E624073 /* Pods_ThingsToDo_ThingsToDoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 713D5263D6D3F015123B61F0 /* Pods_ThingsToDo_ThingsToDoUITests.framework */; };
@@ -74,7 +75,6 @@
 		0027B52C2703486A002298D5 /* NewTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskViewController.swift; sourceTree = "<group>"; };
 		0027B5302704914F002298D5 /* ReminderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderViewController.swift; sourceTree = "<group>"; };
 		0027B5322704BBBA002298D5 /* ThingsToDo.xcworkspace */ = {isa = PBXFileReference; lastKnownFileType = wrapper.workspace; path = ThingsToDo.xcworkspace; sourceTree = "<group>"; };
-		00686A142704BDFE00C55C2B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		00686A172705EE8D00C55C2B /* UIAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertViewController.swift; sourceTree = "<group>"; };
 		00686A62270711E000C55C2B /* TasksCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksCell.swift; sourceTree = "<group>"; };
 		00686A6A2707167900C55C2B /* TasksCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TasksCell.xib; sourceTree = "<group>"; };
@@ -94,6 +94,8 @@
 		00F0829126F3331900B9EC28 /* ThingsToDoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThingsToDoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00F0829526F3331900B9EC28 /* ThingsToDoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThingsToDoUITests.swift; sourceTree = "<group>"; };
 		00F0829726F3331900B9EC28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		00F1380C2710447A004873B4 /* Tasks+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tasks+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		00F1380D2710447A004873B4 /* Tasks+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tasks+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		05D721ED1A6E76DAB15949F0 /* Pods-ThingsToDo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThingsToDo.debug.xcconfig"; path = "Target Support Files/Pods-ThingsToDo/Pods-ThingsToDo.debug.xcconfig"; sourceTree = "<group>"; };
 		0EF162D69C2122F0B5034BDE /* Pods-ThingsToDoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThingsToDoTests.release.xcconfig"; path = "Target Support Files/Pods-ThingsToDoTests/Pods-ThingsToDoTests.release.xcconfig"; sourceTree = "<group>"; };
 		10D80C4C3D3B84905949B10D /* Pods-ThingsToDo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThingsToDo.release.xcconfig"; path = "Target Support Files/Pods-ThingsToDo/Pods-ThingsToDo.release.xcconfig"; sourceTree = "<group>"; };
@@ -186,7 +188,6 @@
 			children = (
 				00F0826F26F3331800B9EC28 /* ThingsToDo */,
 				0027B5322704BBBA002298D5 /* ThingsToDo.xcworkspace */,
-				00686A142704BDFE00C55C2B /* GoogleService-Info.plist */,
 				00F0828926F3331900B9EC28 /* ThingsToDoTests */,
 				00F0829426F3331900B9EC28 /* ThingsToDoUITests */,
 				00F0826E26F3331800B9EC28 /* Products */,
@@ -208,6 +209,8 @@
 		00F0826F26F3331800B9EC28 /* ThingsToDo */ = {
 			isa = PBXGroup;
 			children = (
+				00F1380C2710447A004873B4 /* Tasks+CoreDataClass.swift */,
+				00F1380D2710447A004873B4 /* Tasks+CoreDataProperties.swift */,
 				0027B52027023682002298D5 /* Application */,
 				00686A722709C90A00C55C2B /* EditCellViewController.swift */,
 				0027B51B2701EE94002298D5 /* NeedToDoViewController.swift */,
@@ -377,7 +380,6 @@
 				00686A6B2707167900C55C2B /* TasksCell.xib in Resources */,
 				00F0827D26F3331900B9EC28 /* Assets.xcassets in Resources */,
 				00F0827826F3331800B9EC28 /* Main.storyboard in Resources */,
-				00686A152704BDFE00C55C2B /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -529,6 +531,7 @@
 				00206135270B9CE500EC3E1C /* SettingsTableView.swift in Sources */,
 				0027B51F2702365E002298D5 /* MainFsCalendar.swift in Sources */,
 				00686A182705EE8D00C55C2B /* UIAlertViewController.swift in Sources */,
+				00F1380F2710447A004873B4 /* Tasks+CoreDataProperties.swift in Sources */,
 				00686A732709C90B00C55C2B /* EditCellViewController.swift in Sources */,
 				00F0827126F3331800B9EC28 /* AppDelegate.swift in Sources */,
 				0027B52D2703486A002298D5 /* NewTaskViewController.swift in Sources */,
@@ -542,6 +545,7 @@
 				00260409270C815D00D48A2D /* PriorityTableView.swift in Sources */,
 				00260404270C427400D48A2D /* SettingsCell.swift in Sources */,
 				00F0827326F3331800B9EC28 /* SceneDelegate.swift in Sources */,
+				00F1380E2710447A004873B4 /* Tasks+CoreDataClass.swift in Sources */,
 				0027B52B27026578002298D5 /* NeedToDoTableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

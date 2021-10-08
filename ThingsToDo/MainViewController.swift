@@ -25,7 +25,7 @@ class MainViewController: UIViewController {
 
     @IBAction func returnToNeedToDo(unwindSegue: UIStoryboardSegue) {
         if let segue = unwindSegue.source as? NeedToDoViewController {
-            tasksMain.insert(contentsOf: segue.tasks, at: 0)
+//            tasksMain.insert(contentsOf: segue.tasks, at: 0)
             print(tasksMain)
         }
     }

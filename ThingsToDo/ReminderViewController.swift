@@ -10,7 +10,9 @@ import UserNotifications
 
 class ReminderViewController: UIViewController {
 
+    var reminder = NewTaskViewController()
     @IBAction func atTheTimeReminderButton(_ sender: UIButton) {
+        reminder.addReminder()
     }
     @IBAction func inFiveMinutesReminderButton(_ sender: UIButton) {
     }
