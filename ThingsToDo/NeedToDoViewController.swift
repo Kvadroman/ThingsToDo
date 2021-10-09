@@ -16,7 +16,6 @@ protocol NeedToDoViewControllerDelegate: AnyObject {
 class NeedToDoViewController: UIViewController {
 
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    var state: Bool = false
     var tasks = [Tasks]()
     var selectedDate: Date?
     @IBOutlet weak var titleNavigationBar: UINavigationItem!
@@ -39,7 +38,6 @@ class NeedToDoViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        needToDoTasksTableView.reloadData()
         getAllTasks()
 
     }
@@ -55,6 +53,8 @@ class NeedToDoViewController: UIViewController {
     // NEW ACTION
     @IBAction func returnToNeedToDo(unwindSegue: UIStoryboardSegue) {
         if let segue = unwindSegue.source as? EditCellViewController {
+//            let task = Tasks(context: context)
+//            task.title = segue.editCellTextView.text
 //            deleteTask(title: tasks[segue.indexPath])
 //            tasks.remove(at: segue.indexPath)
             updateTasks(title: tasks[segue.indexPath], newTitle: segue.editCellTextView.text)

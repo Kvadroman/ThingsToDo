@@ -23,45 +23,8 @@ extension NeedToDoViewController: UITableViewDelegate, UITableViewDataSource, Ne
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "TasksCell", for: indexPath)
                 as? TasksCell else {fatalError()}
-        cell.textFromCell.text = "\(indexPath.row+1). \(tasks[indexPath.row])"
-        let longTap = UILongPressGestureRecognizer(target: self, action: #selector(longTapEdit(recognizer:)))
-        let doubleTap = UISwipeGestureRecognizer(target: self, action: #selector(swipeTapEdit(recognizer:)))
-        cell.contentView.addGestureRecognizer(longTap)
-        cell.contentView.addGestureRecognizer(doubleTap)
+        cell.textFromCell.text = "\(indexPath.row+1). \(tasks[indexPath.row].title ?? "")"
         return cell
-    }
-
-    @objc func swipeTapEdit(recognizer: UISwipeGestureRecognizer) {
-        let tapLocation = recognizer.location(in: self.needToDoTasksTableView)
-        if let tapIndexPath = self.needToDoTasksTableView.indexPathForRow(at: tapLocation) {
-            if let tappedCell = self.needToDoTasksTableView.cellForRow(at: tapIndexPath) as? TasksCell {
-                if !state {
-                    tappedCell.contentView.backgroundColor = .green
-                    tappedCell.progressLine.isHidden = false
-                } else {
-                    tappedCell.contentView.backgroundColor = .white
-                    tappedCell.progressLine.isHidden = true
-                }
-                state.toggle()
-            }
-        }
-    }
-
-    @objc func longTapEdit(recognizer: UILongPressGestureRecognizer) {
-        if recognizer.state != .began {return}
-        let tapLocation = recognizer.location(in: self.needToDoTasksTableView)
-        if let tapIndexPath = self.needToDoTasksTableView.indexPathForRow(at: tapLocation) {
-            if let tappedCell = self.needToDoTasksTableView.cellForRow(at: tapIndexPath) as? TasksCell {
-                if !state {
-                    tappedCell.contentView.backgroundColor = .red
-                    tappedCell.progressLine.isHidden = true
-                } else {
-                    tappedCell.contentView.backgroundColor = .white
-                    tappedCell.progressLine.isHidden = true
-                }
-                state.toggle()
-            }
-        }
     }
 
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -82,7 +45,7 @@ extension NeedToDoViewController: UITableViewDelegate, UITableViewDataSource, Ne
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let vc = storyboard?.instantiateViewController(withIdentifier:
          "EditCellViewController") as? EditCellViewController else {return}
-        vc.editText = "\(tasks[indexPath.row])"
+        vc.editText = "\(tasks[indexPath.row].title ?? "")"
         vc.indexPath = indexPath.row
         navigationController?.pushViewController(vc, animated: true)
     }
