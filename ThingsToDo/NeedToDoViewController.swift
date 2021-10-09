@@ -38,7 +38,7 @@ class NeedToDoViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        getAllTasks()
+        getAllTasks(from: needToDoTasksTableView)
 
     }
 
@@ -64,11 +64,11 @@ class NeedToDoViewController: UIViewController {
         }
     }
 
-    func getAllTasks () {
+    func getAllTasks(from table: UITableView) {
         do {
             tasks = try context.fetch(Tasks.fetchRequest())
             DispatchQueue.main.async {
-                self.needToDoTasksTableView.reloadData()}
+                table.reloadData()}
         } catch {
             print(error)
         }
@@ -79,7 +79,7 @@ class NeedToDoViewController: UIViewController {
         newTask.title = title
         do {
             try context.save()
-            getAllTasks()
+            getAllTasks(from: needToDoTasksTableView)
         } catch {
             print(error)
         }
@@ -89,7 +89,7 @@ class NeedToDoViewController: UIViewController {
         context.delete(title)
         do {
             try context.save()
-            getAllTasks()
+            getAllTasks(from: needToDoTasksTableView)
         } catch {
             print(error)
         }
@@ -99,7 +99,7 @@ class NeedToDoViewController: UIViewController {
         title.title = newTitle
         do {
             try context.save()
-            getAllTasks()
+            getAllTasks(from: needToDoTasksTableView)
         } catch {
             print(error)
         }

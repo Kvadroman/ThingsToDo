@@ -17,4 +17,9 @@ class PriorityViewController: UIViewController {
         priorityTableView.dataSource = self
         priorityTableView.register(UINib(nibName: "TasksCell", bundle: nil), forCellReuseIdentifier: "TasksCell")
     }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        task.getAllTasks(from: priorityTableView)
+    }
 }
