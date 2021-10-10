@@ -9,6 +9,7 @@ import UIKit
 
 class TasksCell: UITableViewCell {
 
+    var task = NeedToDoViewController()
     var state: Bool = false
     @IBOutlet weak var progressLine: UIProgressView!
     @IBOutlet weak var switchReminder: UISwitch!
@@ -42,9 +43,5 @@ class TasksCell: UITableViewCell {
             progressLine.isHidden = true
         }
         state.toggle()
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
     }
 }

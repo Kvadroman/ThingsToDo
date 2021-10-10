@@ -34,7 +34,7 @@ extension NeedToDoViewController: UITableViewDelegate, UITableViewDataSource, Ne
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle,
                    forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            deleteTask(title: tasks.remove(at: indexPath.row))
+            deleteTask(title: tasks.remove(at: indexPath.row), from: needToDoTasksTableView)
             let cell = needToDoTasksTableView.cellForRow(at: indexPath) as? TasksCell
             cell?.progressLine.isHidden = true
             cell?.contentView.backgroundColor = .white

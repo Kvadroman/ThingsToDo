@@ -19,9 +19,4 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
         cell.imageViewSettingCell.image = UIImage(systemName: settingsCell[indexPath.row])
         return cell
     }
-    // MARK: - Table view data source
-
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
 }

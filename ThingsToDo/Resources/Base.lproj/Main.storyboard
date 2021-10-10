@@ -75,6 +75,9 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <gestureRecognizers/>
+                                        <connections>
+                                            <segue destination="N1Q-wB-uyX" kind="show" id="2Rs-R1-RJ8"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -443,6 +446,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="N1Q-wB-uyX" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="jPS-lY-ZAf"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="2kT-hR-T3N">
                         <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -526,10 +530,35 @@
                     <view key="view" contentMode="scaleToFill" id="fE8-QN-xnj">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="TAe-Ys-dWc">
+                                <rect key="frame" x="0.0" y="44" width="390" height="717"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TasksCell" id="zop-dH-rSc">
+                                        <rect key="frame" x="0.0" y="44.666666030883789" width="390" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zop-dH-rSc" id="Hlj-9T-9zs">
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="ble-Jr-56c"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ble-Jr-56c" firstAttribute="bottom" secondItem="TAe-Ys-dWc" secondAttribute="bottom" id="J0h-Gi-6Ad"/>
+                            <constraint firstItem="TAe-Ys-dWc" firstAttribute="leading" secondItem="ble-Jr-56c" secondAttribute="leading" id="MNq-io-YsC"/>
+                            <constraint firstItem="ble-Jr-56c" firstAttribute="trailing" secondItem="TAe-Ys-dWc" secondAttribute="trailing" id="PGf-Pc-QGg"/>
+                            <constraint firstItem="TAe-Ys-dWc" firstAttribute="top" secondItem="ble-Jr-56c" secondAttribute="top" id="cxh-NW-vTa"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Done" image="book.closed.fill" catalog="system" id="wTk-E6-G7w"/>
+                    <connections>
+                        <outlet property="doneTableView" destination="TAe-Ys-dWc" id="xzr-hS-1Th"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sep-5d-QCv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

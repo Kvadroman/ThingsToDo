@@ -53,13 +53,7 @@ class NeedToDoViewController: UIViewController {
     // NEW ACTION
     @IBAction func returnToNeedToDo(unwindSegue: UIStoryboardSegue) {
         if let segue = unwindSegue.source as? EditCellViewController {
-//            let task = Tasks(context: context)
-//            task.title = segue.editCellTextView.text
-//            deleteTask(title: tasks[segue.indexPath])
-//            tasks.remove(at: segue.indexPath)
             updateTasks(title: tasks[segue.indexPath], newTitle: segue.editCellTextView.text)
-//            createTask(title: segue.editCellTextView.text)
-//            tasks.insert(segue.editCellTextView.text, at: segue.indexPath)
             print(tasks)
         }
     }
@@ -85,11 +79,11 @@ class NeedToDoViewController: UIViewController {
         }
     }
 
-    func deleteTask(title: Tasks) {
+    func deleteTask(title: Tasks, from table: UITableView) {
         context.delete(title)
         do {
             try context.save()
-            getAllTasks(from: needToDoTasksTableView)
+            getAllTasks(from: table)
         } catch {
             print(error)
         }
