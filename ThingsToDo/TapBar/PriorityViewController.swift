@@ -11,6 +11,7 @@ class PriorityViewController: UIViewController {
 
     @IBOutlet weak var priorityTableView: UITableView!
     let task = NeedToDoViewController()
+    var taskPriority: [Tasks] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         priorityTableView.delegate = self
@@ -20,6 +21,18 @@ class PriorityViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        getData()
         task.getAllTasks(from: priorityTableView)
+    }
+
+    func getData() {
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        do {
+            taskPriority = try context.fetch(Tasks.fetchRequest())
+            print(taskPriority)
+        } catch {
+            print(error.localizedDescription)
+        }
+        taskPriority = taskPriority.filter {$0.gestureLongType == true}
     }
 }

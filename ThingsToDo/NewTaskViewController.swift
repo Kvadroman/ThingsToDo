@@ -14,6 +14,8 @@ class NewTaskViewController: UIViewController {
     weak var delegate: NeedToDoViewControllerDelegate?
     @IBOutlet weak var newTaskTextView: UITextView!
     @IBOutlet weak var backButtonNavigationBar: UINavigationItem!
+    @IBOutlet weak var reminderSwitch: UISwitch!
+    @IBOutlet weak var prioritySwitch: UISwitch!
     override func viewDidLoad() {
         super.viewDidLoad()
     }

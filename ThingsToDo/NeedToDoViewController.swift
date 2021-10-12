@@ -15,9 +15,11 @@ protocol NeedToDoViewControllerDelegate: AnyObject {
 
 class NeedToDoViewController: UIViewController {
 
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    lazy var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var tasks = [Tasks]()
     var selectedDate: Date?
+    var stateLongType: Bool = false
+    var stateSwipeType: Bool = false
     @IBOutlet weak var titleNavigationBar: UINavigationItem!
     @IBOutlet weak var needToDoTasksTableView: UITableView!
     fileprivate let formatter: DateFormatter = {
@@ -39,7 +41,6 @@ class NeedToDoViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         getAllTasks(from: needToDoTasksTableView)
-
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -64,7 +65,7 @@ class NeedToDoViewController: UIViewController {
             DispatchQueue.main.async {
                 table.reloadData()}
         } catch {
-            print(error)
+            print(error.localizedDescription)
         }
     }
 
@@ -75,7 +76,7 @@ class NeedToDoViewController: UIViewController {
             try context.save()
             getAllTasks(from: needToDoTasksTableView)
         } catch {
-            print(error)
+            print(error.localizedDescription)
         }
     }
 
@@ -85,7 +86,7 @@ class NeedToDoViewController: UIViewController {
             try context.save()
             getAllTasks(from: table)
         } catch {
-            print(error)
+            print(error.localizedDescription)
         }
     }
 
@@ -95,7 +96,16 @@ class NeedToDoViewController: UIViewController {
             try context.save()
             getAllTasks(from: needToDoTasksTableView)
         } catch {
-            print(error)
+            print(error.localizedDescription)
+        }
+    }
+
+    func saveAndUpdate(from table: UITableView) {
+        do {
+            try context.save()
+            getAllTasks(from: table)
+        } catch {
+            print(error.localizedDescription)
         }
     }
 }

@@ -20,7 +20,6 @@
 		0027B52B27026578002298D5 /* NeedToDoTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0027B52A27026578002298D5 /* NeedToDoTableView.swift */; };
 		0027B52D2703486A002298D5 /* NewTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0027B52C2703486A002298D5 /* NewTaskViewController.swift */; };
 		0027B5312704914F002298D5 /* ReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0027B5302704914F002298D5 /* ReminderViewController.swift */; };
-		0027B5332704BBBA002298D5 /* ThingsToDo.xcworkspace in Resources */ = {isa = PBXBuildFile; fileRef = 0027B5322704BBBA002298D5 /* ThingsToDo.xcworkspace */; };
 		00686A182705EE8D00C55C2B /* UIAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00686A172705EE8D00C55C2B /* UIAlertViewController.swift */; };
 		00686A64270711E000C55C2B /* TasksCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00686A62270711E000C55C2B /* TasksCell.swift */; };
 		00686A6B2707167900C55C2B /* TasksCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00686A6A2707167900C55C2B /* TasksCell.xib */; };
@@ -73,7 +72,6 @@
 		0027B52A27026578002298D5 /* NeedToDoTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeedToDoTableView.swift; sourceTree = "<group>"; };
 		0027B52C2703486A002298D5 /* NewTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskViewController.swift; sourceTree = "<group>"; };
 		0027B5302704914F002298D5 /* ReminderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderViewController.swift; sourceTree = "<group>"; };
-		0027B5322704BBBA002298D5 /* ThingsToDo.xcworkspace */ = {isa = PBXFileReference; lastKnownFileType = wrapper.workspace; path = ThingsToDo.xcworkspace; sourceTree = "<group>"; };
 		00686A172705EE8D00C55C2B /* UIAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertViewController.swift; sourceTree = "<group>"; };
 		00686A62270711E000C55C2B /* TasksCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksCell.swift; sourceTree = "<group>"; };
 		00686A6A2707167900C55C2B /* TasksCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TasksCell.xib; sourceTree = "<group>"; };
@@ -155,8 +153,8 @@
 				00686A172705EE8D00C55C2B /* UIAlertViewController.swift */,
 				0027B52A27026578002298D5 /* NeedToDoTableView.swift */,
 				00F13810271303A1004873B4 /* DoneTableView.swift */,
-				00206134270B9CE500EC3E1C /* SettingsTableView.swift */,
 				00260408270C815D00D48A2D /* PriorityTableView.swift */,
+				00206134270B9CE500EC3E1C /* SettingsTableView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -187,7 +185,6 @@
 			isa = PBXGroup;
 			children = (
 				00F0826F26F3331800B9EC28 /* ThingsToDo */,
-				0027B5322704BBBA002298D5 /* ThingsToDo.xcworkspace */,
 				00F0828926F3331900B9EC28 /* ThingsToDoTests */,
 				00F0829426F3331900B9EC28 /* ThingsToDoUITests */,
 				00F0826E26F3331800B9EC28 /* Products */,
@@ -376,7 +373,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				00F0828026F3331900B9EC28 /* LaunchScreen.storyboard in Resources */,
-				0027B5332704BBBA002298D5 /* ThingsToDo.xcworkspace in Resources */,
 				00686A6B2707167900C55C2B /* TasksCell.xib in Resources */,
 				00F0827D26F3331900B9EC28 /* Assets.xcassets in Resources */,
 				00F0827826F3331800B9EC28 /* Main.storyboard in Resources */,

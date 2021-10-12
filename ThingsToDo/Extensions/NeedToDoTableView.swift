@@ -10,7 +10,6 @@ import UIKit
 extension NeedToDoViewController: UITableViewDelegate, UITableViewDataSource, NeedToDoViewControllerDelegate {
     func updateCell(label text: String) {
         createTask(title: text)
-//        tasks.append(text)
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -23,8 +22,72 @@ extension NeedToDoViewController: UITableViewDelegate, UITableViewDataSource, Ne
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "TasksCell", for: indexPath)
                 as? TasksCell else {fatalError()}
-        cell.textFromCell.text = "\(indexPath.row+1). \(tasks[indexPath.row].title ?? "")"
+        let task = tasks[indexPath.row]
+        cell.textFromCell.text = "\(indexPath.row+1). \(task.title ?? "")"
+        let doubleTap = UISwipeGestureRecognizer(target: self, action: #selector(swipeTapEdit(recognizer:)))
+//        let longTap = UILongPressGestureRecognizer(target: self, action: #selector(longTapEdit(recognizer:)))
+//        cell.contentView.addGestureRecognizer(longTap)
+        cell.contentView.addGestureRecognizer(doubleTap)
+        stateSwipeType = task.gestureSwipeType
+//        stateLongType = task.gestureLongType
+        if stateSwipeType == true {
+            cell.contentView.backgroundColor = .green
+            cell.progressLine.isHidden = false
+        } else {
+            cell.contentView.backgroundColor = .white
+            cell.progressLine.isHidden = true
+        }
+//        if stateLongType == true {
+//            cell.contentView.backgroundColor = .red
+//            cell.progressLine.isHidden = true
+//            print("stateLongType in tableview \(indexPath.row) is true")
+//        } else {
+//            cell.contentView.backgroundColor = .white
+//            cell.progressLine.isHidden = true
+//            print("stateLongType in tableview \(indexPath.row) is false")
+//        }
         return cell
+    }
+
+    @objc func swipeTapEdit(recognizer: UISwipeGestureRecognizer) {
+        let tapLocation = recognizer.location(in: self.needToDoTasksTableView)
+        if let tapIndexPath = self.needToDoTasksTableView.indexPathForRow(at: tapLocation) {
+            if let tappedCell = self.needToDoTasksTableView.cellForRow(at: tapIndexPath) as? TasksCell {
+                let task = tasks[tapIndexPath.row]
+//                stateSwipeType = task.gestureSwipeType
+                if stateSwipeType == true {
+                    tappedCell.contentView.backgroundColor = .green
+                    tappedCell.progressLine.isHidden = false
+                } else {
+                    tappedCell.contentView.backgroundColor = .white
+                    tappedCell.progressLine.isHidden = true
+                }
+                stateSwipeType.toggle()
+                task.gestureSwipeType = stateSwipeType
+                saveAndUpdate(from: needToDoTasksTableView)
+            }
+        }
+    }
+
+    @objc func longTapEdit(recognizer: UILongPressGestureRecognizer) {
+        if recognizer.state != .began {return}
+        let tapLocation = recognizer.location(in: self.needToDoTasksTableView)
+        if let tapIndexPath = self.needToDoTasksTableView.indexPathForRow(at: tapLocation) {
+            if let tappedCell = self.needToDoTasksTableView.cellForRow(at: tapIndexPath) as? TasksCell {
+                let task = tasks[tapIndexPath.row]
+//                stateLongType = task.gestureLongType
+                if stateLongType == true {
+                    tappedCell.contentView.backgroundColor = .red
+                    tappedCell.progressLine.isHidden = true
+                } else {
+                    tappedCell.contentView.backgroundColor = .white
+                    tappedCell.progressLine.isHidden = true
+                }
+                stateLongType.toggle()
+                task.gestureLongType = stateLongType
+                saveAndUpdate(from: needToDoTasksTableView)
+            }
+        }
     }
 
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -44,7 +107,7 @@ extension NeedToDoViewController: UITableViewDelegate, UITableViewDataSource, Ne
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let vc = storyboard?.instantiateViewController(withIdentifier:
-         "EditCellViewController") as? EditCellViewController else {return}
+                                "EditCellViewController") as? EditCellViewController else {return}
         vc.editText = "\(tasks[indexPath.row].title ?? "")"
         vc.indexPath = indexPath.row
         navigationController?.pushViewController(vc, animated: true)

@@ -8,20 +8,26 @@
 import UIKit
 
 extension PriorityViewController: UITableViewDataSource, UITableViewDelegate {
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return task.tasks.count
+        return taskPriority.count
     }
-    //        let task = Tasks()
-    //        if task.title?.count != 0 {
-    //            return task.title?.count ?? 0
-    //        }
-    //        return 0
-    //    }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "TasksCell",
                                                        for: indexPath) as? TasksCell else {fatalError()}
-        cell.textFromCell.text = "\(indexPath.row+1). \(task.tasks[indexPath.row].title ?? "")"
+        let taskPriority = taskPriority[indexPath.row]
+        cell.textFromCell.text = "\(indexPath.row+1). \(taskPriority.title ?? "")"
+        task.stateLongType = taskPriority.gestureLongType
+        if task.stateSwipeType == true {
+            cell.contentView.backgroundColor = .red
+            cell.progressLine.isHidden = false
+            print("stateSwipeType in tableview \(indexPath.row) is true")
+        } else {
+            cell.contentView.backgroundColor = .white
+            cell.progressLine.isHidden = true
+            print("stateSwipeType in tableview \(indexPath.row) is false")
+        }
         return cell
     }
 

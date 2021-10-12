@@ -2,7 +2,7 @@
 //  Tasks+CoreDataProperties.swift
 //  ThingsToDo
 //
-//  Created by Ивченко Антон on 09.10.2021.
+//  Created by Ивченко Антон on 10.10.2021.
 //
 //
 
@@ -16,8 +16,8 @@ extension Tasks {
     }
 
     @NSManaged public var title: String?
-    @NSManaged public var strikethrought: Bool
-    @NSManaged public var colorCell: String?
+    @NSManaged public var gestureLongType: Bool
+    @NSManaged public var gestureSwipeType: Bool
 
 }
 
