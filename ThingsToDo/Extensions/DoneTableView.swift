@@ -30,4 +30,14 @@ extension DoneViewController: UITableViewDataSource, UITableViewDelegate {
         }
         return cell
     }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle,
+                   forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            task.deleteTask(title: tasksDone.remove(at: indexPath.row), from: doneTableView)
+            let cell = doneTableView.cellForRow(at: indexPath) as? TasksCell
+            cell?.progressLine.isHidden = true
+            cell?.contentView.backgroundColor = .white
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+    }
 }

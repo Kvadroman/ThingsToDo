@@ -19,9 +19,9 @@ extension PriorityViewController: UITableViewDataSource, UITableViewDelegate {
         let taskPriority = taskPriority[indexPath.row]
         cell.textFromCell.text = "\(indexPath.row+1). \(taskPriority.title ?? "")"
         task.stateLongType = taskPriority.gestureLongType
-        if task.stateSwipeType == true {
+        if task.stateLongType == true {
             cell.contentView.backgroundColor = .red
-            cell.progressLine.isHidden = false
+            cell.progressLine.isHidden = true
             print("stateSwipeType in tableview \(indexPath.row) is true")
         } else {
             cell.contentView.backgroundColor = .white
@@ -34,7 +34,7 @@ extension PriorityViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle,
                    forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            task.deleteTask(title: task.tasks.remove(at: indexPath.row), from: priorityTableView)
+            task.deleteTask(title: taskPriority.remove(at: indexPath.row), from: priorityTableView)
             let cell = priorityTableView.cellForRow(at: indexPath) as? TasksCell
             cell?.progressLine.isHidden = true
             cell?.contentView.backgroundColor = .white

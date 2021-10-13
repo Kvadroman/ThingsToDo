@@ -10,7 +10,7 @@ import FSCalendar
 import CoreData
 
 protocol NeedToDoViewControllerDelegate: AnyObject {
-    func updateCell(label text: String)
+    func updateCell(label text: String, priorityButton: Bool, doneButton: Bool)
 }
 
 class NeedToDoViewController: UIViewController {
@@ -69,9 +69,11 @@ class NeedToDoViewController: UIViewController {
         }
     }
 
-    func createTask(title: String) {
+    func createTask(title: String, priorityButton: Bool, doneButton: Bool) {
         let newTask = Tasks(context: context)
         newTask.title = title
+        newTask.gestureLongType = priorityButton
+        newTask.gestureSwipeType = doneButton
         do {
             try context.save()
             getAllTasks(from: needToDoTasksTableView)

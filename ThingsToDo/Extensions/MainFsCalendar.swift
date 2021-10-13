@@ -15,4 +15,7 @@ extension MainViewController: FSCalendarDelegate, FSCalendarDataSource {
         }
         self.performSegue(withIdentifier: "gotoNeedToDo", sender: nil)
     }
+    func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
+        return 1
+    }
 }

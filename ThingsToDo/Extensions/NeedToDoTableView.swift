@@ -8,8 +8,8 @@
 import UIKit
 
 extension NeedToDoViewController: UITableViewDelegate, UITableViewDataSource, NeedToDoViewControllerDelegate {
-    func updateCell(label text: String) {
-        createTask(title: text)
+    func updateCell(label text: String, priorityButton: Bool, doneButton: Bool) {
+        createTask(title: text, priorityButton: priorityButton, doneButton: doneButton)
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -24,28 +24,22 @@ extension NeedToDoViewController: UITableViewDelegate, UITableViewDataSource, Ne
                 as? TasksCell else {fatalError()}
         let task = tasks[indexPath.row]
         cell.textFromCell.text = "\(indexPath.row+1). \(task.title ?? "")"
-        let doubleTap = UISwipeGestureRecognizer(target: self, action: #selector(swipeTapEdit(recognizer:)))
-//        let longTap = UILongPressGestureRecognizer(target: self, action: #selector(longTapEdit(recognizer:)))
-//        cell.contentView.addGestureRecognizer(longTap)
-        cell.contentView.addGestureRecognizer(doubleTap)
+        let swipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(swipeTapEdit(recognizer:)))
+        let longTap = UILongPressGestureRecognizer(target: self, action: #selector(longTapEdit(recognizer:)))
+        cell.contentView.addGestureRecognizer(longTap)
+        cell.contentView.addGestureRecognizer(swipeGesture)
         stateSwipeType = task.gestureSwipeType
-//        stateLongType = task.gestureLongType
+        stateLongType = task.gestureLongType
         if stateSwipeType == true {
             cell.contentView.backgroundColor = .green
             cell.progressLine.isHidden = false
+        } else if stateLongType == true {
+            cell.contentView.backgroundColor = .red
+            cell.progressLine.isHidden = true
         } else {
             cell.contentView.backgroundColor = .white
             cell.progressLine.isHidden = true
         }
-//        if stateLongType == true {
-//            cell.contentView.backgroundColor = .red
-//            cell.progressLine.isHidden = true
-//            print("stateLongType in tableview \(indexPath.row) is true")
-//        } else {
-//            cell.contentView.backgroundColor = .white
-//            cell.progressLine.isHidden = true
-//            print("stateLongType in tableview \(indexPath.row) is false")
-//        }
         return cell
     }
 
@@ -54,7 +48,7 @@ extension NeedToDoViewController: UITableViewDelegate, UITableViewDataSource, Ne
         if let tapIndexPath = self.needToDoTasksTableView.indexPathForRow(at: tapLocation) {
             if let tappedCell = self.needToDoTasksTableView.cellForRow(at: tapIndexPath) as? TasksCell {
                 let task = tasks[tapIndexPath.row]
-//                stateSwipeType = task.gestureSwipeType
+                stateSwipeType = task.gestureSwipeType
                 if stateSwipeType == true {
                     tappedCell.contentView.backgroundColor = .green
                     tappedCell.progressLine.isHidden = false
@@ -75,7 +69,7 @@ extension NeedToDoViewController: UITableViewDelegate, UITableViewDataSource, Ne
         if let tapIndexPath = self.needToDoTasksTableView.indexPathForRow(at: tapLocation) {
             if let tappedCell = self.needToDoTasksTableView.cellForRow(at: tapIndexPath) as? TasksCell {
                 let task = tasks[tapIndexPath.row]
-//                stateLongType = task.gestureLongType
+                stateLongType = task.gestureLongType
                 if stateLongType == true {
                     tappedCell.contentView.backgroundColor = .red
                     tappedCell.progressLine.isHidden = true
@@ -107,7 +101,7 @@ extension NeedToDoViewController: UITableViewDelegate, UITableViewDataSource, Ne
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let vc = storyboard?.instantiateViewController(withIdentifier:
-                                "EditCellViewController") as? EditCellViewController else {return}
+                        "EditCellViewController") as? EditCellViewController else {return}
         vc.editText = "\(tasks[indexPath.row].title ?? "")"
         vc.indexPath = indexPath.row
         navigationController?.pushViewController(vc, animated: true)
