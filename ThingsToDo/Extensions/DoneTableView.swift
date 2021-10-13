@@ -22,11 +22,9 @@ extension DoneViewController: UITableViewDataSource, UITableViewDelegate {
         if task.stateSwipeType == true {
             cell.contentView.backgroundColor = .green
             cell.progressLine.isHidden = false
-            print("stateSwipeType in tableview \(indexPath.row) is true")
         } else {
             cell.contentView.backgroundColor = .white
             cell.progressLine.isHidden = true
-            print("stateSwipeType in tableview \(indexPath.row) is false")
         }
         return cell
     }

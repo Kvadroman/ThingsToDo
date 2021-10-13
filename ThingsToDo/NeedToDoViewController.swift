@@ -10,7 +10,7 @@ import FSCalendar
 import CoreData
 
 protocol NeedToDoViewControllerDelegate: AnyObject {
-    func updateCell(label text: String, priorityButton: Bool, doneButton: Bool)
+    func updateCell(date: String, label text: String, priorityButton: Bool, doneButton: Bool)
 }
 
 class NeedToDoViewController: UIViewController {
@@ -22,7 +22,7 @@ class NeedToDoViewController: UIViewController {
     var stateSwipeType: Bool = false
     @IBOutlet weak var titleNavigationBar: UINavigationItem!
     @IBOutlet weak var needToDoTasksTableView: UITableView!
-    fileprivate let formatter: DateFormatter = {
+    let formatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "dd/MM/yyyy"
         return formatter
@@ -30,6 +30,7 @@ class NeedToDoViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("viewDidLoad")
         needToDoTasksTableView.register(UINib(nibName: "TasksCell", bundle: nil), forCellReuseIdentifier: "TasksCell")
         if let d = selectedDate {
             titleNavigationBar.title = formatter.string(from: d)
@@ -46,16 +47,21 @@ class NeedToDoViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "NewTaskViewController" {
             if let selectVC = segue.destination as? NewTaskViewController {
+                selectVC.date = formatter.string(from: selectedDate ?? Date())
                 selectVC.delegate = self
             }
         }
         navigationItem.backButtonTitle = "NeedToDo"
+        if segue.identifier == "DoneViewController" {
+            if let selectVC = segue.destination as? DoneViewController {
+                selectVC.date = selectedDate
+            }
+        }
     }
-    // NEW ACTION
+
     @IBAction func returnToNeedToDo(unwindSegue: UIStoryboardSegue) {
         if let segue = unwindSegue.source as? EditCellViewController {
             updateTasks(title: tasks[segue.indexPath], newTitle: segue.editCellTextView.text)
-            print(tasks)
         }
     }
 
@@ -67,10 +73,12 @@ class NeedToDoViewController: UIViewController {
         } catch {
             print(error.localizedDescription)
         }
+        tasks = tasks.filter {$0.date == formatter.string(from: selectedDate ?? Date())}
     }
 
-    func createTask(title: String, priorityButton: Bool, doneButton: Bool) {
+    func createTask(date: String, title: String, priorityButton: Bool, doneButton: Bool) {
         let newTask = Tasks(context: context)
+        newTask.date = date
         newTask.title = title
         newTask.gestureLongType = priorityButton
         newTask.gestureSwipeType = doneButton

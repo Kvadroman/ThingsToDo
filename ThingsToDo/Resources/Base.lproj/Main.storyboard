@@ -5,7 +5,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Image references" minToolsVersion="12.0"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -41,12 +40,10 @@
                                         <real key="value" value="0.0"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="eventDefaultColor">
-                                        <color key="value" name="AccentColor"/>
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="fakeSubtitles" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="fakeEventDots" value="YES"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="fakedSelectedDay">
-                                        <integer key="value" value="9"/>
+                                        <integer key="value" value="0"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
@@ -508,7 +505,7 @@
         <!--Priority-->
         <scene sceneID="Sg4-wQ-f2J">
             <objects>
-                <viewController id="2nC-CC-jHL" customClass="PriorityViewController" customModule="ThingsToDo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PriorityViewController" id="2nC-CC-jHL" customClass="PriorityViewController" customModule="ThingsToDo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wDb-zY-kOg">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -549,7 +546,7 @@
         <!--Done-->
         <scene sceneID="edj-Rm-DgV">
             <objects>
-                <viewController id="fnz-2N-sI1" customClass="DoneViewController" customModule="ThingsToDo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DoneViewController" id="fnz-2N-sI1" customClass="DoneViewController" customModule="ThingsToDo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fE8-QN-xnj">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -590,7 +587,7 @@
         <!--Search-->
         <scene sceneID="eJw-a5-wjb">
             <objects>
-                <viewController id="zOd-0R-0fG" customClass="SearchViewController" customModule="ThingsToDo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchViewController" id="zOd-0R-0fG" customClass="SearchViewController" customModule="ThingsToDo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TY0-ZA-87A">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -778,9 +775,6 @@
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="plus" width="147" height="148"/>
         <image name="plus.circle" catalog="system" width="128" height="121"/>
-        <namedColor name="AccentColor">
-            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

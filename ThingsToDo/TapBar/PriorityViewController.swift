@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class PriorityViewController: UIViewController {
 
@@ -29,7 +30,6 @@ class PriorityViewController: UIViewController {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         do {
             taskPriority = try context.fetch(Tasks.fetchRequest())
-            print(taskPriority)
         } catch {
             print(error.localizedDescription)
         }

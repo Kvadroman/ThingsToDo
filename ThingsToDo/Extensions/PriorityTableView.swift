@@ -22,11 +22,9 @@ extension PriorityViewController: UITableViewDataSource, UITableViewDelegate {
         if task.stateLongType == true {
             cell.contentView.backgroundColor = .red
             cell.progressLine.isHidden = true
-            print("stateSwipeType in tableview \(indexPath.row) is true")
         } else {
             cell.contentView.backgroundColor = .white
             cell.progressLine.isHidden = true
-            print("stateSwipeType in tableview \(indexPath.row) is false")
         }
         return cell
     }
