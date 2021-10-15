@@ -18,7 +18,9 @@ class MainViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let config = segue.destination as? NeedToDoViewController {
             config.selectedDate = calendar.selectedDate
+            SelectedDate.shared.selectedDate = config.formatter.string(from: calendar.selectedDate ?? Date())
             navigationItem.backButtonTitle = "Back"
+            print(SelectedDate.shared.selectedDate)
         }
     }
 }

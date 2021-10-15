@@ -28,8 +28,10 @@ class PriorityViewController: UIViewController {
 
     func getData() {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let fetchRequest: NSFetchRequest<Tasks> = Tasks.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "date == %@", SelectedDate.shared.selectedDate ?? task.formatter.string(from: task.selectedDate ?? Date()))
         do {
-            taskPriority = try context.fetch(Tasks.fetchRequest())
+            taskPriority = try context.fetch(fetchRequest)
         } catch {
             print(error.localizedDescription)
         }

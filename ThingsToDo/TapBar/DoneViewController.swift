@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class DoneViewController: UIViewController {
 
@@ -18,24 +19,23 @@ class DoneViewController: UIViewController {
         doneTableView.delegate = self
         doneTableView.dataSource = self
         doneTableView.register(UINib(nibName: "TasksCell", bundle: nil), forCellReuseIdentifier: "TasksCell")
-//        getData()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         getData()
-        task.getAllTasks(from: doneTableView)
-        print(task.formatter.string(from: date ?? Date()))
     }
 
     func getData() {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let fetchRequest: NSFetchRequest<Tasks> = Tasks.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "date == %@", SelectedDate.shared.selectedDate)
         do {
-            tasksDone = try context.fetch(Tasks.fetchRequest())
+            tasksDone = try context.fetch(fetchRequest)
+            tasksDone = tasksDone.filter {$0.gestureSwipeType == true}
+            doneTableView.reloadData()
         } catch {
             print(error.localizedDescription)
-        }
-        tasksDone = tasksDone.filter {$0.date == task.formatter.string(from: date ?? Date())
         }
     }
 }
