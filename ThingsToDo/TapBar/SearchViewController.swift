@@ -6,27 +6,47 @@
 //
 
 import UIKit
+import CoreData
 
 class SearchViewController: UIViewController {
 
-    @IBOutlet weak var tasksSearchBar: UISearchBar!
-    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var searchTableView: UITableView!
+    let searchController = UISearchController()
+    var task = NeedToDoViewController()
+    var tasksSearch: [Tasks] = []
     override func viewDidLoad() {
         super.viewDidLoad()
-        tasksSearchBar.delegate = self
+        title = "Search"
+        navigationItem.searchController = searchController
+        searchController.searchResultsUpdater = self
+        searchTableView.delegate = self
+        searchTableView.dataSource = self
+        searchTableView.register(UINib(nibName: "TasksCell", bundle: nil), forCellReuseIdentifier: "TasksCell")
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        searchBar.becomeFirstResponder()
+        searchController.becomeFirstResponder()
+        searchTableView.isHidden = true
+    }
+
+    func getAllData(from searchText: String) {
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let fetchRequest: NSFetchRequest<Tasks> = Tasks.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "title contains %@", searchText)
+        do {
+            tasksSearch = try context.fetch(fetchRequest)
+        } catch {
+            print(error.localizedDescription)
+        }
     }
 }
 
-extension SearchViewController: UISearchResultsUpdating, UISearchBarDelegate {
+extension SearchViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
-        print("1")
-    }
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print("1")
+        guard let text = searchController.searchBar.text else {return}
+        getAllData(from: text)
+        searchTableView.reloadData()
+        searchTableView.isHidden = false
     }
 }

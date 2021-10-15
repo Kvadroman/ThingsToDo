@@ -22,19 +22,32 @@ class PriorityViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        getData()
-        task.getAllTasks(from: priorityTableView)
+        if SelectedDate.shared.selectedDate == "" {
+            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+            let fetchRequest: NSFetchRequest<Tasks> = Tasks.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "date == %@",
+                    task.formatter.string(from: task.selectedDate ?? Date()))
+            do {
+                taskPriority = try context.fetch(fetchRequest)
+                taskPriority = taskPriority.filter {$0.gestureLongType == true}
+            } catch {
+                print(error.localizedDescription)
+            }
+        } else {
+            getData()
+        }
     }
 
     func getData() {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         let fetchRequest: NSFetchRequest<Tasks> = Tasks.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "date == %@", SelectedDate.shared.selectedDate ?? task.formatter.string(from: task.selectedDate ?? Date()))
+        fetchRequest.predicate = NSPredicate(format: "date == %@", SelectedDate.shared.selectedDate)
         do {
             taskPriority = try context.fetch(fetchRequest)
+            taskPriority = taskPriority.filter {$0.gestureLongType == true}
+            priorityTableView.reloadData()
         } catch {
             print(error.localizedDescription)
         }
-        taskPriority = taskPriority.filter {$0.gestureLongType == true}
     }
 }

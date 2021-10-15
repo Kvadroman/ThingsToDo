@@ -23,7 +23,20 @@ class DoneViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        getData()
+        if SelectedDate.shared.selectedDate == "" {
+            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+            let fetchRequest: NSFetchRequest<Tasks> = Tasks.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "date == %@",
+                    task.formatter.string(from: task.selectedDate ?? Date()))
+            do {
+                tasksDone = try context.fetch(fetchRequest)
+                tasksDone = tasksDone.filter {$0.gestureSwipeType == true}
+            } catch {
+                print(error.localizedDescription)
+            }
+        } else {
+            getData()
+        }
     }
 
     func getData() {

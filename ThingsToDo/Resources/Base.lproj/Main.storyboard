@@ -495,7 +495,7 @@
                         <segue destination="2nC-CC-jHL" kind="relationship" relationship="viewControllers" id="eQ8-IK-nGy"/>
                         <segue destination="VcR-gQ-dxm" kind="relationship" relationship="viewControllers" id="lBW-yd-6nQ"/>
                         <segue destination="fnz-2N-sI1" kind="relationship" relationship="viewControllers" id="3ZW-qw-BVI"/>
-                        <segue destination="zOd-0R-0fG" kind="relationship" relationship="viewControllers" id="Yez-YP-aqS"/>
+                        <segue destination="l1l-Ui-zHu" kind="relationship" relationship="viewControllers" id="Yez-YP-aqS"/>
                         <segue destination="1jL-df-SWQ" kind="relationship" relationship="viewControllers" id="lVX-87-smw"/>
                     </connections>
                 </tabBarController>
@@ -542,7 +542,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sxS-8k-JSQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2075" y="805"/>
+            <point key="canvasLocation" x="-3017" y="805"/>
         </scene>
         <!--Done-->
         <scene sceneID="edj-Rm-DgV">
@@ -583,9 +583,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sep-5d-QCv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1323" y="805"/>
+            <point key="canvasLocation" x="-2265" y="805"/>
         </scene>
-        <!--Search-->
+        <!--Search View Controller-->
         <scene sceneID="eJw-a5-wjb">
             <objects>
                 <viewController storyboardIdentifier="SearchViewController" id="zOd-0R-0fG" customClass="SearchViewController" customModule="ThingsToDo" customModuleProvider="target" sceneMemberID="viewController">
@@ -593,37 +593,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="g1O-u7-uTt">
-                                <rect key="frame" x="0.0" y="44" width="390" height="51"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="49x-W9-sFN">
-                                <rect key="frame" x="0.0" y="95" width="390" height="666"/>
+                                <rect key="frame" x="0.0" y="88" width="390" height="673"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="BrQ-BF-EPb"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="g1O-u7-uTt" firstAttribute="trailing" secondItem="BrQ-BF-EPb" secondAttribute="trailing" id="439-C2-b5H"/>
-                            <constraint firstItem="g1O-u7-uTt" firstAttribute="leading" secondItem="BrQ-BF-EPb" secondAttribute="leading" id="5ff-5M-9a7"/>
-                            <constraint firstItem="49x-W9-sFN" firstAttribute="top" secondItem="g1O-u7-uTt" secondAttribute="bottom" id="EOL-eX-Mp9"/>
+                            <constraint firstItem="49x-W9-sFN" firstAttribute="top" secondItem="BrQ-BF-EPb" secondAttribute="top" id="5ws-J5-Eng"/>
                             <constraint firstItem="BrQ-BF-EPb" firstAttribute="trailing" secondItem="49x-W9-sFN" secondAttribute="trailing" id="NbD-ts-YVP"/>
                             <constraint firstItem="49x-W9-sFN" firstAttribute="leading" secondItem="BrQ-BF-EPb" secondAttribute="leading" id="X6E-zM-rFG"/>
-                            <constraint firstItem="g1O-u7-uTt" firstAttribute="top" secondItem="BrQ-BF-EPb" secondAttribute="top" id="dDo-JX-whg"/>
                             <constraint firstItem="BrQ-BF-EPb" firstAttribute="bottom" secondItem="49x-W9-sFN" secondAttribute="bottom" id="iIG-6N-pa1"/>
-                            <constraint firstItem="49x-W9-sFN" firstAttribute="top" secondItem="g1O-u7-uTt" secondAttribute="bottom" id="jIq-QE-zlD"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="49h-J2-qoK"/>
+                    <navigationItem key="navigationItem" id="FDm-vu-1rB"/>
                     <connections>
-                        <outlet property="searchBar" destination="g1O-u7-uTt" id="Zni-va-y04"/>
-                        <outlet property="tasksSearchBar" destination="g1O-u7-uTt" id="gpl-JU-4dh"/>
+                        <outlet property="searchTableView" destination="49x-W9-sFN" id="1Ib-5B-xwA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jZM-kZ-sWr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-555" y="805"/>
+            <point key="canvasLocation" x="373.84615384615381" y="804.73933649289097"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="OFd-KY-uoD">
@@ -692,7 +683,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qUI-Bq-TYY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1109.2307692307693" y="804.73933649289097"/>
+            <point key="canvasLocation" x="2038.4615384615383" y="804.73933649289097"/>
         </scene>
         <!--Color Theme View Controller-->
         <scene sceneID="oL6-i0-Pqc">
@@ -773,7 +764,26 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jly-68-7cr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="180" y="804.73933649289097"/>
+            <point key="canvasLocation" x="1109.2307692307693" y="804.73933649289097"/>
+        </scene>
+        <!--Search-->
+        <scene sceneID="MwD-NA-5qs">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="l1l-Ui-zHu" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="49h-J2-qoK"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="muC-Yx-XWk">
+                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="zOd-0R-0fG" kind="relationship" relationship="rootViewController" id="jcP-p4-yjY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qpt-6h-bLH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-555.38461538461536" y="804.73933649289097"/>
         </scene>
     </scenes>
     <resources>
