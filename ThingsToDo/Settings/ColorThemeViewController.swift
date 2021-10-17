@@ -9,8 +9,12 @@ import UIKit
 
 class ColorThemeViewController: UIViewController {
 
+    @IBOutlet weak var colorThemeTableView: UITableView!
+    var colorImageArray: [String] = ["lightbulb", "lightbulb.fill"]
+    var colorTitleArray: [String] = ["Light Theme", "Dark Theme"]
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        colorThemeTableView.delegate = self
+        colorThemeTableView.dataSource = self
     }
 }

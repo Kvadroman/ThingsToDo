@@ -42,6 +42,8 @@
 		00F1381A27177F65004873B4 /* ChangeAppIconViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F1381927177F65004873B4 /* ChangeAppIconViewController.swift */; };
 		00F1381C2719DA1C004873B4 /* SelectedDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F1381B2719DA1C004873B4 /* SelectedDate.swift */; };
 		00F1381E2719F5DC004873B4 /* SearchTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F1381D2719F5DC004873B4 /* SearchTableView.swift */; };
+		00F13820271C38E3004873B4 /* ColorThemeTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F1381F271C38E3004873B4 /* ColorThemeTableView.swift */; };
+		00F13822271C3C7E004873B4 /* ColorThemeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F13821271C3C7E004873B4 /* ColorThemeCell.swift */; };
 		43B08C53F5164FE0BE1A98EA /* Pods_ThingsToDoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A296FE0CACCBF29EF6D2726 /* Pods_ThingsToDoTests.framework */; };
 		B97608C8C5FE0FD8DCCECAA3 /* Pods_ThingsToDo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0D58FB709AD0F91AF7826A9 /* Pods_ThingsToDo.framework */; };
 		D53F2D337BFA959A8E624073 /* Pods_ThingsToDo_ThingsToDoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 713D5263D6D3F015123B61F0 /* Pods_ThingsToDo_ThingsToDoUITests.framework */; };
@@ -106,6 +108,8 @@
 		00F1381927177F65004873B4 /* ChangeAppIconViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeAppIconViewController.swift; sourceTree = "<group>"; };
 		00F1381B2719DA1C004873B4 /* SelectedDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedDate.swift; sourceTree = "<group>"; };
 		00F1381D2719F5DC004873B4 /* SearchTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableView.swift; sourceTree = "<group>"; };
+		00F1381F271C38E3004873B4 /* ColorThemeTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorThemeTableView.swift; sourceTree = "<group>"; };
+		00F13821271C3C7E004873B4 /* ColorThemeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorThemeCell.swift; sourceTree = "<group>"; };
 		05D721ED1A6E76DAB15949F0 /* Pods-ThingsToDo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThingsToDo.debug.xcconfig"; path = "Target Support Files/Pods-ThingsToDo/Pods-ThingsToDo.debug.xcconfig"; sourceTree = "<group>"; };
 		0EF162D69C2122F0B5034BDE /* Pods-ThingsToDoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThingsToDoTests.release.xcconfig"; path = "Target Support Files/Pods-ThingsToDoTests/Pods-ThingsToDoTests.release.xcconfig"; sourceTree = "<group>"; };
 		10D80C4C3D3B84905949B10D /* Pods-ThingsToDo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThingsToDo.release.xcconfig"; path = "Target Support Files/Pods-ThingsToDo/Pods-ThingsToDo.release.xcconfig"; sourceTree = "<group>"; };
@@ -165,6 +169,7 @@
 				00686A172705EE8D00C55C2B /* UIAlertViewController.swift */,
 				0027B52A27026578002298D5 /* NeedToDoTableView.swift */,
 				00F13810271303A1004873B4 /* DoneTableView.swift */,
+				00F1381F271C38E3004873B4 /* ColorThemeTableView.swift */,
 				00F1381D2719F5DC004873B4 /* SearchTableView.swift */,
 				00260408270C815D00D48A2D /* PriorityTableView.swift */,
 				00206134270B9CE500EC3E1C /* SettingsTableView.swift */,
@@ -258,6 +263,7 @@
 		00F1381227177E94004873B4 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				00F13821271C3C7E004873B4 /* ColorThemeCell.swift */,
 				00F1381327177EF3004873B4 /* ColorThemeViewController.swift */,
 				00F1381927177F65004873B4 /* ChangeAppIconViewController.swift */,
 				00F1381727177F4A004873B4 /* FontSizeViewController.swift */,
@@ -546,6 +552,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00F13822271C3C7E004873B4 /* ColorThemeCell.swift in Sources */,
 				00F0827526F3331800B9EC28 /* MainViewController.swift in Sources */,
 				0020612E270B9B2900EC3E1C /* DoneViewController.swift in Sources */,
 				0020612A270B883400EC3E1C /* TabBarController.swift in Sources */,
@@ -575,6 +582,7 @@
 				00F1380E2710447A004873B4 /* Tasks+CoreDataClass.swift in Sources */,
 				00F1381827177F4A004873B4 /* FontSizeViewController.swift in Sources */,
 				0027B52B27026578002298D5 /* NeedToDoTableView.swift in Sources */,
+				00F13820271C38E3004873B4 /* ColorThemeTableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

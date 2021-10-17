@@ -9,13 +9,15 @@ import UIKit
 
 class SettingsViewController: UIViewController {
 
-    var settingsCell: [String] = ["building.2.crop.circle.fill", "character", "mount.fill", "iphone", "envelope.fill"]
+    var settingsImageCell: [String] = ["building.2.crop.circle.fill", "character", "mount.fill", "iphone",
+                                       "envelope.fill"]
     var settingsArray: [String] = ["Color Theme", "Font Face", "Font Size", "Change App Icon",
                                    "Contact Me (via E-mail)"]
 
     @IBOutlet weak var settings: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Settings"
         settings.dataSource = self
         settings.delegate = self
     }

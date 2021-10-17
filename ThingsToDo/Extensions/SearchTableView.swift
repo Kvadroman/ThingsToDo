@@ -8,7 +8,7 @@
 import UIKit
 
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "TasksCell",
                                                        for: indexPath) as? TasksCell else {fatalError()}
@@ -26,14 +26,14 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         }
         return cell
     }
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tasksSearch.count
     }
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
-    
+
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle,
                    forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {

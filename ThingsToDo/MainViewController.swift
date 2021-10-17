@@ -10,6 +10,8 @@ import FSCalendar
 
 class MainViewController: UIViewController {
 
+    lazy var task = NeedToDoViewController()
+    lazy var tasks = [Tasks]()
     @IBOutlet weak var calendar: FSCalendar!
     override func viewWillAppear(_ animated: Bool) {
         calendar.reloadData()

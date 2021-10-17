@@ -10,12 +10,13 @@ import FSCalendar
 
 extension MainViewController: FSCalendarDelegate, FSCalendarDataSource {
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        if monthPosition == .previous || monthPosition == .next {
-            calendar.setCurrentPage(date, animated: true)
-        }
+//        if monthPosition == .previous || monthPosition == .next {
+//            calendar.setCurrentPage(date, animated: true)
+//        }
         self.performSegue(withIdentifier: "gotoNeedToDo", sender: nil)
     }
+
     func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
-        return 1
+        return 0
     }
 }
