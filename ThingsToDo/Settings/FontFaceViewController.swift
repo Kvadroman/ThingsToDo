@@ -9,13 +9,12 @@ import UIKit
 
 class FontFaceViewController: UIViewController {
 
-    static func storyboardInitiate() -> FontFaceViewController? {
-        let storyboard = UIStoryboard(name: "FontFaceViewController", bundle: nil)
-        return storyboard.instantiateInitialViewController() as? FontFaceViewController
-    }
-
+    @IBOutlet weak var fontFaceTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Font Face"
+        fontFaceTableView.delegate = self
+        fontFaceTableView.dataSource = self
 
     }
 }

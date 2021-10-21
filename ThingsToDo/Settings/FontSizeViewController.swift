@@ -16,6 +16,6 @@ class FontSizeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        title = "Font Size"
     }
   }

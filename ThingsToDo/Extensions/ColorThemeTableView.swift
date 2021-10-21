@@ -19,14 +19,23 @@ extension ColorThemeViewController: UITableViewDelegate, UITableViewDataSource {
         cell.colorThemeCellImageView.image = UIImage(systemName: colorImageArray[indexPath.row])
         return cell
     }
-    
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        switch indexPath {
-//    case [0, 1]:
-//        
-//    case [0, 2]:
-//    default:
-//        return
-//        }
+        switch indexPath {
+        case [0, 0]:
+            if #available(iOS 13.0, *) {
+                let window = UIApplication.shared.keyWindow
+                window?.overrideUserInterfaceStyle = .light
+                tabBarController?.overrideUserInterfaceStyle = .light
+            }
+        case [0, 1]:
+            if #available(iOS 13.0, *) {
+                let window = UIApplication.shared.keyWindow
+                window?.overrideUserInterfaceStyle = .dark
+                tabBarController?.overrideUserInterfaceStyle = .dark
+            }
+        default:
+        return
+        }
     }
 }

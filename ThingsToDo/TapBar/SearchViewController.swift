@@ -18,6 +18,7 @@ class SearchViewController: UIViewController {
         super.viewDidLoad()
         title = "Search"
         navigationItem.searchController = searchController
+        navigationController?.navigationBar.prefersLargeTitles = true
         searchController.searchResultsUpdater = self
         searchTableView.delegate = self
         searchTableView.dataSource = self

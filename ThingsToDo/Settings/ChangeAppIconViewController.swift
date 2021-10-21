@@ -9,13 +9,13 @@ import UIKit
 
 class ChangeAppIconViewController: UIViewController {
 
-    static func storyboardInitiate() -> ChangeAppIconViewController? {
-        let storyboard = UIStoryboard(name: "ChangeAppIconViewController", bundle: nil)
-        return storyboard.instantiateInitialViewController() as? ChangeAppIconViewController
-    }
-
+    let changeAppIconTextArray = ["Rabit Icon", "Default Icon"]
+    let changeAppIconImageArray = ["rabit", "default"]
+    @IBOutlet weak var changeAppIconTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        title = "Change App Icon"
+        changeAppIconTableView.delegate = self
+        changeAppIconTableView.dataSource = self
     }
  }

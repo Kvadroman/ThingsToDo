@@ -9,9 +9,10 @@ import UIKit
 
 class ColorThemeViewController: UIViewController {
 
-    @IBOutlet weak var colorThemeTableView: UITableView!
+    var userDefaults = UserDefaults.standard
     var colorImageArray: [String] = ["lightbulb", "lightbulb.fill"]
     var colorTitleArray: [String] = ["Light Theme", "Dark Theme"]
+    @IBOutlet weak var colorThemeTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         colorThemeTableView.delegate = self

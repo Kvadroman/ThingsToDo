@@ -27,25 +27,39 @@ class NewTaskViewController: UIViewController {
         newTaskTextView.becomeFirstResponder()
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        navigationItem.backButtonTitle = "Event"
-    }
-
-    @IBAction func reminderButton(_ sender: Any) {
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
-            if success {
-                self.addReminder()
-            } else if let error = error {
-                print("\(error)")
+        if newTaskTextView.text.isEmpty == true {
+            showAlert(msg: "", inViewController: self, title: "Please type something in field")
+        } else {
+            UNUserNotificationCenter.current().requestAuthorization(options:
+                                                                        [.alert, .badge, .sound]) { success, error in
+                if success {
+//                    DispatchQueue.main.async {
+//                        self.addReminder(for: self.newTaskTextView.text, for: 5)
+//                    }
+                } else if let error = error {
+                    print("\(error)")
+                }
+            }
+            if segue.identifier == "reminderViewController" {
+                if let selecVC = segue.destination as? ReminderViewController {
+                    selecVC.textFromNewTask = newTaskTextView.text
+                    print(selecVC.textFromNewTask)
+                    reminderSwitch.isOn = true
+                    navigationItem.backButtonTitle = "Event"
+                }
             }
         }
     }
 
-    func addReminder() {
+    @IBAction func reminderButton(_ sender: UIButton) {
+    }
+
+    func addReminder(for body: String, for time: Double) {
         let content = UNMutableNotificationContent()
-        content.title = "Hello world"
+        content.title = "ThingsToDo"
         content.sound = .default
-        content.body = "Here is the reminder"
-        let targetDate = Date().addingTimeInterval(5)
+        content.body = body
+        let targetDate = Date().addingTimeInterval(time)
         let trigger = UNCalendarNotificationTrigger(dateMatching: Calendar.current.dateComponents([
             .year, .month, .day, .hour, .minute, .second], from: targetDate), repeats: false)
         let request = UNNotificationRequest(identifier: "id", content: content, trigger: trigger)

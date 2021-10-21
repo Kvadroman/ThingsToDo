@@ -25,6 +25,7 @@ extension SettingsViewController: UITableViewDataSource,
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         switch indexPath {
         case [0, 0]:
             guard let vc = storyboard?.instantiateViewController(
