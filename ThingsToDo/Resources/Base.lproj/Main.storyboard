@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -684,7 +685,7 @@
             </objects>
             <point key="canvasLocation" x="2038.4615384615383" y="804.73933649289097"/>
         </scene>
-        <!--Color Theme View Controller-->
+        <!--Color Theme-->
         <scene sceneID="oL6-i0-Pqc">
             <objects>
                 <viewController storyboardIdentifier="ColorThemeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="TY7-Sn-poU" customClass="ColorThemeViewController" customModule="ThingsToDo" customModuleProvider="target" sceneMemberID="viewController">
@@ -736,7 +737,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="JOE-Jb-Deu"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="backgroundColor"/>
                         <constraints>
                             <constraint firstItem="JOE-Jb-Deu" firstAttribute="bottom" secondItem="6rD-3Q-meY" secondAttribute="bottom" id="6H7-Lg-Jc7"/>
                             <constraint firstItem="6rD-3Q-meY" firstAttribute="leading" secondItem="JOE-Jb-Deu" secondAttribute="leading" id="DpO-R0-ciX"/>
@@ -744,7 +745,7 @@
                             <constraint firstItem="JOE-Jb-Deu" firstAttribute="trailing" secondItem="6rD-3Q-meY" secondAttribute="trailing" id="lqw-eM-f49"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="QHH-M4-hrc"/>
+                    <navigationItem key="navigationItem" title="Color Theme" id="QHH-M4-hrc"/>
                     <connections>
                         <outlet property="colorThemeTableView" destination="6rD-3Q-meY" id="6Rr-yj-Jtu"/>
                     </connections>
@@ -753,7 +754,7 @@
             </objects>
             <point key="canvasLocation" x="933.84615384615381" y="1709.7156398104264"/>
         </scene>
-        <!--Font Size View Controller-->
+        <!--Font Size-->
         <scene sceneID="YJs-Nx-vvx">
             <objects>
                 <viewController storyboardIdentifier="FontSizeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gtA-bg-5Mm" customClass="FontSizeViewController" customModule="ThingsToDo" customModuleProvider="target" sceneMemberID="viewController">
@@ -772,6 +773,9 @@
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gFf-TT-f0i">
                                 <rect key="frame" x="333" y="96" width="51" height="31"/>
+                                <connections>
+                                    <action selector="enableFontSize:" destination="gtA-bg-5Mm" eventType="valueChanged" id="e8N-qQ-AO8"/>
+                                </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use the slider to choose a font size" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oEf-kZ-glv">
                                 <rect key="frame" x="8" y="162" width="374" height="20"/>
@@ -810,7 +814,7 @@
                             </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Blv-Pv-7cR"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="backgroundColor"/>
                         <constraints>
                             <constraint firstItem="UBF-eb-sKu" firstAttribute="leading" secondItem="Blv-Pv-7cR" secondAttribute="leading" constant="8" id="1EW-I3-wAV"/>
                             <constraint firstItem="UBF-eb-sKu" firstAttribute="top" secondItem="kf4-zb-ks2" secondAttribute="bottom" constant="90" id="8X5-Iv-xZM"/>
@@ -831,13 +835,17 @@
                             <constraint firstItem="Blv-Pv-7cR" firstAttribute="trailing" secondItem="kf4-zb-ks2" secondAttribute="trailing" constant="8" id="w9r-Vx-KEZ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="80G-5t-5Og"/>
+                    <navigationItem key="navigationItem" title="Font Size" id="80G-5t-5Og"/>
+                    <connections>
+                        <outlet property="sizeSlider" destination="kf4-zb-ks2" id="kQN-vz-8ww"/>
+                        <outlet property="sizeSwitch" destination="gFf-TT-f0i" id="328-5S-mGb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gN7-uY-xte" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4692.3076923076924" y="1709.7156398104264"/>
         </scene>
-        <!--Font Face View Controller-->
+        <!--Font Face-->
         <scene sceneID="HLQ-v7-hRe">
             <objects>
                 <viewController storyboardIdentifier="FontFaceViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="JnF-hB-nhh" customClass="FontFaceViewController" customModule="ThingsToDo" customModuleProvider="target" sceneMemberID="viewController">
@@ -861,7 +869,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="FtU-i4-3Gs"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="backgroundColor"/>
                         <constraints>
                             <constraint firstItem="wpD-LW-grl" firstAttribute="leading" secondItem="FtU-i4-3Gs" secondAttribute="leading" id="Hyk-Ge-VQf"/>
                             <constraint firstItem="FtU-i4-3Gs" firstAttribute="trailing" secondItem="wpD-LW-grl" secondAttribute="trailing" id="JdT-Q9-H3e"/>
@@ -869,7 +877,7 @@
                             <constraint firstItem="wpD-LW-grl" firstAttribute="top" secondItem="FtU-i4-3Gs" secondAttribute="top" id="tQu-qZ-HWX"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="rvR-mZ-JvL"/>
+                    <navigationItem key="navigationItem" title="Font Face" id="rvR-mZ-JvL"/>
                     <connections>
                         <outlet property="fontFaceTableView" destination="wpD-LW-grl" id="Fqb-MK-Bja"/>
                     </connections>
@@ -878,7 +886,7 @@
             </objects>
             <point key="canvasLocation" x="2860" y="1709.7156398104264"/>
         </scene>
-        <!--Change App Icon View Controller-->
+        <!--Change App Icon-->
         <scene sceneID="fqP-bl-fQi">
             <objects>
                 <viewController storyboardIdentifier="ChangeAppIconViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="GW5-05-aTq" customClass="ChangeAppIconViewController" customModule="ThingsToDo" customModuleProvider="target" sceneMemberID="viewController">
@@ -929,7 +937,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="aGn-Xt-N9w"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="backgroundColor"/>
                         <constraints>
                             <constraint firstItem="aGn-Xt-N9w" firstAttribute="bottom" secondItem="3Hp-RE-EPN" secondAttribute="bottom" id="CE2-s9-omS"/>
                             <constraint firstItem="aGn-Xt-N9w" firstAttribute="trailing" secondItem="3Hp-RE-EPN" secondAttribute="trailing" id="RrZ-WE-7oj"/>
@@ -937,7 +945,7 @@
                             <constraint firstItem="3Hp-RE-EPN" firstAttribute="top" secondItem="aGn-Xt-N9w" secondAttribute="top" id="rcu-Pd-omL"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Eua-3D-jQd"/>
+                    <navigationItem key="navigationItem" title="Change App Icon" id="Eua-3D-jQd"/>
                     <connections>
                         <outlet property="changeAppIconTableView" destination="3Hp-RE-EPN" id="2sd-Mp-YQI"/>
                     </connections>
@@ -1065,6 +1073,9 @@
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="plus" width="147" height="148"/>
         <image name="plus.circle" catalog="system" width="128" height="121"/>
+        <namedColor name="backgroundColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -23,17 +23,11 @@ extension ColorThemeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath {
         case [0, 0]:
-            if #available(iOS 13.0, *) {
-                let window = UIApplication.shared.keyWindow
-                window?.overrideUserInterfaceStyle = .light
-                tabBarController?.overrideUserInterfaceStyle = .light
-            }
+            tabBarController?.overrideUserInterfaceStyle = .light
+            Settings.shared.appTheme = .light
         case [0, 1]:
-            if #available(iOS 13.0, *) {
-                let window = UIApplication.shared.keyWindow
-                window?.overrideUserInterfaceStyle = .dark
-                tabBarController?.overrideUserInterfaceStyle = .dark
-            }
+            tabBarController?.overrideUserInterfaceStyle = .dark
+            Settings.shared.appTheme = .dark
         default:
         return
         }

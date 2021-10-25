@@ -14,6 +14,7 @@ class MainViewController: UIViewController {
     lazy var tasks = [Tasks]()
     @IBOutlet weak var calendar: FSCalendar!
     override func viewWillAppear(_ animated: Bool) {
+        tabBarController?.overrideUserInterfaceStyle = Settings.shared.appTheme ?? .unspecified
         calendar.reloadData()
     }
 

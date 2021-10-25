@@ -51,6 +51,7 @@
 		00F1382E271CB550004873B4 /* default@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00F1382C271CB550004873B4 /* default@3x.png */; };
 		00F13831271CB5B1004873B4 /* rabit@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00F1382F271CB5B1004873B4 /* rabit@3x.png */; };
 		00F13832271CB5B1004873B4 /* rabit@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00F13830271CB5B1004873B4 /* rabit@2x.png */; };
+		00F138B22725E953004873B4 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F138B12725E953004873B4 /* Settings.swift */; };
 		43B08C53F5164FE0BE1A98EA /* Pods_ThingsToDoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A296FE0CACCBF29EF6D2726 /* Pods_ThingsToDoTests.framework */; };
 		B97608C8C5FE0FD8DCCECAA3 /* Pods_ThingsToDo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0D58FB709AD0F91AF7826A9 /* Pods_ThingsToDo.framework */; };
 		D53F2D337BFA959A8E624073 /* Pods_ThingsToDo_ThingsToDoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 713D5263D6D3F015123B61F0 /* Pods_ThingsToDo_ThingsToDoUITests.framework */; };
@@ -124,6 +125,7 @@
 		00F1382C271CB550004873B4 /* default@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default@3x.png"; sourceTree = "<group>"; };
 		00F1382F271CB5B1004873B4 /* rabit@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rabit@3x.png"; sourceTree = "<group>"; };
 		00F13830271CB5B1004873B4 /* rabit@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rabit@2x.png"; sourceTree = "<group>"; };
+		00F138B12725E953004873B4 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		05D721ED1A6E76DAB15949F0 /* Pods-ThingsToDo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThingsToDo.debug.xcconfig"; path = "Target Support Files/Pods-ThingsToDo/Pods-ThingsToDo.debug.xcconfig"; sourceTree = "<group>"; };
 		0EF162D69C2122F0B5034BDE /* Pods-ThingsToDoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThingsToDoTests.release.xcconfig"; path = "Target Support Files/Pods-ThingsToDoTests/Pods-ThingsToDoTests.release.xcconfig"; sourceTree = "<group>"; };
 		10D80C4C3D3B84905949B10D /* Pods-ThingsToDo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThingsToDo.release.xcconfig"; path = "Target Support Files/Pods-ThingsToDo/Pods-ThingsToDo.release.xcconfig"; sourceTree = "<group>"; };
@@ -246,6 +248,7 @@
 				0027B52027023682002298D5 /* Application */,
 				00686A722709C90A00C55C2B /* EditCellViewController.swift */,
 				0027B51B2701EE94002298D5 /* NeedToDoViewController.swift */,
+				00F138B12725E953004873B4 /* Settings.swift */,
 				0027B52C2703486A002298D5 /* NewTaskViewController.swift */,
 				00F0827426F3331800B9EC28 /* MainViewController.swift */,
 				0027B5302704914F002298D5 /* ReminderViewController.swift */,
@@ -611,6 +614,7 @@
 				00F0827B26F3331800B9EC28 /* ThingsToDo.xcdatamodeld in Sources */,
 				00F13829271CA83E004873B4 /* ChangeAppIconCell.swift in Sources */,
 				00260409270C815D00D48A2D /* PriorityTableView.swift in Sources */,
+				00F138B22725E953004873B4 /* Settings.swift in Sources */,
 				00F1381A27177F65004873B4 /* ChangeAppIconViewController.swift in Sources */,
 				00260404270C427400D48A2D /* SettingsCell.swift in Sources */,
 				00F0827326F3331800B9EC28 /* SceneDelegate.swift in Sources */,
