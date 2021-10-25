@@ -795,13 +795,16 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="kf4-zb-ks2">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="15" minValue="15" maxValue="60" translatesAutoresizingMaskIntoConstraints="NO" id="kf4-zb-ks2">
                                 <rect key="frame" x="6" y="198" width="378" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="U0F-kQ-tpk"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="sliderDidChangedAction:" destination="gtA-bg-5Mm" eventType="valueChanged" id="nGi-FX-I4J"/>
+                                </connections>
                             </slider>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9OE-JD-rwr">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9OE-JD-rwr">
                                 <rect key="frame" x="16" y="354" width="358" height="90"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
@@ -837,6 +840,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Font Size" id="80G-5t-5Og"/>
                     <connections>
+                        <outlet property="exampleTextView" destination="9OE-JD-rwr" id="Mn5-ZF-a5e"/>
                         <outlet property="sizeSlider" destination="kf4-zb-ks2" id="kQN-vz-8ww"/>
                         <outlet property="sizeSwitch" destination="gFf-TT-f0i" id="328-5S-mGb"/>
                     </connections>
@@ -857,13 +861,45 @@
                                 <rect key="frame" x="0.0" y="88" width="390" height="722"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="WaK-Pc-Sev">
-                                        <rect key="frame" x="0.0" y="44.666666030883789" width="390" height="43.666667938232422"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FontSizeCell" id="WaK-Pc-Sev" customClass="FontFaceCell" customModule="ThingsToDo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.666666030883789" width="390" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WaK-Pc-Sev" id="qLf-Nz-3uB">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="5T8-4S-mX4">
+                                                    <rect key="frame" x="8" y="8" width="374" height="44"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O0r-yR-vSs">
+                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="20.333333333333332"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="20.333333333333332" id="1Ks-HX-kZv"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="SnellRoundhand" family="Snell Roundhand" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nsd-JA-Kpc">
+                                                            <rect key="frame" x="0.0" y="23.333333333333329" width="374" height="20.666666666666671"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="5T8-4S-mX4" firstAttribute="top" secondItem="qLf-Nz-3uB" secondAttribute="top" constant="8" id="Jwy-tE-7Po"/>
+                                                <constraint firstAttribute="bottom" secondItem="5T8-4S-mX4" secondAttribute="bottom" constant="8" id="Yw1-SD-N88"/>
+                                                <constraint firstItem="5T8-4S-mX4" firstAttribute="leading" secondItem="qLf-Nz-3uB" secondAttribute="leading" constant="8" id="fpW-c4-18P"/>
+                                                <constraint firstAttribute="trailing" secondItem="5T8-4S-mX4" secondAttribute="trailing" constant="8" id="phX-gW-HCY"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="fontFaceExampleLabel" destination="nsd-JA-Kpc" id="Zma-Vj-WQH"/>
+                                            <outlet property="fontFaceLabel" destination="O0r-yR-vSs" id="3Y5-20-jtC"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

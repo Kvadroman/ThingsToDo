@@ -27,4 +27,13 @@ final class Settings {
             defaults.setValue(newValue, forKey: "fontSize")
         }
     }
+
+    var sliderValue: Float? {
+        get {
+            return defaults.float(forKey: "sliderValue")
+        }
+        set {
+            defaults.setValue(newValue, forKey: "sliderValue")
+        }
+    }
 }

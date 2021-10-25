@@ -14,5 +14,10 @@ class TasksCell: UITableViewCell {
     @IBOutlet weak var textFromCell: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
+        fontSize()
+    }
+
+    func fontSize() {
+        textFromCell.font = textFromCell.font.withSize(CGFloat(Int(Settings.shared.sliderValue ?? 0.1)))
     }
 }
