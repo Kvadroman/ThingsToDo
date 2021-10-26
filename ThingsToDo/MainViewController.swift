@@ -15,7 +15,8 @@ class MainViewController: UIViewController {
     @IBOutlet weak var calendar: FSCalendar!
     override func viewWillAppear(_ animated: Bool) {
         tabBarController?.overrideUserInterfaceStyle = Settings.shared.appTheme ?? .unspecified
-        calendar.appearance.titleFont = calendar.appearance.titleFont.withSize(CGFloat(Int(Settings.shared.sliderValue ?? 0.1)))
+        calendar.appearance.titleFont = calendar.appearance.titleFont.withSize(CGFloat(Int(Settings
+                                                        .shared.sliderValue ?? 0.1)))
         calendar.reloadData()
     }
 

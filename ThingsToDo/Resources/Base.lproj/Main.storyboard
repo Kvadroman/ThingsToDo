@@ -795,7 +795,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="15" minValue="15" maxValue="60" translatesAutoresizingMaskIntoConstraints="NO" id="kf4-zb-ks2">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="15" minValue="15" maxValue="30" translatesAutoresizingMaskIntoConstraints="NO" id="kf4-zb-ks2">
                                 <rect key="frame" x="6" y="198" width="378" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="U0F-kQ-tpk"/>
@@ -805,10 +805,10 @@
                                 </connections>
                             </slider>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9OE-JD-rwr">
-                                <rect key="frame" x="16" y="354" width="358" height="90"/>
+                                <rect key="frame" x="16" y="354" width="358" height="174"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="90" id="8Mm-01-GBK"/>
+                                    <constraint firstAttribute="height" constant="174" id="8Mm-01-GBK"/>
                                 </constraints>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor"/>
@@ -962,6 +962,7 @@
                                                 <constraint firstItem="yFF-Jy-rsK" firstAttribute="top" secondItem="3ZR-o2-z0Y" secondAttribute="topMargin" constant="8" id="hZa-OU-51J"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="yFF-Jy-rsK" secondAttribute="bottom" constant="8" id="jNb-Pw-qer"/>
                                                 <constraint firstAttribute="bottom" secondItem="eDu-ph-hc4" secondAttribute="bottom" constant="8" id="lVD-DJ-OhD"/>
+                                                <constraint firstItem="eDu-ph-hc4" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="yFF-Jy-rsK" secondAttribute="trailing" constant="8" symbolic="YES" id="zZ0-Lu-MNL"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>

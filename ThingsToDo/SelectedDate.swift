@@ -10,4 +10,5 @@ import Foundation
 class SelectedDate {
     static let shared = SelectedDate()
     var selectedDate: String = ""
+    private init () {}
 }

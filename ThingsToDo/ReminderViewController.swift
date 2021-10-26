@@ -13,7 +13,7 @@ class ReminderViewController: UIViewController {
     var textFromNewTask: String = ""
     var reminder = NewTaskViewController()
     @IBAction func atTheTimeReminderButton(_ sender: UIButton) {
-        reminder.addReminder(for: textFromNewTask, for: 15)
+        reminder.addReminder(for: textFromNewTask, for: 5)
         navigationController?.popViewController(animated: true)
     }
     @IBAction func inFiveMinutesReminderButton(_ sender: UIButton) {
