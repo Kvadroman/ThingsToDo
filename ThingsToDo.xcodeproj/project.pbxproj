@@ -24,6 +24,7 @@
 		00686A64270711E000C55C2B /* TasksCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00686A62270711E000C55C2B /* TasksCell.swift */; };
 		00686A6B2707167900C55C2B /* TasksCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00686A6A2707167900C55C2B /* TasksCell.xib */; };
 		00686A732709C90B00C55C2B /* EditCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00686A722709C90A00C55C2B /* EditCellViewController.swift */; };
+		00E0BC7F27297624001A8A70 /* ReminderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E0BC7E27297624001A8A70 /* ReminderModel.swift */; };
 		00F0827126F3331800B9EC28 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F0827026F3331800B9EC28 /* AppDelegate.swift */; };
 		00F0827326F3331800B9EC28 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F0827226F3331800B9EC28 /* SceneDelegate.swift */; };
 		00F0827526F3331800B9EC28 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F0827426F3331800B9EC28 /* MainViewController.swift */; };
@@ -93,6 +94,7 @@
 		00686A62270711E000C55C2B /* TasksCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksCell.swift; sourceTree = "<group>"; };
 		00686A6A2707167900C55C2B /* TasksCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TasksCell.xib; sourceTree = "<group>"; };
 		00686A722709C90A00C55C2B /* EditCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCellViewController.swift; sourceTree = "<group>"; };
+		00E0BC7E27297624001A8A70 /* ReminderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderModel.swift; sourceTree = "<group>"; };
 		00F0826D26F3331800B9EC28 /* ThingsToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThingsToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00F0827026F3331800B9EC28 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		00F0827226F3331800B9EC28 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -167,7 +169,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		00206133270B9C5600EC3E1C /* TapBar */ = {
+		00206133270B9C5600EC3E1C /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
 				00206129270B883400EC3E1C /* TabBarController.swift */,
@@ -177,22 +179,22 @@
 				00260403270C427400D48A2D /* SettingsCell.swift */,
 				00206131270B9B6E00EC3E1C /* SettingsViewController.swift */,
 			);
-			path = TapBar;
+			path = TabBar;
 			sourceTree = "<group>";
 		};
 		0027B51D2702357A002298D5 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				0027B51E2702365E002298D5 /* MainFsCalendar.swift */,
-				00686A172705EE8D00C55C2B /* UIAlertViewController.swift */,
-				0027B52A27026578002298D5 /* NeedToDoTableView.swift */,
-				00F13810271303A1004873B4 /* DoneTableView.swift */,
-				00F1381F271C38E3004873B4 /* ColorThemeTableView.swift */,
-				00F13824271CA1EC004873B4 /* FontFaceTableView.swift */,
 				00F13826271CA7FF004873B4 /* ChangeAppIconTableView.swift */,
-				00F1381D2719F5DC004873B4 /* SearchTableView.swift */,
+				00F1381F271C38E3004873B4 /* ColorThemeTableView.swift */,
+				00F13810271303A1004873B4 /* DoneTableView.swift */,
+				00F13824271CA1EC004873B4 /* FontFaceTableView.swift */,
+				0027B52A27026578002298D5 /* NeedToDoTableView.swift */,
+				0027B51E2702365E002298D5 /* MainFsCalendar.swift */,
 				00260408270C815D00D48A2D /* PriorityTableView.swift */,
+				00F1381D2719F5DC004873B4 /* SearchTableView.swift */,
 				00206134270B9CE500EC3E1C /* SettingsTableView.swift */,
+				00686A172705EE8D00C55C2B /* UIAlertViewController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -250,15 +252,16 @@
 				0027B52027023682002298D5 /* Application */,
 				00686A722709C90A00C55C2B /* EditCellViewController.swift */,
 				0027B51B2701EE94002298D5 /* NeedToDoViewController.swift */,
-				00F138B12725E953004873B4 /* Settings.swift */,
 				0027B52C2703486A002298D5 /* NewTaskViewController.swift */,
+				00E0BC7E27297624001A8A70 /* ReminderModel.swift */,
 				00F0827426F3331800B9EC28 /* MainViewController.swift */,
 				0027B5302704914F002298D5 /* ReminderViewController.swift */,
 				00F1381B2719DA1C004873B4 /* SelectedDate.swift */,
+				00F138B12725E953004873B4 /* Settings.swift */,
 				00686A62270711E000C55C2B /* TasksCell.swift */,
-				00F1381227177E94004873B4 /* Settings */,
-				00206133270B9C5600EC3E1C /* TapBar */,
 				0027B521270236A3002298D5 /* Resources */,
+				00F1381227177E94004873B4 /* Settings */,
+				00206133270B9C5600EC3E1C /* TabBar */,
 				0027B51D2702357A002298D5 /* Extensions */,
 			);
 			path = ThingsToDo;
@@ -289,9 +292,9 @@
 				00F1381327177EF3004873B4 /* ColorThemeViewController.swift */,
 				00F13828271CA83E004873B4 /* ChangeAppIconCell.swift */,
 				00F1381927177F65004873B4 /* ChangeAppIconViewController.swift */,
-				00F1381727177F4A004873B4 /* FontSizeViewController.swift */,
 				00F138B3272712FB004873B4 /* FontFaceCell.swift */,
 				00F1381527177F2E004873B4 /* FontFaceViewController.swift */,
+				00F1381727177F4A004873B4 /* FontSizeViewController.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -620,6 +623,7 @@
 				00F138B22725E953004873B4 /* Settings.swift in Sources */,
 				00F138B4272712FB004873B4 /* FontFaceCell.swift in Sources */,
 				00F1381A27177F65004873B4 /* ChangeAppIconViewController.swift in Sources */,
+				00E0BC7F27297624001A8A70 /* ReminderModel.swift in Sources */,
 				00260404270C427400D48A2D /* SettingsCell.swift in Sources */,
 				00F0827326F3331800B9EC28 /* SceneDelegate.swift in Sources */,
 				00F13825271CA1EC004873B4 /* FontFaceTableView.swift in Sources */,

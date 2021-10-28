@@ -10,7 +10,7 @@ import FSCalendar
 import CoreData
 
 protocol NeedToDoViewControllerDelegate: AnyObject {
-    func updateCell(date: String, label text: String, priorityButton: Bool, doneButton: Bool)
+    func updateCell(date: String, label text: String, priorityButton: Bool, doneButton: Bool, reminder: Bool)
 }
 
 class NeedToDoViewController: UIViewController {
@@ -20,6 +20,7 @@ class NeedToDoViewController: UIViewController {
     var selectedDate: Date?
     var stateLongType: Bool = false
     var stateSwipeType: Bool = false
+    var stateReminder: Bool = false
     @IBOutlet weak var titleNavigationBar: UINavigationItem!
     @IBOutlet weak var needToDoTasksTableView: UITableView!
     let formatter: DateFormatter = {
@@ -71,12 +72,13 @@ func getAllTasks(from table: UITableView) {
     tasks = tasks.filter {$0.date == formatter.string(from: selectedDate ?? Date())}
 }
 
-func createTask(date: String, title: String, priorityButton: Bool, doneButton: Bool) {
+    func createTask(date: String, title: String, priorityButton: Bool, doneButton: Bool, reminder: Bool) {
     let newTask = Tasks(context: context)
     newTask.date = date
     newTask.title = title
     newTask.gestureLongType = priorityButton
     newTask.gestureSwipeType = doneButton
+    newTask.reminder = reminder
     do {
         try context.save()
         getAllTasks(from: needToDoTasksTableView)

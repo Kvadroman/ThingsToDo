@@ -10,14 +10,24 @@ import FSCalendar
 
 class MainViewController: UIViewController {
 
-    lazy var task = NeedToDoViewController()
     lazy var tasks = [Tasks]()
     @IBOutlet weak var calendar: FSCalendar!
+    let formatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yyyy"
+        return formatter
+    }()
+
     override func viewWillAppear(_ animated: Bool) {
         tabBarController?.overrideUserInterfaceStyle = Settings.shared.appTheme ?? .unspecified
-        calendar.appearance.titleFont = calendar.appearance.titleFont.withSize(CGFloat(Int(Settings
-                                                        .shared.sliderValue ?? 0.1)))
+        calendar.appearance.titleFont = UIFont(name: Settings.shared.fontFace ?? "",
+                                               size: CGFloat(Settings.shared.sliderValue ?? 0.1))
         calendar.reloadData()
+    }
+
+    override func willTransition(to newCollection: UITraitCollection,
+                                 with coordinator: UIViewControllerTransitionCoordinator) {
+        self.calendar?.reloadData()
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -18,6 +18,7 @@ extension PriorityViewController: UITableViewDataSource, UITableViewDelegate {
                                                        for: indexPath) as? TasksCell else {fatalError()}
         let taskPriority = taskPriority[indexPath.row]
         cell.textFromCell.text = "\(indexPath.row+1). \(taskPriority.title ?? "")"
+        cell.fontFace()
         task.stateLongType = taskPriority.gestureLongType
         if task.stateLongType == true {
             cell.contentView.backgroundColor = .red

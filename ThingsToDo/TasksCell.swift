@@ -9,15 +9,29 @@ import UIKit
 
 class TasksCell: UITableViewCell {
 
+    let cells = NeedToDoViewController()
     @IBOutlet weak var progressLine: UIProgressView!
     @IBOutlet weak var switchReminder: UISwitch!
     @IBOutlet weak var textFromCell: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        fontSize()
+        fontFace()
     }
 
-    func fontSize() {
-        textFromCell.font = textFromCell.font.withSize(CGFloat(Int(Settings.shared.sliderValue ?? 0.1)))
+    func fontFace() {
+        textFromCell.font = UIFont(name: Settings.shared.fontFace ?? "",
+                                   size: CGFloat(Settings.shared.sliderValue ?? 0.1))
+    }
+
+    @IBAction func switchAction(_ sender: UISwitch) {
+    }
+
+    func changeBackgroundColorCell() {
+        let styles = UIUserInterfaceStyle(rawValue: 1)
+        if styles == .dark {
+            contentView.backgroundColor = .black
+        } else {
+            contentView.backgroundColor = .white
+        }
     }
 }

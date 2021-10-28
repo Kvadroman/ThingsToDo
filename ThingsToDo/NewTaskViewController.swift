@@ -25,6 +25,8 @@ class NewTaskViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         newTaskTextView.becomeFirstResponder()
+        newTaskTextView.font = UIFont(name: Settings.shared.fontFace ?? "",
+                                      size: CGFloat(Settings.shared.sliderValue ?? 0.1))
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if newTaskTextView.text.isEmpty == true {
@@ -37,7 +39,6 @@ class NewTaskViewController: UIViewController {
                         if segue.identifier == "reminderViewController" {
                             if let selecVC = segue.destination as? ReminderViewController {
                                 selecVC.textFromNewTask = self.newTaskTextView.text
-                                print(selecVC.textFromNewTask)
                                 self.reminderSwitch.isOn = true
                                 self.navigationItem.backButtonTitle = "Event"
                             }
@@ -53,21 +54,6 @@ class NewTaskViewController: UIViewController {
     @IBAction func reminderButton(_ sender: UIButton) {
     }
 
-    func addReminder(for body: String, for time: Double) {
-        let content = UNMutableNotificationContent()
-        content.title = "ThingsToDo"
-        content.sound = .default
-        content.body = body
-        let targetDate = Date().addingTimeInterval(time)
-        let trigger = UNCalendarNotificationTrigger(dateMatching: Calendar.current.dateComponents([
-            .year, .month, .day, .hour, .minute, .second], from: targetDate), repeats: false)
-        let request = UNNotificationRequest(identifier: "id", content: content, trigger: trigger)
-        UNUserNotificationCenter.current().add(request, withCompletionHandler: { error in
-            if error != nil {
-                fatalError()
-            }
-        })
-    }
     @IBAction func saveTextFromTextField(_ sender: UIBarButtonItem) {
         if newTaskTextView.text == "" {
             showAlert(msg: "", inViewController: self, title: "Please fill the fields")
@@ -76,7 +62,7 @@ class NewTaskViewController: UIViewController {
                         "Please choose only one position for Priority Task or Done")
         } else {
             delegate?.updateCell(date: date, label: newTaskTextView.text, priorityButton:
-                                    prioritySwitch.isOn, doneButton: doneSwitch.isOn)
+                                    prioritySwitch.isOn, doneButton: doneSwitch.isOn, reminder: reminderSwitch.isOn)
             self.navigationController?.popViewController(animated: true)
         }
     }

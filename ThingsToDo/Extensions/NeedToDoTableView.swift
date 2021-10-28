@@ -8,8 +8,8 @@
 import UIKit
 
 extension NeedToDoViewController: UITableViewDelegate, UITableViewDataSource, NeedToDoViewControllerDelegate {
-    func updateCell(date: String, label text: String, priorityButton: Bool, doneButton: Bool) {
-        createTask(date: date, title: text, priorityButton: priorityButton, doneButton: doneButton)
+    func updateCell(date: String, label text: String, priorityButton: Bool, doneButton: Bool, reminder: Bool) {
+        createTask(date: date, title: text, priorityButton: priorityButton, doneButton: doneButton, reminder: reminder)
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -24,6 +24,12 @@ extension NeedToDoViewController: UITableViewDelegate, UITableViewDataSource, Ne
                 as? TasksCell else {fatalError()}
         let task = tasks[indexPath.row]
         cell.textFromCell.text = "\(indexPath.row+1). \(task.title ?? "")"
+        cell.switchReminder.isOn = task.reminder
+        if self.traitCollection.userInterfaceStyle == .dark {
+            cell.contentView.backgroundColor = .black
+        } else {
+            cell.contentView.backgroundColor = .white
+        }
         let swipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(swipeTapEdit(recognizer:)))
         let longTap = UILongPressGestureRecognizer(target: self, action: #selector(longTapEdit(recognizer:)))
         cell.contentView.addGestureRecognizer(longTap)
@@ -95,6 +101,7 @@ extension NeedToDoViewController: UITableViewDelegate, UITableViewDataSource, Ne
             let cell = needToDoTasksTableView.cellForRow(at: indexPath) as? TasksCell
             cell?.progressLine.isHidden = true
             cell?.contentView.backgroundColor = .white
+            cell?.switchReminder.isOn = false
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
     }

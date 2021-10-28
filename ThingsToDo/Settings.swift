@@ -36,4 +36,13 @@ final class Settings {
             defaults.setValue(newValue, forKey: "sliderValue")
         }
     }
+
+    var fontFace: String? {
+        get {
+            return defaults.string(forKey: "fontFace")
+        }
+        set {
+            defaults.setValue(newValue, forKey: "fontFace")
+        }
+    }
 }

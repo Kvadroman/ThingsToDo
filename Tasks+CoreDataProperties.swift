@@ -2,7 +2,7 @@
 //  Tasks+CoreDataProperties.swift
 //  ThingsToDo
 //
-//  Created by Ивченко Антон on 13.10.2021.
+//  Created by Ивченко Антон on 27.10.2021.
 //
 //
 
@@ -15,10 +15,12 @@ extension Tasks {
         return NSFetchRequest<Tasks>(entityName: "Tasks")
     }
 
-    @NSManaged public var title: String?
+    @NSManaged public var date: String?
     @NSManaged public var gestureLongType: Bool
     @NSManaged public var gestureSwipeType: Bool
-    @NSManaged public var date: String?
+    @NSManaged public var title: String?
+    @NSManaged public var reminder: Bool
+
 }
 
 extension Tasks: Identifiable {

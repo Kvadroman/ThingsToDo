@@ -36,6 +36,7 @@ class PriorityViewController: UIViewController {
         } else {
             getData()
         }
+        priorityTableView.reloadData()
     }
 
     func getData() {

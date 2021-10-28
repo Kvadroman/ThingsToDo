@@ -18,6 +18,7 @@ extension DoneViewController: UITableViewDataSource, UITableViewDelegate {
                                                        for: indexPath) as? TasksCell else {fatalError()}
         let taskDone = tasksDone[indexPath.row]
         cell.textFromCell.text = "\(indexPath.row+1). \(taskDone.title ?? "")"
+        cell.fontFace()
         task.stateSwipeType = taskDone.gestureSwipeType
         if task.stateSwipeType == true {
             cell.contentView.backgroundColor = .green

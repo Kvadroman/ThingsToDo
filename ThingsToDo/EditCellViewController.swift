@@ -22,5 +22,4 @@ class EditCellViewController: UIViewController {
         super.viewWillAppear(animated)
         editCellTextView.becomeFirstResponder()
     }
-
-    }
+}

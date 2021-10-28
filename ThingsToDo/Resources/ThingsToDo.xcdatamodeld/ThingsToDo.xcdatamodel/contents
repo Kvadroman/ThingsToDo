@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19206" systemVersion="20G165" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19461" systemVersion="21A559" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
     <entity name="Tasks" representedClassName="Tasks" syncable="YES">
         <attribute name="date" optional="YES" attributeType="String"/>
         <attribute name="gestureLongType" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
         <attribute name="gestureSwipeType" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="reminder" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="title" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="Tasks" positionX="-63" positionY="-18" width="128" height="89"/>
+        <element name="Tasks" positionX="-63" positionY="-18" width="128" height="104"/>
     </elements>
 </model>

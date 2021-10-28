@@ -37,6 +37,7 @@ class DoneViewController: UIViewController {
         } else {
             getData()
         }
+        doneTableView.reloadData()
     }
 
     func getData() {
