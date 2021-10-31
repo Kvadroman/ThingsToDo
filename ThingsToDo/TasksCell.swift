@@ -26,12 +26,4 @@ class TasksCell: UITableViewCell {
     @IBAction func switchAction(_ sender: UISwitch) {
     }
 
-    func changeBackgroundColorCell() {
-        let styles = UIUserInterfaceStyle(rawValue: 1)
-        if styles == .dark {
-            contentView.backgroundColor = .black
-        } else {
-            contentView.backgroundColor = .white
-        }
-    }
 }

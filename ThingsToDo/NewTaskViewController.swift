@@ -51,9 +51,6 @@ class NewTaskViewController: UIViewController {
         }
     }
 
-    @IBAction func reminderButton(_ sender: UIButton) {
-    }
-
     @IBAction func saveTextFromTextField(_ sender: UIBarButtonItem) {
         if newTaskTextView.text == "" {
             showAlert(msg: "", inViewController: self, title: "Please fill the fields")

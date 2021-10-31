@@ -10,8 +10,11 @@ import UIKit
 class ReminderViewController: UIViewController {
 
     var textFromNewTask: String = ""
+    @IBAction func noReminderButton(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
+    }
     @IBAction func atTheTimeReminderButton(_ sender: UIButton) {
-        reminderTime(for: 10)
+        reminderTime(for: 60)
     }
     @IBAction func inFiveMinutesReminderButton(_ sender: UIButton) {
        reminderTime(for: 300)

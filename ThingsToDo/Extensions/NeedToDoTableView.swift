@@ -43,7 +43,6 @@ extension NeedToDoViewController: UITableViewDelegate, UITableViewDataSource, Ne
             cell.contentView.backgroundColor = .red
             cell.progressLine.isHidden = true
         } else {
-            cell.contentView.backgroundColor = .white
             cell.progressLine.isHidden = true
         }
         return cell
@@ -101,7 +100,6 @@ extension NeedToDoViewController: UITableViewDelegate, UITableViewDataSource, Ne
             let cell = needToDoTasksTableView.cellForRow(at: indexPath) as? TasksCell
             cell?.progressLine.isHidden = true
             cell?.contentView.backgroundColor = .white
-            cell?.switchReminder.isOn = false
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
     }
