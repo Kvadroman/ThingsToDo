@@ -9,7 +9,6 @@ import UIKit
 
 class EditCellViewController: UIViewController {
 
-//    weak var delegate: NeedToDoViewControllerDelegate?
     var indexPath: Int = 0
     var editText = ""
     @IBOutlet weak var editCellTextView: UITextView!

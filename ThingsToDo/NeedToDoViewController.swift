@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import FSCalendar
 import CoreData
 
 protocol NeedToDoViewControllerDelegate: AnyObject {
@@ -20,13 +19,14 @@ class NeedToDoViewController: UIViewController {
     var selectedDate: Date?
     var stateLongType: Bool = false
     var stateSwipeType: Bool = false
-    @IBOutlet weak var titleNavigationBar: UINavigationItem!
-    @IBOutlet weak var needToDoTasksTableView: UITableView!
     let formatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "dd/MM/yyyy"
         return formatter
     }()
+    @IBOutlet weak var titleNavigationBar: UINavigationItem!
+    @IBOutlet weak var needToDoTasksTableView: UITableView!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +41,7 @@ class NeedToDoViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         getAllTasks(from: needToDoTasksTableView)
+        print(tasks)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

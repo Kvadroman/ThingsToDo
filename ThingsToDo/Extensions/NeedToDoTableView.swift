@@ -25,6 +25,16 @@ extension NeedToDoViewController: UITableViewDelegate, UITableViewDataSource, Ne
         let task = tasks[indexPath.row]
         cell.textFromCell.text = "\(indexPath.row+1). \(task.title ?? "")"
         cell.switchReminder.isOn = task.reminder
+        cell.switchAction = { [weak self] sender in
+            task.reminder = cell.switchReminder.isOn
+            UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+            do {
+                try self?.context.save()
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+        cell.fontFace()
         if self.traitCollection.userInterfaceStyle == .dark {
             cell.contentView.backgroundColor = .black
         } else {

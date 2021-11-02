@@ -14,6 +14,15 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
                                                        for: indexPath) as? TasksCell else {fatalError()}
         let searchTasks = tasksSearch[indexPath.row]
         cell.textFromCell.text = "\(indexPath.row + 1). \(searchTasks.title ?? "")"
+        cell.switchReminder.isOn = searchTasks.reminder
+        cell.switchAction = { [weak self] sender in
+            searchTasks.reminder = cell.switchReminder.isOn
+            do {
+                try self?.task.context.save()
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
         if searchTasks.gestureSwipeType == true {
             cell.contentView.backgroundColor = .green
             cell.progressLine.isHidden = false

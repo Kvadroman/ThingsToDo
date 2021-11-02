@@ -18,6 +18,15 @@ extension PriorityViewController: UITableViewDataSource, UITableViewDelegate {
                                                        for: indexPath) as? TasksCell else {fatalError()}
         let taskPriority = taskPriority[indexPath.row]
         cell.textFromCell.text = "\(indexPath.row+1). \(taskPriority.title ?? "")"
+        cell.switchReminder.isOn = taskPriority.reminder
+        cell.switchAction = { [weak self] sender in
+            taskPriority.reminder = cell.switchReminder.isOn
+            do {
+                try self?.task.context.save()
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
         cell.fontFace()
         task.stateLongType = taskPriority.gestureLongType
         if task.stateLongType == true {

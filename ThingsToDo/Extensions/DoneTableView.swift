@@ -18,6 +18,15 @@ extension DoneViewController: UITableViewDataSource, UITableViewDelegate {
                                                        for: indexPath) as? TasksCell else {fatalError()}
         let taskDone = tasksDone[indexPath.row]
         cell.textFromCell.text = "\(indexPath.row+1). \(taskDone.title ?? "")"
+        cell.switchReminder.isOn = taskDone.reminder
+        cell.switchAction = { [weak self] sender in
+            taskDone.reminder = cell.switchReminder.isOn
+            do {
+                try self?.task.context.save()
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
         cell.fontFace()
         task.stateSwipeType = taskDone.gestureSwipeType
         if task.stateSwipeType == true {

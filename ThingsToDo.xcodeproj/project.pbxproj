@@ -172,12 +172,12 @@
 		00206133270B9C5600EC3E1C /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
-				00206129270B883400EC3E1C /* TabBarController.swift */,
 				0020612B270B9B0A00EC3E1C /* PriorityViewController.swift */,
 				0020612D270B9B2900EC3E1C /* DoneViewController.swift */,
 				0020612F270B9B4000EC3E1C /* SearchViewController.swift */,
 				00260403270C427400D48A2D /* SettingsCell.swift */,
 				00206131270B9B6E00EC3E1C /* SettingsViewController.swift */,
+				00206129270B883400EC3E1C /* TabBarController.swift */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";

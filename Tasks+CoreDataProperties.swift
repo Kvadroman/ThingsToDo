@@ -2,7 +2,7 @@
 //  Tasks+CoreDataProperties.swift
 //  ThingsToDo
 //
-//  Created by Ивченко Антон on 27.10.2021.
+//  Created by Ивченко Антон on 01.11.2021.
 //
 //
 
@@ -18,8 +18,9 @@ extension Tasks {
     @NSManaged public var date: String?
     @NSManaged public var gestureLongType: Bool
     @NSManaged public var gestureSwipeType: Bool
-    @NSManaged public var title: String?
     @NSManaged public var reminder: Bool
+    @NSManaged public var title: String?
+    @NSManaged public var uuid: String?
 
 }
 

@@ -9,6 +9,7 @@ import UIKit
 
 class ReminderModel {
 
+    private var tasks: [Tasks] = []
     static var shared: ReminderModel = {
         let instance = ReminderModel()
         return instance
@@ -17,6 +18,7 @@ class ReminderModel {
     private init () {}
 
     func addReminder(for body: String, for time: Double) {
+        let uuid = UUID().uuidString
         let content = UNMutableNotificationContent()
         content.title = "ThingsToDo"
         content.sound = .default
@@ -24,12 +26,34 @@ class ReminderModel {
         let targetDate = Date().addingTimeInterval(time)
         let trigger = UNCalendarNotificationTrigger(dateMatching: Calendar.current.dateComponents([
             .year, .month, .day, .hour, .minute, .second], from: targetDate), repeats: false)
-        let request = UNNotificationRequest(identifier: UUID().uuidString,
+        let request = UNNotificationRequest(identifier: uuid,
                                             content: content, trigger: trigger)
-        UNUserNotificationCenter.current().add(request, withCompletionHandler: { error in
+        UNUserNotificationCenter.current().add(request) { error in
             if error != nil {
                 fatalError()
             }
-        })
+        }
+        let context = (UIApplication.shared.delegate as? AppDelegate)!.persistentContainer.viewContext
+        do {
+            tasks = try context.fetch(Tasks.fetchRequest())
+        } catch {
+            print(error.localizedDescription)
+        }
+//        task.uuid = uuid
+        do {
+            try context.save()
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+
+    func getRemindersIdentifiers() {
+        UNUserNotificationCenter.current().getPendingNotificationRequests { notificationRequest in
+            var identifiers: [String] = []
+            for notification: UNNotificationRequest in notificationRequest {
+                identifiers.append(notification.identifier)
+                print(identifiers)
+            }
+        }
     }
 }

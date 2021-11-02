@@ -6,8 +6,9 @@
         <attribute name="gestureSwipeType" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="reminder" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="title" optional="YES" attributeType="String"/>
+        <attribute name="uuid" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="Tasks" positionX="-63" positionY="-18" width="128" height="104"/>
+        <element name="Tasks" positionX="-63" positionY="-18" width="128" height="119"/>
     </elements>
 </model>
