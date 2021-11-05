@@ -26,14 +26,13 @@ class NeedToDoViewController: UIViewController {
     }()
     @IBOutlet weak var titleNavigationBar: UINavigationItem!
     @IBOutlet weak var needToDoTasksTableView: UITableView!
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        needToDoTasksTableView.register(UINib(nibName: "TasksCell", bundle: nil), forCellReuseIdentifier: "TasksCell")
         if let d = selectedDate {
             titleNavigationBar.title = formatter.string(from: d)
         }
+        needToDoTasksTableView.register(UINib(nibName: "TasksCell", bundle: nil), forCellReuseIdentifier: "TasksCell")
         needToDoTasksTableView.dataSource = self
         needToDoTasksTableView.delegate = self
     }
@@ -41,7 +40,6 @@ class NeedToDoViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         getAllTasks(from: needToDoTasksTableView)
-        print(tasks)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -79,7 +77,6 @@ class NeedToDoViewController: UIViewController {
         newTask.reminder = reminder
         do {
             try context.save()
-            getAllTasks(from: needToDoTasksTableView)
         } catch {
             print(error.localizedDescription)
         }
@@ -89,7 +86,6 @@ class NeedToDoViewController: UIViewController {
         context.delete(title)
         do {
             try context.save()
-            getAllTasks(from: table)
         } catch {
             print(error.localizedDescription)
         }
@@ -99,7 +95,6 @@ class NeedToDoViewController: UIViewController {
         title.title = newTitle
         do {
             try context.save()
-            getAllTasks(from: needToDoTasksTableView)
         } catch {
             print(error.localizedDescription)
         }

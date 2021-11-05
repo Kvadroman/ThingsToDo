@@ -42,7 +42,7 @@ extension MainViewController: FSCalendarDelegateAppearance {
     func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance,
                   eventDefaultColorsFor date: Date) -> [UIColor]? {
         if self.traitCollection.userInterfaceStyle == .dark {
-            return [.white]
+            return [UIColor.white]
         } else {
             return [UIColor.black]
         }

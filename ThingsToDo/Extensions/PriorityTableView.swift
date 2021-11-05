@@ -19,7 +19,7 @@ extension PriorityViewController: UITableViewDataSource, UITableViewDelegate {
         let taskPriority = taskPriority[indexPath.row]
         cell.textFromCell.text = "\(indexPath.row+1). \(taskPriority.title ?? "")"
         cell.switchReminder.isOn = taskPriority.reminder
-        cell.switchAction = { [weak self] sender in
+        cell.switchAction = { [weak self] _ in
             taskPriority.reminder = cell.switchReminder.isOn
             do {
                 try self?.task.context.save()
@@ -43,9 +43,6 @@ extension PriorityViewController: UITableViewDataSource, UITableViewDelegate {
                    forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             task.deleteTask(title: taskPriority.remove(at: indexPath.row), from: priorityTableView)
-            let cell = priorityTableView.cellForRow(at: indexPath) as? TasksCell
-            cell?.progressLine.isHidden = true
-            cell?.contentView.backgroundColor = .white
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
     }

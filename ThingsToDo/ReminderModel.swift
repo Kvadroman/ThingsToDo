@@ -9,6 +9,7 @@ import UIKit
 
 class ReminderModel {
 
+    private var identifiers: [String] = []
     private var tasks: [Tasks] = []
     static var shared: ReminderModel = {
         let instance = ReminderModel()
@@ -33,6 +34,7 @@ class ReminderModel {
                 fatalError()
             }
         }
+        
         let context = (UIApplication.shared.delegate as? AppDelegate)!.persistentContainer.viewContext
         do {
             tasks = try context.fetch(Tasks.fetchRequest())
@@ -47,13 +49,15 @@ class ReminderModel {
         }
     }
 
-    func getRemindersIdentifiers() {
+    func getRemindersIdentifiers() -> String {
         UNUserNotificationCenter.current().getPendingNotificationRequests { notificationRequest in
-            var identifiers: [String] = []
+//            var identifiers: [String] = []
             for notification: UNNotificationRequest in notificationRequest {
-                identifiers.append(notification.identifier)
-                print(identifiers)
+                self.identifiers.append(notification.identifier)
+//                print(notification.identifier)
             }
         }
+        print(identifiers.popLast() ?? "")
+        return identifiers.popLast() ?? ""
     }
 }

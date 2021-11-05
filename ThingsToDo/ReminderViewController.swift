@@ -15,6 +15,7 @@ class ReminderViewController: UIViewController {
     }
     @IBAction func atTheTimeReminderButton(_ sender: UIButton) {
         reminderTime(for: 60)
+        ReminderModel.shared.getRemindersIdentifiers()
     }
     @IBAction func inFiveMinutesReminderButton(_ sender: UIButton) {
        reminderTime(for: 300)

@@ -816,7 +816,7 @@
                                     <action selector="sliderDidChangedAction:" destination="gtA-bg-5Mm" eventType="valueChanged" id="nGi-FX-I4J"/>
                                 </connections>
                             </slider>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9OE-JD-rwr">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9OE-JD-rwr">
                                 <rect key="frame" x="16" y="354" width="358" height="174"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>

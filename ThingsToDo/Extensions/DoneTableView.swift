@@ -19,7 +19,7 @@ extension DoneViewController: UITableViewDataSource, UITableViewDelegate {
         let taskDone = tasksDone[indexPath.row]
         cell.textFromCell.text = "\(indexPath.row+1). \(taskDone.title ?? "")"
         cell.switchReminder.isOn = taskDone.reminder
-        cell.switchAction = { [weak self] sender in
+        cell.switchAction = { [weak self] _ in
             taskDone.reminder = cell.switchReminder.isOn
             do {
                 try self?.task.context.save()
@@ -42,9 +42,6 @@ extension DoneViewController: UITableViewDataSource, UITableViewDelegate {
                    forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             task.deleteTask(title: tasksDone.remove(at: indexPath.row), from: doneTableView)
-            let cell = doneTableView.cellForRow(at: indexPath) as? TasksCell
-            cell?.progressLine.isHidden = true
-            cell?.contentView.backgroundColor = .white
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
     }

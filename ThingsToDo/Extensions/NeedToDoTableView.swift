@@ -25,9 +25,8 @@ extension NeedToDoViewController: UITableViewDelegate, UITableViewDataSource, Ne
         let task = tasks[indexPath.row]
         cell.textFromCell.text = "\(indexPath.row+1). \(task.title ?? "")"
         cell.switchReminder.isOn = task.reminder
-        cell.switchAction = { [weak self] sender in
+        cell.switchAction = { [weak self] _ in
             task.reminder = cell.switchReminder.isOn
-            UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
             do {
                 try self?.context.save()
             } catch {
@@ -107,9 +106,6 @@ extension NeedToDoViewController: UITableViewDelegate, UITableViewDataSource, Ne
                    forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             deleteTask(title: tasks.remove(at: indexPath.row), from: needToDoTasksTableView)
-            let cell = needToDoTasksTableView.cellForRow(at: indexPath) as? TasksCell
-            cell?.progressLine.isHidden = true
-            cell?.contentView.backgroundColor = .white
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
     }
