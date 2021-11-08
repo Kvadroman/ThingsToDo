@@ -13,6 +13,7 @@ class NewTaskViewController: UIViewController {
 
     weak var delegate: NeedToDoViewControllerDelegate?
     var date: String = ""
+    var uuid: String = ""
     @IBOutlet weak var newTaskTextView: UITextView!
     @IBOutlet weak var backButtonNavigationBar: UINavigationItem!
     @IBOutlet weak var reminderSwitch: UISwitch!
@@ -38,6 +39,11 @@ class NewTaskViewController: UIViewController {
                     DispatchQueue.main.async {
                         if segue.identifier == "reminderViewController" {
                             if let selecVC = segue.destination as? ReminderViewController {
+                                let reminderModel = ReminderModel()
+                                selecVC.reminderModel = reminderModel
+                                print(reminderModel.id + "NewTask")
+                                print(self.uuid)
+                                self.uuid = reminderModel.id
                                 selecVC.textFromNewTask = self.newTaskTextView.text
                                 self.reminderSwitch.isOn = true
                                 self.navigationItem.backButtonTitle = "Event"

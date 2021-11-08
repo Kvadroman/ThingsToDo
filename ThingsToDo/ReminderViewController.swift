@@ -9,13 +9,16 @@ import UIKit
 
 class ReminderViewController: UIViewController {
 
+    var reminderModel = ReminderModel()
     var textFromNewTask: String = ""
+    var uuid: String = ""
     @IBAction func noReminderButton(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
     }
     @IBAction func atTheTimeReminderButton(_ sender: UIButton) {
+//        let reminderModel = ReminderModel(time: 60)
+        print(reminderModel.id + "ReminderViewController")
         reminderTime(for: 60)
-        ReminderModel.shared.getRemindersIdentifiers()
     }
     @IBAction func inFiveMinutesReminderButton(_ sender: UIButton) {
        reminderTime(for: 300)
@@ -46,7 +49,7 @@ class ReminderViewController: UIViewController {
     }
 
     func reminderTime(for time: Double) {
-        ReminderModel.shared.addReminder(for: textFromNewTask, for: time)
+//        ReminderModel.shared.addReminder(for: textFromNewTask, for: time)
         navigationController?.popViewController(animated: true)
     }
 }
