@@ -9,7 +9,7 @@ import UIKit
 import CoreData
 
 protocol NeedToDoViewControllerDelegate: AnyObject {
-    func updateCell(date: String, label text: String, priorityButton: Bool, doneButton: Bool, reminder: Bool)
+    func updateCell(date: String, label text: String, priorityButton: Bool, doneButton: Bool, reminder: Bool, uuid: String)
 }
 
 class NeedToDoViewController: UIViewController {
@@ -40,6 +40,7 @@ class NeedToDoViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         getAllTasks(from: needToDoTasksTableView)
+        print(tasks)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -68,13 +69,14 @@ class NeedToDoViewController: UIViewController {
         tasks = tasks.filter {$0.date == formatter.string(from: selectedDate ?? Date())}
     }
 
-    func createTask(date: String, title: String, priorityButton: Bool, doneButton: Bool, reminder: Bool) {
+    func createTask(date: String, title: String, priorityButton: Bool, doneButton: Bool, reminder: Bool, uuid: String) {
         let newTask = Tasks(context: context)
         newTask.date = date
         newTask.title = title
         newTask.gestureLongType = priorityButton
         newTask.gestureSwipeType = doneButton
         newTask.reminder = reminder
+        newTask.uuid = uuid
         do {
             try context.save()
         } catch {

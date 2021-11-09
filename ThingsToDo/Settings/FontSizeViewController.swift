@@ -15,9 +15,9 @@ class FontSizeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Font Size"
-        sizeSlider.value = Settings.shared.sliderValue ?? 0.1
+        sizeSlider.value = Settings.shared.sliderValue ?? 20
         exampleTextView.font = exampleTextView.font?.withSize(CGFloat(Int(sizeSlider.value)))
-        if Settings.shared.fontSize == true {
+        if Settings.shared.fontSwitch == true {
             sizeSwitch.isOn = true
             sizeSlider.isUserInteractionEnabled = true
             sizeSlider.alpha = 1
@@ -32,11 +32,11 @@ class FontSizeViewController: UIViewController {
         if sender.isOn {
             sizeSlider.isUserInteractionEnabled = true
             sizeSlider.alpha = 1
-            Settings.shared.fontSize = true
+            Settings.shared.fontSwitch = true
         } else {
             sizeSlider.isUserInteractionEnabled = false
             sizeSlider.alpha = 0.5
-            Settings.shared.fontSize = false
+            Settings.shared.fontSwitch = false
         }
     }
     @IBAction func sliderDidChangedAction(_ sender: UISlider) {

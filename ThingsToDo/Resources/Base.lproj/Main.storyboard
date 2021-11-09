@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2TX-YX-Xzv">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -339,7 +338,8 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="In 1 minute"/>
                                         <connections>
-                                            <action selector="atTheTimeReminderButton:" destination="fB3-Yr-PCe" eventType="touchUpInside" id="WYl-Vq-Pz8"/>
+                                            <action selector="atOneMinuteButton:" destination="fB3-Yr-PCe" eventType="touchUpInside" id="agi-t3-Dbf"/>
+                                            <segue destination="Unl-MC-gOl" kind="unwind" unwindAction="returnToNewTaskVcWithUnwindSegue:" id="fCS-IK-UA6"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dvY-0E-awX">
@@ -451,6 +451,7 @@
                     <navigationItem key="navigationItem" id="fCf-bI-As3"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="inO-Ix-YAk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Unl-MC-gOl" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3916.9230769230767" y="-4.2654028436018958"/>
         </scene>
@@ -807,7 +808,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="15" minValue="15" maxValue="30" translatesAutoresizingMaskIntoConstraints="NO" id="kf4-zb-ks2">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="25" minValue="15" maxValue="30" translatesAutoresizingMaskIntoConstraints="NO" id="kf4-zb-ks2">
                                 <rect key="frame" x="6" y="198" width="378" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="U0F-kQ-tpk"/>

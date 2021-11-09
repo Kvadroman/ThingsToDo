@@ -19,18 +19,18 @@ final class Settings {
             defaults.set(newValue?.rawValue, forKey: "appTheme")
         }
     }
-    var fontSize: Bool? {
+    var fontSwitch: Bool? {
         get {
-            return defaults.bool(forKey: "fontSize")
+            return defaults.value(forKey: "fontSwitch") as? Bool ?? true
         }
         set {
-            defaults.setValue(newValue, forKey: "fontSize")
+            defaults.setValue(newValue, forKey: "fontSwitch")
         }
     }
 
     var sliderValue: Float? {
         get {
-            return defaults.float(forKey: "sliderValue")
+            return defaults.value(forKey: "sliderValue") as? Float ?? 20
         }
         set {
             defaults.setValue(newValue, forKey: "sliderValue")
@@ -39,7 +39,7 @@ final class Settings {
 
     var fontFace: String? {
         get {
-            return defaults.string(forKey: "fontFace")
+            return defaults.value(forKey: "fontFace") as? String ?? "Arial"
         }
         set {
             defaults.setValue(newValue, forKey: "fontFace")

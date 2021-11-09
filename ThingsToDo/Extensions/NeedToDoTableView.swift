@@ -8,8 +8,10 @@
 import UIKit
 
 extension NeedToDoViewController: UITableViewDelegate, UITableViewDataSource, NeedToDoViewControllerDelegate {
-    func updateCell(date: String, label text: String, priorityButton: Bool, doneButton: Bool, reminder: Bool) {
-        createTask(date: date, title: text, priorityButton: priorityButton, doneButton: doneButton, reminder: reminder)
+    func updateCell(date: String, label text: String,
+                    priorityButton: Bool, doneButton: Bool, reminder: Bool, uuid: String) {
+        createTask(date: date, title: text, priorityButton: priorityButton,
+                   doneButton: doneButton, reminder: reminder, uuid: uuid)
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

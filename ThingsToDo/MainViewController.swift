@@ -17,11 +17,15 @@ class MainViewController: UIViewController {
         formatter.dateFormat = "dd/MM/yyyy"
         return formatter
     }()
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
 
     override func viewWillAppear(_ animated: Bool) {
         tabBarController?.overrideUserInterfaceStyle = Settings.shared.appTheme ?? .unspecified
         calendar.appearance.titleFont = UIFont(name: Settings.shared.fontFace ?? "",
-                                               size: CGFloat(Settings.shared.sliderValue ?? 0.1))
+                                               size: CGFloat(Settings.shared.sliderValue ?? 20))
+
         calendar.reloadData()
     }
 
@@ -35,7 +39,6 @@ class MainViewController: UIViewController {
             config.selectedDate = calendar.selectedDate
             SelectedDate.shared.selectedDate = config.formatter.string(from: calendar.selectedDate ?? Date())
             navigationItem.backButtonTitle = "Back"
-            print(SelectedDate.shared.selectedDate)
         }
     }
 }

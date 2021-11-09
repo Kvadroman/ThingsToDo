@@ -9,23 +9,12 @@ import UIKit
 
 class ReminderModel {
 
-    private var identifiers: [String] = []
-    public var id: String = ""
-    public var time: Double = 0
-    private var tasks: [Tasks] = []
-//    static var shared: ReminderModel = {
-//        let instance = ReminderModel(time: Double)
-//        return instance
-//    }()
+    static var shared: ReminderModel = {
+        let instance = ReminderModel()
+        return instance
+    }()
 
-    public init () {
-        id = UUID().uuidString
-    }
-
-    public convenience init (time: Double) {
-        self.init()
-        self.time = time
-    }
+    public init () {}
 
     func addReminder(for body: String, for time: Double) {
         let uuid = UUID().uuidString
@@ -43,30 +32,5 @@ class ReminderModel {
                 fatalError()
             }
         }
-
-        let context = (UIApplication.shared.delegate as? AppDelegate)!.persistentContainer.viewContext
-        do {
-            tasks = try context.fetch(Tasks.fetchRequest())
-        } catch {
-            print(error.localizedDescription)
-        }
-//        task.uuid = uuid
-        do {
-            try context.save()
-        } catch {
-            print(error.localizedDescription)
-        }
-    }
-
-    func getRemindersIdentifiers() -> String {
-        UNUserNotificationCenter.current().getPendingNotificationRequests { notificationRequest in
-//            var identifiers: [String] = []
-            for notification: UNNotificationRequest in notificationRequest {
-                self.identifiers.append(notification.identifier)
-//                print(notification.identifier)
-            }
-        }
-        print(identifiers.popLast() ?? "")
-        return identifiers.popLast() ?? ""
     }
 }
