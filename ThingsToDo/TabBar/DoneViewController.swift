@@ -10,10 +10,8 @@ import CoreData
 
 class DoneViewController: UIViewController {
 
-    @IBOutlet weak var doneTableView: UITableView!
-    let task = NeedToDoViewController()
     var tasksDone: [Tasks] = []
-    var date: Date?
+    @IBOutlet weak var doneTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         doneTableView.delegate = self
@@ -24,12 +22,10 @@ class DoneViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if SelectedDate.shared.selectedDate == "" {
-            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-            let fetchRequest: NSFetchRequest<Tasks> = Tasks.fetchRequest()
-            fetchRequest.predicate = NSPredicate(format: "date == %@",
-                    task.formatter.string(from: task.selectedDate ?? Date()))
+            CoreDataService.shared.fetchRequest.predicate = NSPredicate(format: "date == %@",
+                                                 DateFormatting.shared.formatter.string(from: Date()))
             do {
-                tasksDone = try context.fetch(fetchRequest)
+                tasksDone = try CoreDataService.shared.context.fetch(CoreDataService.shared.fetchRequest)
                 tasksDone = tasksDone.filter {$0.gestureSwipeType == true}
             } catch {
                 print(error.localizedDescription)
@@ -40,14 +36,12 @@ class DoneViewController: UIViewController {
         doneTableView.reloadData()
     }
 
-    func getData() {
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        let fetchRequest: NSFetchRequest<Tasks> = Tasks.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "date == %@", SelectedDate.shared.selectedDate)
+    private func getData() {
+        CoreDataService.shared.fetchRequest.predicate = NSPredicate(
+            format: "date == %@", SelectedDate.shared.selectedDate)
         do {
-            tasksDone = try context.fetch(fetchRequest)
+            tasksDone = try CoreDataService.shared.context.fetch(CoreDataService.shared.fetchRequest)
             tasksDone = tasksDone.filter {$0.gestureSwipeType == true}
-            doneTableView.reloadData()
         } catch {
             print(error.localizedDescription)
         }

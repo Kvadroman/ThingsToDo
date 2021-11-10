@@ -21,6 +21,7 @@
 		0027B52B27026578002298D5 /* NeedToDoTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0027B52A27026578002298D5 /* NeedToDoTableView.swift */; };
 		0027B52D2703486A002298D5 /* NewTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0027B52C2703486A002298D5 /* NewTaskViewController.swift */; };
 		0027B5312704914F002298D5 /* ReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0027B5302704914F002298D5 /* ReminderViewController.swift */; };
+		002AE5B7273C6A2400ED333D /* DateFormatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AE5B6273C6A2400ED333D /* DateFormatting.swift */; };
 		00686A182705EE8D00C55C2B /* UIAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00686A172705EE8D00C55C2B /* UIAlertViewController.swift */; };
 		00686A64270711E000C55C2B /* TasksCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00686A62270711E000C55C2B /* TasksCell.swift */; };
 		00686A6B2707167900C55C2B /* TasksCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00686A6A2707167900C55C2B /* TasksCell.xib */; };
@@ -92,6 +93,7 @@
 		0027B52A27026578002298D5 /* NeedToDoTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeedToDoTableView.swift; sourceTree = "<group>"; };
 		0027B52C2703486A002298D5 /* NewTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskViewController.swift; sourceTree = "<group>"; };
 		0027B5302704914F002298D5 /* ReminderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderViewController.swift; sourceTree = "<group>"; };
+		002AE5B6273C6A2400ED333D /* DateFormatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatting.swift; sourceTree = "<group>"; };
 		00686A172705EE8D00C55C2B /* UIAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertViewController.swift; sourceTree = "<group>"; };
 		00686A62270711E000C55C2B /* TasksCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksCell.swift; sourceTree = "<group>"; };
 		00686A6A2707167900C55C2B /* TasksCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TasksCell.xib; sourceTree = "<group>"; };
@@ -257,6 +259,7 @@
 				0027B51B2701EE94002298D5 /* NeedToDoViewController.swift */,
 				0027B52C2703486A002298D5 /* NewTaskViewController.swift */,
 				00E0BC7E27297624001A8A70 /* ReminderModel.swift */,
+				002AE5B6273C6A2400ED333D /* DateFormatting.swift */,
 				00F0827426F3331800B9EC28 /* MainViewController.swift */,
 				0027B5302704914F002298D5 /* ReminderViewController.swift */,
 				00F1381B2719DA1C004873B4 /* SelectedDate.swift */,
@@ -627,6 +630,7 @@
 				00F138B4272712FB004873B4 /* FontFaceCell.swift in Sources */,
 				00F1381A27177F65004873B4 /* ChangeAppIconViewController.swift in Sources */,
 				00E0BC7F27297624001A8A70 /* ReminderModel.swift in Sources */,
+				002AE5B7273C6A2400ED333D /* DateFormatting.swift in Sources */,
 				00260404270C427400D48A2D /* SettingsCell.swift in Sources */,
 				00F0827326F3331800B9EC28 /* SceneDelegate.swift in Sources */,
 				00F13825271CA1EC004873B4 /* FontFaceTableView.swift in Sources */,

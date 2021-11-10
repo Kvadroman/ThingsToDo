@@ -10,10 +10,9 @@ import CoreData
 
 class SearchViewController: UIViewController {
 
-    @IBOutlet weak var searchTableView: UITableView!
-    let searchController = UISearchController()
-    var task = NeedToDoViewController()
+    private let searchController = UISearchController()
     var tasksSearch: [Tasks] = []
+    @IBOutlet weak var searchTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Search"
@@ -32,11 +31,9 @@ class SearchViewController: UIViewController {
     }
 
     func getAllData(from searchText: String) {
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        let fetchRequest: NSFetchRequest<Tasks> = Tasks.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "title contains %@", searchText)
+        CoreDataService.shared.fetchRequest.predicate = NSPredicate(format: "title contains %@", searchText)
         do {
-            tasksSearch = try context.fetch(fetchRequest)
+            tasksSearch = try CoreDataService.shared.context.fetch(CoreDataService.shared.fetchRequest)
         } catch {
             print(error.localizedDescription)
         }
@@ -45,8 +42,8 @@ class SearchViewController: UIViewController {
 
 extension SearchViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
-        guard let text = searchController.searchBar.text else {return}
-        getAllData(from: text)
+        guard let searchText = searchController.searchBar.text else {return}
+        getAllData(from: searchText)
         searchTableView.reloadData()
         searchTableView.isHidden = false
     }

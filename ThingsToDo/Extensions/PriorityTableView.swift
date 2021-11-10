@@ -16,20 +16,15 @@ extension PriorityViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "TasksCell",
                                                        for: indexPath) as? TasksCell else {fatalError()}
-        let taskPriority = taskPriority[indexPath.row]
-        cell.textFromCell.text = "\(indexPath.row+1). \(taskPriority.title ?? "")"
-        cell.switchReminder.isOn = taskPriority.reminder
-        cell.switchAction = { _ in
-            taskPriority.reminder = cell.switchReminder.isOn
-            CoreDataService.shared.saveTask()
-        }
+        let tasksPriority = taskPriority[indexPath.row]
+        cell.setupTitleCell(indexPath: indexPath.row, task: taskPriority)
         cell.fontFace()
-        if taskPriority.gestureLongType == true {
-            cell.contentView.backgroundColor = .red
-            cell.progressLine.isHidden = true
-        } else {
-            cell.contentView.backgroundColor = .white
-            cell.progressLine.isHidden = true
+        cell.backgroundColorCellDonePriority(gesture: tasksPriority.gestureLongType, color: .red)
+        cell.switchAction = { _ in
+            tasksPriority.reminder = cell.switchReminder.isOn
+            UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [tasksPriority.uuid!])
+            cell.switchReminder.isEnabled = false
+            CoreDataService.shared.saveTask()
         }
         return cell
     }

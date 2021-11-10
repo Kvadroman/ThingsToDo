@@ -10,15 +10,15 @@ import CoreData
 
 class CoreDataService {
 
+    lazy var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    let fetchRequest: NSFetchRequest<Tasks> = Tasks.fetchRequest()
+    var tasks = [Tasks]()
     static let shared: CoreDataService = {
         let instance = CoreDataService()
         return instance
     }()
 
     private init () {}
-
-    lazy var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    var tasks = [Tasks]()
 
     func getAllTasks() {
         do {

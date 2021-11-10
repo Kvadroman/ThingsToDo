@@ -17,26 +17,17 @@ extension DoneViewController: UITableViewDataSource, UITableViewDelegate {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "TasksCell",
                                                        for: indexPath) as? TasksCell else {fatalError()}
         let taskDone = tasksDone[indexPath.row]
-        cell.textFromCell.text = "\(indexPath.row+1). \(taskDone.title ?? "")"
-        cell.switchReminder.isOn = taskDone.reminder
-        cell.switchAction = { [weak self] _ in
-            taskDone.reminder = cell.switchReminder.isOn
-            do {
-                try self?.task.context.save()
-            } catch {
-                print(error.localizedDescription)
-            }
-        }
+        cell.setupTitleCell(indexPath: indexPath.row, task: tasksDone)
         cell.fontFace()
-        if taskDone.gestureSwipeType == true {
-            cell.contentView.backgroundColor = .green
-            cell.progressLine.isHidden = false
-        } else {
-            cell.contentView.backgroundColor = .white
-            cell.progressLine.isHidden = true
+        cell.backgroundColorCellDonePriority(gesture: taskDone.gestureSwipeType, color: .green)
+        cell.switchAction = { _ in
+            taskDone.reminder = cell.switchReminder.isOn
+            UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [taskDone.uuid!])
+            CoreDataService.shared.saveTask()
         }
         return cell
     }
+
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle,
                    forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {

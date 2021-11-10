@@ -12,11 +12,6 @@ class MainViewController: UIViewController {
 
     lazy var tasks = [Tasks]()
     @IBOutlet weak var calendar: FSCalendar!
-    let formatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd/MM/yyyy"
-        return formatter
-    }()
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -25,19 +20,14 @@ class MainViewController: UIViewController {
         tabBarController?.overrideUserInterfaceStyle = Settings.shared.appTheme ?? .unspecified
         calendar.appearance.titleFont = UIFont(name: Settings.shared.fontFace ?? "",
                                                size: CGFloat(Settings.shared.sliderValue ?? 20))
-
         calendar.reloadData()
-    }
-
-    override func willTransition(to newCollection: UITraitCollection,
-                                 with coordinator: UIViewControllerTransitionCoordinator) {
-        self.calendar?.reloadData()
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let config = segue.destination as? NeedToDoViewController {
             config.selectedDate = calendar.selectedDate
-            SelectedDate.shared.selectedDate = config.formatter.string(from: calendar.selectedDate ?? Date())
+            SelectedDate.shared.selectedDate = DateFormatting.shared.formatter.string(
+                from: calendar.selectedDate ?? Date())
             navigationItem.backButtonTitle = "Back"
         }
     }

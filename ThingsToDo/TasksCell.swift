@@ -42,6 +42,21 @@ class TasksCell: UITableViewCell {
         }
     }
 
+    func backgroundColorCellDonePriority(gesture: Bool, color: UIColor) {
+        if gesture == true {
+            contentView.backgroundColor = color
+            progressLine.isHidden = false
+        } else {
+            contentView.backgroundColor = .white
+            progressLine.isHidden = true
+        }
+    }
+
+    func setupTitleCell(indexPath: Int, task: [Tasks]) {
+        textFromCell.text = "\(indexPath+1). \(task[indexPath].title ?? "")"
+        switchReminder.isOn = task[indexPath].reminder
+    }
+
     // MARK: Action that save the value switch to CoreData
     @IBAction func switchAction(_ sender: UISwitch) {
         self.switchAction?(sender)

@@ -17,28 +17,15 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "TasksCell",
                                                        for: indexPath) as? TasksCell else {fatalError()}
         let searchTasks = tasksSearch[indexPath.row]
-        cell.textFromCell.text = "\(indexPath.row + 1). \(searchTasks.title ?? "")"
-        cell.switchReminder.isOn = searchTasks.reminder
-        cell.switchAction = { [weak self] sender in
-            searchTasks.reminder = cell.switchReminder.isOn
-            do {
-                try self?.task.context.save()
-            } catch {
-                print(error.localizedDescription)
-            }
-        }
+        cell.setupTitleCell(indexPath: indexPath.row, task: tasksSearch)
         cell.fontFace()
         cell.backgroundColorCellUserInterfaceStyle()
         cell.backgroundColorCellGesture(array: tasksSearch, indexPath: indexPath.row)
-//        if searchTasks.gestureSwipeType == true {
-//            cell.contentView.backgroundColor = .green
-//            cell.progressLine.isHidden = false
-//        } else if searchTasks.gestureLongType == true {
-//            cell.contentView.backgroundColor = .red
-//            cell.progressLine.isHidden = true
-//        } else {
-//            cell.progressLine.isHidden = true
-//        }
+        cell.switchAction = { _ in
+            searchTasks.reminder = cell.switchReminder.isOn
+            UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [searchTasks.uuid!])
+            CoreDataService.shared.saveTask()
+        }
         return cell
     }
 

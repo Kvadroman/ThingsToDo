@@ -10,7 +10,6 @@ import UIKit
 extension UIViewController {
     func showAlert(msg: String, inViewController vc: UIViewController,
                    actions: [UIAlertAction]? = nil, type: UIAlertController.Style = .alert, title: String) {
-        
         let alertType: UIAlertController.Style = .alert
         let alertTitle = title
         let alertVC = UIAlertController(title: alertTitle, message: msg, preferredStyle: alertType)

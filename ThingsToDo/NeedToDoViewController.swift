@@ -15,23 +15,15 @@ protocol NeedToDoViewControllerDelegate: AnyObject {
 
 class NeedToDoViewController: UIViewController {
 
-    lazy var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var tasks = [Tasks]()
     var selectedDate: Date?
-    var stateLongType: Bool = false
-    var stateSwipeType: Bool = false
-    let formatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd/MM/yyyy"
-        return formatter
-    }()
     @IBOutlet weak var titleNavigationBar: UINavigationItem!
     @IBOutlet weak var needToDoTasksTableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         if let d = selectedDate {
-            titleNavigationBar.title = formatter.string(from: d)
+            titleNavigationBar.title = DateFormatting.shared.formatter.string(from: d)
         }
         needToDoTasksTableView.register(UINib(nibName: "TasksCell", bundle: nil), forCellReuseIdentifier: "TasksCell")
         needToDoTasksTableView.dataSource = self
@@ -41,15 +33,15 @@ class NeedToDoViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         CoreDataService.shared.getAllTasks()
-        tasks = CoreDataService.shared.tasks.filter {$0.date == formatter.string(from: selectedDate ?? Date())}
+        tasks = CoreDataService.shared.tasks.filter {$0.date == DateFormatting.shared.formatter.string(
+            from: selectedDate ?? Date())}
         needToDoTasksTableView.reloadData()
-        print(tasks)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "NewTaskViewController" {
             if let selectVC = segue.destination as? NewTaskViewController {
-                selectVC.date = formatter.string(from: selectedDate ?? Date())
+                selectVC.date = DateFormatting.shared.formatter.string(from: selectedDate ?? Date())
                 selectVC.delegate = self
             }
         }

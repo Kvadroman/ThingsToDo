@@ -11,7 +11,6 @@ import CoreData
 class PriorityViewController: UIViewController {
 
     @IBOutlet weak var priorityTableView: UITableView!
-    let task = NeedToDoViewController()
     var taskPriority: [Tasks] = []
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,12 +22,10 @@ class PriorityViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if SelectedDate.shared.selectedDate == "" {
-            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-            let fetchRequest: NSFetchRequest<Tasks> = Tasks.fetchRequest()
-            fetchRequest.predicate = NSPredicate(format: "date == %@",
-                    task.formatter.string(from: task.selectedDate ?? Date()))
+            CoreDataService.shared.fetchRequest.predicate = NSPredicate(format: "date == %@",
+                            DateFormatting.shared.formatter.string(from: Date()))
             do {
-                taskPriority = try context.fetch(fetchRequest)
+                taskPriority = try CoreDataService.shared.context.fetch(CoreDataService.shared.fetchRequest)
                 taskPriority = taskPriority.filter {$0.gestureLongType == true}
             } catch {
                 print(error.localizedDescription)
@@ -39,14 +36,12 @@ class PriorityViewController: UIViewController {
         priorityTableView.reloadData()
     }
 
-    func getData() {
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        let fetchRequest: NSFetchRequest<Tasks> = Tasks.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "date == %@", SelectedDate.shared.selectedDate)
+    private func getData() {
+        CoreDataService.shared.fetchRequest.predicate = NSPredicate(
+            format: "date == %@", SelectedDate.shared.selectedDate)
         do {
-            taskPriority = try context.fetch(fetchRequest)
+            taskPriority = try CoreDataService.shared.context.fetch(CoreDataService.shared.fetchRequest)
             taskPriority = taskPriority.filter {$0.gestureLongType == true}
-            priorityTableView.reloadData()
         } catch {
             print(error.localizedDescription)
         }

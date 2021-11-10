@@ -22,20 +22,19 @@ extension NeedToDoViewController: UITableViewDelegate, UITableViewDataSource, Ne
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "TasksCell", for: indexPath)
                 as? TasksCell else {fatalError()}
         let task = tasks[indexPath.row]
-        cell.textFromCell.text = "\(indexPath.row+1). \(task.title ?? "")"
-        cell.switchReminder.isOn = task.reminder
+        let swipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(swipeTapEdit(recognizer:)))
+        let longTap = UILongPressGestureRecognizer(target: self, action: #selector(longTapEdit(recognizer:)))
+        cell.contentView.addGestureRecognizer(longTap)
+        cell.contentView.addGestureRecognizer(swipeGesture)
+        cell.setupTitleCell(indexPath: indexPath.row, task: tasks)
+        cell.fontFace()
+        cell.backgroundColorCellUserInterfaceStyle()
+        cell.backgroundColorCellGesture(array: tasks, indexPath: indexPath.row)
         cell.switchAction = { _ in
             task.reminder = cell.switchReminder.isOn
             UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [task.uuid!])
             CoreDataService.shared.saveTask()
         }
-        cell.fontFace()
-        cell.backgroundColorCellUserInterfaceStyle()
-        let swipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(swipeTapEdit(recognizer:)))
-        let longTap = UILongPressGestureRecognizer(target: self, action: #selector(longTapEdit(recognizer:)))
-        cell.contentView.addGestureRecognizer(longTap)
-        cell.contentView.addGestureRecognizer(swipeGesture)
-        cell.backgroundColorCellGesture(array: tasks, indexPath: indexPath.row)
         return cell
     }
 

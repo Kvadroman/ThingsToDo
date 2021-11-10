@@ -40,6 +40,7 @@ class NewTaskViewController: UIViewController {
                                 selecVC.uuid = UUID().uuidString
                                 selecVC.textFromNewTask = self.newTaskTextView.text
                                 self.reminderSwitch.isOn = true
+                                self.reminderSwitch.isEnabled = false
                                 self.navigationItem.backButtonTitle = "Event"
                             }
                         }

@@ -16,13 +16,9 @@ extension MainViewController: FSCalendarDelegate {
 
 extension MainViewController: FSCalendarDataSource {
     func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
-        let context = (UIApplication.shared.delegate as? AppDelegate)!.persistentContainer.viewContext
-        do {
-            tasks = try context.fetch(Tasks.fetchRequest())
-        } catch {
-            print(error.localizedDescription)
-        }
-        tasks = tasks.filter {$0.date == formatter.string(from: date)}
+        CoreDataService.shared.getAllTasks()
+        tasks = CoreDataService.shared.tasks
+        tasks = tasks.filter {$0.date == DateFormatting.shared.formatter.string(from: date)}
         return tasks.count
     }
 }
