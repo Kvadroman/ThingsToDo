@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0013FB40273AEA7800B407A0 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0013FB3F273AEA7800B407A0 /* CoreDataService.swift */; };
 		0020612A270B883400EC3E1C /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00206129270B883400EC3E1C /* TabBarController.swift */; };
 		0020612C270B9B0A00EC3E1C /* PriorityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0020612B270B9B0A00EC3E1C /* PriorityViewController.swift */; };
 		0020612E270B9B2900EC3E1C /* DoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0020612D270B9B2900EC3E1C /* DoneViewController.swift */; };
@@ -77,6 +78,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0013FB3F273AEA7800B407A0 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
 		00206129270B883400EC3E1C /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		0020612B270B9B0A00EC3E1C /* PriorityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriorityViewController.swift; sourceTree = "<group>"; };
 		0020612D270B9B2900EC3E1C /* DoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneViewController.swift; sourceTree = "<group>"; };
@@ -251,6 +253,7 @@
 				00F1380D2710447A004873B4 /* Tasks+CoreDataProperties.swift */,
 				0027B52027023682002298D5 /* Application */,
 				00686A722709C90A00C55C2B /* EditCellViewController.swift */,
+				0013FB3F273AEA7800B407A0 /* CoreDataService.swift */,
 				0027B51B2701EE94002298D5 /* NeedToDoViewController.swift */,
 				0027B52C2703486A002298D5 /* NewTaskViewController.swift */,
 				00E0BC7E27297624001A8A70 /* ReminderModel.swift */,
@@ -630,6 +633,7 @@
 				00F1380E2710447A004873B4 /* Tasks+CoreDataClass.swift in Sources */,
 				00F1381827177F4A004873B4 /* FontSizeViewController.swift in Sources */,
 				0027B52B27026578002298D5 /* NeedToDoTableView.swift in Sources */,
+				0013FB40273AEA7800B407A0 /* CoreDataService.swift in Sources */,
 				00F13820271C38E3004873B4 /* ColorThemeTableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

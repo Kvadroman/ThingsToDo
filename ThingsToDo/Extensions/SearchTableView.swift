@@ -28,16 +28,17 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
             }
         }
         cell.fontFace()
-        if searchTasks.gestureSwipeType == true {
-            cell.contentView.backgroundColor = .green
-            cell.progressLine.isHidden = false
-        } else if searchTasks.gestureLongType == true {
-            cell.contentView.backgroundColor = .red
-            cell.progressLine.isHidden = true
-        } else {
-            cell.contentView.backgroundColor = .white
-            cell.progressLine.isHidden = true
-        }
+        cell.backgroundColorCellUserInterfaceStyle()
+        cell.backgroundColorCellGesture(array: tasksSearch, indexPath: indexPath.row)
+//        if searchTasks.gestureSwipeType == true {
+//            cell.contentView.backgroundColor = .green
+//            cell.progressLine.isHidden = false
+//        } else if searchTasks.gestureLongType == true {
+//            cell.contentView.backgroundColor = .red
+//            cell.progressLine.isHidden = true
+//        } else {
+//            cell.progressLine.isHidden = true
+//        }
         return cell
     }
 
@@ -48,7 +49,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle,
                    forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            task.deleteTask(title: tasksSearch.remove(at: indexPath.row), from: searchTableView)
+            CoreDataService.shared.deleteTask(title: tasksSearch.remove(at: indexPath.row))
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }

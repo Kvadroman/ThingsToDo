@@ -67,7 +67,7 @@ class NewTaskViewController: UIViewController {
             delegate?.updateCell(date: date, label: newTaskTextView.text, priorityButton:
                                 prioritySwitch.isOn, doneButton: doneSwitch.isOn,
                                  reminder: reminderSwitch.isOn, uuid: uuid)
-            ReminderModel.shared.addReminder(for: newTaskTextView.text, for: time)
+            ReminderModel.shared.addReminder(for: uuid, for: newTaskTextView.text, for: time)
             self.navigationController?.popViewController(animated: true)
         }
     }

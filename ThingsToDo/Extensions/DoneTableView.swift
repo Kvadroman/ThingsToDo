@@ -28,8 +28,7 @@ extension DoneViewController: UITableViewDataSource, UITableViewDelegate {
             }
         }
         cell.fontFace()
-        task.stateSwipeType = taskDone.gestureSwipeType
-        if task.stateSwipeType == true {
+        if taskDone.gestureSwipeType == true {
             cell.contentView.backgroundColor = .green
             cell.progressLine.isHidden = false
         } else {
@@ -41,7 +40,7 @@ extension DoneViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle,
                    forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            task.deleteTask(title: tasksDone.remove(at: indexPath.row), from: doneTableView)
+            CoreDataService.shared.deleteTask(title: tasksDone.remove(at: indexPath.row))
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
     }

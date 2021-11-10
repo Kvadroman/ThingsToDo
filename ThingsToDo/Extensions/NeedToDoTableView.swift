@@ -10,15 +10,12 @@ import UIKit
 extension NeedToDoViewController: UITableViewDelegate, UITableViewDataSource, NeedToDoViewControllerDelegate {
     func updateCell(date: String, label text: String,
                     priorityButton: Bool, doneButton: Bool, reminder: Bool, uuid: String) {
-        createTask(date: date, title: text, priorityButton: priorityButton,
+        CoreDataService.shared.createTask(date: date, title: text, priorityButton: priorityButton,
                    doneButton: doneButton, reminder: reminder, uuid: uuid)
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if tasks.count != 0 {
-            return tasks.count
-        }
-        return 0
+         tasks.count != 0 ? tasks.count : 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -27,35 +24,18 @@ extension NeedToDoViewController: UITableViewDelegate, UITableViewDataSource, Ne
         let task = tasks[indexPath.row]
         cell.textFromCell.text = "\(indexPath.row+1). \(task.title ?? "")"
         cell.switchReminder.isOn = task.reminder
-        cell.switchAction = { [weak self] _ in
+        cell.switchAction = { _ in
             task.reminder = cell.switchReminder.isOn
-            do {
-                try self?.context.save()
-            } catch {
-                print(error.localizedDescription)
-            }
+            UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [task.uuid!])
+            CoreDataService.shared.saveTask()
         }
         cell.fontFace()
-        if self.traitCollection.userInterfaceStyle == .dark {
-            cell.contentView.backgroundColor = .black
-        } else {
-            cell.contentView.backgroundColor = .white
-        }
+        cell.backgroundColorCellUserInterfaceStyle()
         let swipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(swipeTapEdit(recognizer:)))
         let longTap = UILongPressGestureRecognizer(target: self, action: #selector(longTapEdit(recognizer:)))
         cell.contentView.addGestureRecognizer(longTap)
         cell.contentView.addGestureRecognizer(swipeGesture)
-        stateSwipeType = task.gestureSwipeType
-        stateLongType = task.gestureLongType
-        if stateSwipeType == true {
-            cell.contentView.backgroundColor = .green
-            cell.progressLine.isHidden = false
-        } else if stateLongType == true {
-            cell.contentView.backgroundColor = .red
-            cell.progressLine.isHidden = true
-        } else {
-            cell.progressLine.isHidden = true
-        }
+        cell.backgroundColorCellGesture(array: tasks, indexPath: indexPath.row)
         return cell
     }
 
@@ -64,17 +44,16 @@ extension NeedToDoViewController: UITableViewDelegate, UITableViewDataSource, Ne
         if let tapIndexPath = self.needToDoTasksTableView.indexPathForRow(at: tapLocation) {
             if let tappedCell = self.needToDoTasksTableView.cellForRow(at: tapIndexPath) as? TasksCell {
                 let task = tasks[tapIndexPath.row]
-                stateSwipeType = task.gestureSwipeType
-                if stateSwipeType == true {
+                if task.gestureSwipeType == true {
                     tappedCell.contentView.backgroundColor = .green
                     tappedCell.progressLine.isHidden = false
                 } else {
                     tappedCell.contentView.backgroundColor = .white
                     tappedCell.progressLine.isHidden = true
                 }
-                stateSwipeType.toggle()
-                task.gestureSwipeType = stateSwipeType
-                saveAndUpdate(from: needToDoTasksTableView)
+                task.gestureSwipeType.toggle()
+                CoreDataService.shared.saveTask()
+                needToDoTasksTableView.reloadData()
             }
         }
     }
@@ -85,17 +64,16 @@ extension NeedToDoViewController: UITableViewDelegate, UITableViewDataSource, Ne
         if let tapIndexPath = self.needToDoTasksTableView.indexPathForRow(at: tapLocation) {
             if let tappedCell = self.needToDoTasksTableView.cellForRow(at: tapIndexPath) as? TasksCell {
                 let task = tasks[tapIndexPath.row]
-                stateLongType = task.gestureLongType
-                if stateLongType == true {
+                if task.gestureLongType == true {
                     tappedCell.contentView.backgroundColor = .red
                     tappedCell.progressLine.isHidden = true
                 } else {
                     tappedCell.contentView.backgroundColor = .white
                     tappedCell.progressLine.isHidden = true
                 }
-                stateLongType.toggle()
-                task.gestureLongType = stateLongType
-                saveAndUpdate(from: needToDoTasksTableView)
+                task.gestureLongType.toggle()
+                CoreDataService.shared.saveTask()
+                needToDoTasksTableView.reloadData()
             }
         }
     }
@@ -107,7 +85,7 @@ extension NeedToDoViewController: UITableViewDelegate, UITableViewDataSource, Ne
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle,
                    forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            deleteTask(title: tasks.remove(at: indexPath.row), from: needToDoTasksTableView)
+            CoreDataService.shared.deleteTask(title: tasks.remove(at: indexPath.row))
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
     }

@@ -16,8 +16,7 @@ class ReminderModel {
 
     public init () {}
 
-    func addReminder(for body: String, for time: Double) {
-        let uuid = UUID().uuidString
+    func addReminder(for uuid: String, for body: String, for time: Double) {
         let content = UNMutableNotificationContent()
         content.title = "ThingsToDo"
         content.sound = .default
