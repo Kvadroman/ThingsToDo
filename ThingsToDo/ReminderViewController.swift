@@ -16,7 +16,7 @@ class ReminderViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     @IBAction func atOneMinuteButton(_ sender: UIButton) {
-        reminderTime(for: 20)
+        reminderTime(for: 60)
     }
     @IBAction func inFiveMinutesReminderButton(_ sender: UIButton) {
         reminderTime(for: 300)
