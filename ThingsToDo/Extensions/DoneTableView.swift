@@ -19,7 +19,7 @@ extension DoneViewController: UITableViewDataSource, UITableViewDelegate {
         let taskDone = tasksDone[indexPath.row]
         cell.setupTitleCell(indexPath: indexPath.row, task: tasksDone)
         cell.fontFace()
-        cell.backgroundColorCellDonePriority(gesture: taskDone.gestureSwipeType, color: .green)
+        cell.backgroundColorCellDonePriority(gesture: taskDone.gestureSwipeType, color: .green, crossedOut: false)
         cell.switchAction = { _ in
             taskDone.reminder = cell.switchReminder.isOn
             UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [taskDone.uuid!])

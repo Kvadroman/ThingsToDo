@@ -19,11 +19,10 @@ extension PriorityViewController: UITableViewDataSource, UITableViewDelegate {
         let tasksPriority = taskPriority[indexPath.row]
         cell.setupTitleCell(indexPath: indexPath.row, task: taskPriority)
         cell.fontFace()
-        cell.backgroundColorCellDonePriority(gesture: tasksPriority.gestureLongType, color: .red)
+        cell.backgroundColorCellDonePriority(gesture: tasksPriority.gestureLongType, color: .red, crossedOut: true)
         cell.switchAction = { _ in
             tasksPriority.reminder = cell.switchReminder.isOn
             UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [tasksPriority.uuid!])
-            cell.switchReminder.isEnabled = false
             CoreDataService.shared.saveTask()
         }
         return cell

@@ -42,10 +42,10 @@ class TasksCell: UITableViewCell {
         }
     }
 
-    func backgroundColorCellDonePriority(gesture: Bool, color: UIColor) {
+    func backgroundColorCellDonePriority(gesture: Bool, color: UIColor, crossedOut: Bool) {
         if gesture == true {
             contentView.backgroundColor = color
-            progressLine.isHidden = false
+            progressLine.isHidden = crossedOut
         } else {
             contentView.backgroundColor = .white
             progressLine.isHidden = true
